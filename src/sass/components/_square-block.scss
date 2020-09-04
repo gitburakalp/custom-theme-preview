@@ -1,0 +1,23 @@
+.square-block {
+  &-contents {
+    @include media-breakpoint-down(sm) {
+      text-align: center;
+    }
+  }
+
+  &-images {
+    margin-bottom: $sectionGutters;
+  }
+
+  .main-image {
+    padding-bottom: 260 / 390 * 100%;
+  }
+
+  .helper-image {
+    padding-bottom: 188 / 320 * 100%;
+
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+  }
+}

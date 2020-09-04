@@ -1,0 +1,135 @@
+.title {
+  font-family: $ff-sans-serif;
+  font-weight: 400;
+  font-size: 2.4rem;
+  color: inherit;
+
+  &--serif {
+    font-family: $ff-serif;
+  }
+
+  &--sans-serif-two {
+    font-family: $ff-sans-serif-2;
+  }
+
+  &--light {
+    font-weight: 300;
+  }
+
+  &--big {
+    font-size: 4rem;
+
+    @include media-breakpoint-up(md) {
+      font-size: 4.5rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+      font-size: 6rem;
+    }
+  }
+
+  &--sub {
+    font-size: 2.5rem;
+
+    @include media-breakpoint-up(md) {
+      font-size: 2.5rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+      font-size: 4rem;
+    }
+  }
+
+  &--bordered {
+    position: relative;
+    padding-bottom: 1rem;
+
+    + * {
+      margin-top: 3rem;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 2.5rem;
+      height: 1px;
+      background-color: color(primary, textColor);
+
+      @include media-breakpoint-up(lg) {
+        width: 5rem;
+      }
+    }
+  }
+
+  &-block {
+    position: relative;
+
+    .parallax {
+      position: relative;
+      display: inline-block;
+
+      &-rectangle {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba($colors--black, $alpha: 0.165);
+          z-index: 1;
+          transform: translate(12.5%, -12.5%);
+        }
+      }
+    }
+
+    + * {
+      margin-top: 5rem;
+
+      @include media-breakpoint-up(md) {
+        margin-top: 10rem;
+      }
+    }
+  }
+}
+
+.description {
+  font-family: $ff-sans-serif;
+  font-size: 1.4rem;
+  color: rgba($colors--black, $alpha: 0.85);
+
+  &--lg {
+    font-size: 1.5rem;
+    line-height: 1.85;
+
+    @include media-breakpoint-up(md) {
+      font-size: 1.4rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+.text-color {
+  &--gray {
+    color: rgba($colors--black, $alpha: 0.65);
+  }
+}
+
+.paragraph {
+  padding: 5rem 5rem 5rem 2rem;
+
+  @include media-breakpoint-up(md) {
+    padding-left: 5vw;
+    padding-top: 2.5vw;
+    padding-bottom: 2.5vw;
+  }
+}

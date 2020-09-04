@@ -1,0 +1,144 @@
+html {
+  font-size: 62.5%;
+
+  @include media-breakpoint-between(md, lg) {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: $ff-sans-serif;
+  font-size: 1rem;
+  background-color: color(primary, backgroundColor);
+  color: color(primary, textColor);
+  transition: background-color 1s;
+
+  main {
+    > section {
+      + * {
+        &:not(.no-padding) {
+          padding-top: $sectionGutters;
+          padding-bottom: $sectionGutters;
+
+          @include media-breakpoint-up(lg) {
+            padding-top: 7.5vw;
+            padding-bottom: 7.5vw;
+          }
+        }
+      }
+    }
+  }
+
+  .container {
+    @include media-breakpoint-up(xl) {
+      max-width: calc(100% - (15vw + 15vw - 30px));
+    }
+  }
+}
+
+@for $i from 1 to 7 {
+  h#{$i} {
+    margin-bottom: 0;
+  }
+}
+
+figure,
+p {
+  margin-bottom: 0;
+}
+
+#body {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  transform: translateZ(0);
+  will-change: transform;
+
+  #scroller {
+    position: relative;
+
+    @extend %parallax-anim;
+  }
+}
+
+.py-big {
+  padding-top: 75px;
+  padding-bottom: 75px;
+
+  @include media-breakpoint-up(md) {
+    padding-top: 7.5vw;
+    padding-bottom: 7.5vw;
+  }
+}
+
+.py {
+  &-medium {
+    padding-top: 1.25vw;
+    padding-bottom: 1.25vw;
+  }
+
+  &-large {
+    padding-top: 2.5vw;
+    padding-bottom: 2.5vw;
+  }
+
+  &-xlarge {
+    padding-top: 5vw;
+    padding-bottom: 5vw;
+  }
+}
+
+%text-white--all {
+  color: $colors--white;
+
+  * {
+    color: $colors--white;
+    border-color: $colors--white !important;
+
+    &.btn {
+      &::before {
+        background-color: $colors--white;
+      }
+
+      &:hover {
+        span {
+          color: $colors--black !important;
+        }
+      }
+    }
+  }
+}
+
+%text-md-white--all {
+  @include media-breakpoint-up(md) {
+    color: $colors--white;
+
+    * {
+      color: $colors--white;
+      border-color: $colors--white !important;
+
+      &.btn {
+        &::before {
+          background-color: $colors--white;
+        }
+
+        &:hover {
+          span {
+            color: $colors--black !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.text {
+  &-white--all {
+    @extend %text-white--all;
+  }
+
+  &-md-white--all {
+    @extend %text-md-white--all;
+  }
+}

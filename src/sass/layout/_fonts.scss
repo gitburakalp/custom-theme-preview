@@ -1,0 +1,82 @@
+@font-face {
+  font-family: 'Gilroy';
+  font-weight: 700;
+  src: url($fontSource + 'Gilroy-Heavy.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  font-weight: 600;
+  src: url($fontSource + 'Gilroy-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  font-weight: 500;
+  src: url($fontSource + 'Gilroy-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  font-weight: 400;
+  src: url($fontSource + 'Gilroy-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  font-weight: 300;
+  src: url($fontSource + 'Gilroy-Light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Avant Garde';
+  src: url($fontSource + 'Avant-Garde-ExtraLight.woff2');
+}
+
+.font-family {
+  &--avant-garde {
+    font-family: $ff-avant-garde;
+  }
+
+  &--serif {
+    font-family: $ff-serif;
+  }
+}
+
+.font-size {
+  &--xs {
+    font-size: 1.2rem;
+  }
+
+  &--sm {
+    font-size: 1.4rem;
+  }
+
+  &--md {
+    font-size: 1.6rem;
+  }
+
+  &--lg {
+    font-size: 1.8rem;
+  }
+
+  &--xl {
+    font-size: 2rem;
+  }
+
+  &--2xl {
+    font-size: 2.4rem;
+  }
+
+  &--3xl {
+    font-size: 2.8rem;
+  }
+
+  &--huge {
+    font-size: 2.6rem;
+
+    @include media-breakpoint-up(md) {
+      font-size: 3.6rem;
+    }
+  }
+}

@@ -1,0 +1,67 @@
+@keyframes headerAnim {
+  from {
+    transform: translateY(-125%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.no-effect-header {
+  .header {
+    &::before {
+      content: none !important;
+    }
+  }
+}
+
+.header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 2rem 1rem;
+  z-index: 9;
+
+  @include media-breakpoint-up(md) {
+    padding: 2rem;
+  }
+
+  &.scrolled {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      // background-color: rgba($colors--white, 0.85);
+      background: linear-gradient(to bottom, rgba($colors--white, 1), rgba($colors--white, 0.75), rgba($colors--white, 0.5), rgba($colors--white, 0.25));
+      box-shadow: 0 0 3px rgba($colors--black, 0.15);
+      transition: background-color 350ms;
+      animation: headerAnim 1s;
+      z-index: 1;
+    }
+  }
+
+  &-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    z-index: 2;
+
+    .brand {
+      position: absolute;
+      width: 9rem;
+      left: 50%;
+      transform: translateX(-50%);
+
+      @include media-breakpoint-up(md) {
+        width: 20rem;
+      }
+    }
+  }
+}

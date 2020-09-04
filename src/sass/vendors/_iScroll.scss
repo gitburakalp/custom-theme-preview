@@ -1,0 +1,8 @@
+.iScrollVerticalScrollbar {
+  z-index: 10 !important;
+  .iScrollIndicator {
+    background-color: $colors--black !important;
+    border-color: transparent !important;
+    border-radius: 0 !important;
+  }
+}

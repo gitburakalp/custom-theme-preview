@@ -1,0 +1,23 @@
+$primary-color: #00ccef;
+$lighten: 15%;
+$darken: 10%;
+
+$colors--white: #fff;
+$colors--black: rgb(13, 13, 13);
+
+$colors: (
+  primary: (
+    base: $primary-color,
+    light: lighten($primary-color, $lighten),
+    dark: darken($primary-color, $darken),
+    textColor: $colors--black,
+    backgroundColor: #f9f9f9,
+    buttonTextColor: $colors--black,
+    buttonHoverColor: rgba($colors--black, 0.5),
+  ),
+);
+
+@function color($base, $shade: base) {
+  $color: map-get(map-get($colors, $base), $shade);
+  @return $color;
+}
