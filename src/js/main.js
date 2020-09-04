@@ -1,3 +1,4 @@
+var scroller = document.querySelector('#scroller');
 var myScroll;
 var scrollType;
 var pageY;
@@ -5,6 +6,7 @@ var isMobile = $(window).outerWidth() < 1024;
 var windowHeight = $(window).height();
 var mobileSliders = [];
 var isHandheld = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+var tl;
 
 function initVerticalScroll() {
   if (navigator.userAgent.toLowerCase().indexOf('firefox') == -1 && !isMobile) {
@@ -25,6 +27,8 @@ function initVerticalScroll() {
       pageY = -myScroll.y;
       commonScrollEvents();
     });
+
+    window.onload = function () {};
   } else {
     scrollType = 'native';
 
@@ -196,27 +200,18 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-// gsap.to('.parallax-rectangle', {
-//   yPercent: 50,
-//   scrollTrigger: {
-//     trigger: '.parallax',
-//     scrub: true,
-//   },
-// });
+gsap.to('.parallax-rectangle', {
+  yPercent: -15,
+  scrollTrigger: {
+    trigger: '.parallax',
+    scrub: true,
+  },
+});
 
-// gsap.to('.gsap-parallax-texts', {
-//   yPercent: -50,
-//   scrollTrigger: {
-//     trigger: '.parallax',
-//     scrub: true,
-//   },
-// });
-
-// gsap.to('.prx', {
-//   yPercent: 20,
-//   scrollTrigger: {
-//     trigger: '.main-block.main-block--filtered',
-//     scrub: true,
-//     start: 100,
-//   },
-// });
+gsap.to('.gsap-parallax-texts', {
+  yPercent: 15,
+  scrollTrigger: {
+    trigger: '.parallax',
+    scrub: true,
+  },
+});
