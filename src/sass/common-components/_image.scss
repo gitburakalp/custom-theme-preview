@@ -27,6 +27,7 @@
 
     &.lazy {
       &:not(.lazy-loaded) {
+        opacity: 0;
         filter: blur(20px);
         transform: scale(1.1);
       }

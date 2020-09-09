@@ -5,6 +5,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Playfair+Display:wght@400;500;700&family=Oswald:wght@300;400;600&display=swap');
 
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss';
 
 /* Base Styles */
 @import 'abstracts/index.scss';

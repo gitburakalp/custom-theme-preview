@@ -50,6 +50,12 @@
 .slider {
   &-container {
     @extend %slider-container;
+
+    &--vertical {
+      > * {
+        @extend %slider-container--vertical;
+      }
+    }
   }
 
   &-wrapper {
@@ -58,5 +64,28 @@
 
   &-slide {
     @extend %slider-slide;
+  }
+
+  &-controls {
+    position: relative;
+    font-size: 2rem;
+    color: $colors--black;
+    z-index: 11;
+
+    > * {
+      display: inline-block;
+      color: inherit;
+      line-height: 1;
+      font-size: inherit;
+      cursor: pointer;
+
+      &[class*='-disabled'] {
+        opacity: 0.35;
+      }
+    }
+
+    &--white {
+      color: $colors--white;
+    }
   }
 }

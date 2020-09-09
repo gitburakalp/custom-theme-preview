@@ -1,0 +1,39 @@
+.social-list {
+  position: relative;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  justify-content: center;
+  text-align: center;
+
+  > * {
+    position: relative;
+    min-height: 1px;
+    width: auto;
+    max-width: 100%;
+
+    @include media-breakpoint-down(sm) {
+      + * {
+        margin-left: 3rem;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      width: 100%;
+
+      + * {
+        margin-top: 3rem;
+      }
+    }
+  }
+
+  &-link {
+    display: block;
+    font-size: 3rem;
+    color: rgba($colors--black, 0.875) !important;
+  }
+}

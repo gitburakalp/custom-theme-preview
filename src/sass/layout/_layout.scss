@@ -12,6 +12,16 @@ body {
   background-color: color(primary, backgroundColor);
   color: color(primary, textColor);
   transition: background-color 1s;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+
+  * {
+    &:focus {
+      outline: none !important;
+      border-color: transprant !important;
+      box-shadow: none !important;
+    }
+  }
 
   main {
     > section {
@@ -48,17 +58,15 @@ p {
 }
 
 #body {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  transform: translateZ(0);
-  will-change: transform;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 
   #scroller {
-    position: relative;
-
-    @extend %parallax-anim;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 }
 

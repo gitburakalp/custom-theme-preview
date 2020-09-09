@@ -44,15 +44,39 @@
       position: relative;
       border: 1px solid rgba($colors--white, 0.5);
       padding: 5rem;
-      max-width: 65%;
       left: -12.5%;
       transition: all 340ms cubic-bezier(0.16, 0.01, 0.77, 1);
       z-index: 9;
-      background-color: rgba($colors--white, 0.65);
+      background-color: rgba($colors--white, 0.85);
       box-shadow: 0 0 10px 0 rgba($colors--black, 0.15);
 
+      height: var(--vsh);
+      max-height: var(--vsh);
+
       @include media-breakpoint-up(md) {
-        min-height: 25vw;
+        margin-left: 0;
+
+        > * {
+          max-height: 25vw;
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        max-width: 65%;
+      }
+    }
+
+    .slider-controls {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+
+      display: flex;
+      justify-content: space-between;
+
+      @include media-breakpoint-up(md) {
+        font-size: 4rem;
       }
     }
   }

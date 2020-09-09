@@ -29,6 +29,8 @@
   }
 
   &-col {
+    transition: opacity 1s;
+
     @include media-breakpoint-up(md) {
       flex: 0 0 50%;
       max-width: 50%;
