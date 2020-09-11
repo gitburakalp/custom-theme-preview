@@ -9,8 +9,57 @@
   </head>
 
   <body>
-    <div class="offset-block">
-      <i class="fal fa-times" data-dismiss=".offset-block"></i>
+    <div id="blockMenu" class="offset-block">
+      <div class="menu-col">
+        <ul class="offset-menu">
+          <li class="offset-menu-item">
+            <a href="#" class="offset-menu-link border-bottom-white"> About HotelN </a>
+          </li>
+          <li class="offset-menu-item">
+            <a href="#" class="offset-menu-link"> Rooms </a>
+          </li>
+          <li class="offset-menu-item">
+            <a href="#" class="offset-menu-link"> Offers </a>
+          </li>
+          <li class="offset-menu-item">
+            <a href="#" class="offset-menu-link"> Bar & Champagne </a>
+          </li>
+          <li class="offset-menu-item">
+            <a href="#" class="offset-menu-link"> Meeting Room </a>
+          </li>
+          <li class="offset-menu-item">
+            <a href="#" class="offset-menu-link"> Gallery </a>
+          </li>
+          <li class="offset-menu-item">
+            <a href="#" class="offset-menu-link"> Contact </a>
+          </li>
+          <li class="offset-menu-item">
+            <a href="#" class="offset-menu-link"> Protocol COVID-19 </a>
+          </li>
+        </ul>
+
+        <ul class="offset-menu right offset-menu--normal">
+          <li class="offset-menu-item">Follow Us</li>
+          <li class="offset-menu-item">
+            <a href="#" class="offset-menu-link"><i class="fab fa-facebook-f"></i></a>
+          </li>
+          <li class="offset-menu-item">
+            <a href="#" class="offset-menu-link"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li class="offset-menu-item">
+            <a href="#" class="offset-menu-link"><i class="fab fa-youtube"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="image-col d-none d-md-flex">
+        <div class="col-8 mx-auto">
+          <figure class="img standart">
+            <img src="images/statics/menu-image.jpeg" />
+          </figure>
+        </div>
+      </div>
+    </div>
+    <div id="bookBlock" class="offset-block">
       <div class="offset-block__text">
         <h5 class="title font-family--avant-garde">book now</h5>
       </div>
@@ -92,7 +141,7 @@
       <div class="header-container">
         <div class="header-container-left">
           <div class="menu-trigger">
-            <a class="menu-trigger-button">
+            <a class="menu-trigger-button" data-toggle="offset-block" data-target="#blockMenu">
               <div></div>
               <div></div>
               <div></div>
@@ -104,7 +153,7 @@
         </div>
         <div class="header-container-right">
           <div class="book-now">
-            <a class="book-now-button"> BOOK NOW </a>
+            <a class="book-now-button" data-toggle="offset-block" data-target="#bookBlock"> BOOK NOW </a>
           </div>
         </div>
       </div>

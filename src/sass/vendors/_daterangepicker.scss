@@ -6,6 +6,12 @@
   z-index: 999;
   right: 0;
 
+  table .caption {
+    @include media-breakpoint-up(md) {
+      height: 7rem;
+    }
+  }
+
   .month {
     &-wrapper {
       border-color: transparent;
@@ -41,6 +47,22 @@
     min-width: 3rem;
     min-height: 3.5rem;
     font-weight: 400;
+    line-height: 2 !important;
+
+    &.real-today {
+      background-color: $colors--black !important;
+      color: $colors--white !important;
+    }
+
+    &.checked,
+    &.hovering {
+      background-color: rgba($colors--black, 0.125) !important;
+    }
+
+    &.first-date-selected,
+    &.last-date-selected {
+      background-color: rgba($colors--black, 0.5) !important;
+    }
 
     @include media-breakpoint-up(md) {
       width: calc(19vw / 7);

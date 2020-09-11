@@ -297,10 +297,6 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('orientationchange', lazyLoad);
 
   if (isMobile) initMobileSwipers();
-
-  $('.menu-trigger-button').on('click', function () {
-    $(this).parent().toggleClass('is-active');
-  });
 });
 
 gsap.to('.parallax-rectangle', {
@@ -362,18 +358,27 @@ $('.form-control-block.minus-plus').each(function () {
   });
 });
 
+$('[data-toggle]').on('click', function () {
+  var isOffsetMenu = $(this).data('toggle') == 'offset-block';
+  var target = $(this).data('target');
+
+  if (isOffsetMenu) {
+    $(target).addClass('is-shown');
+  }
+});
+
 $('.offset-block').each(function () {
   var $this = $(this);
+  var $htmlBody = $('html,body');
   var cssClass = 'is-shown';
 
-  $('.book-now-button').on('click', () => {
-    $this.addClass(cssClass);
-  });
+  $this.append('<i class="fal fa-times" data-dismiss=".offset-block"></i>');
 
   $('[data-dismiss]').on('click', function () {
     var target = $(this).attr('data-dismiss');
 
     $(target).removeClass(cssClass);
+    $htmlBody.removeClass('overflow-hidden');
   });
 });
 
@@ -401,5 +406,27 @@ $("[data-prop*='datepicker']").each(function () {
     },
   };
 
-  $(this).dateRangePicker(config);
+  $(this)
+    .dateRangePicker(config)
+    .bind('datepicker-open', function () {
+      $('html,body').animate(
+        {
+          scrollTop: $('.date-picker-wrapper:visible').offset().top + 250,
+        },
+        5000,
+      );
+    });
 });
+
+$(window).on({
+  load: initOffsetMenuWidth,
+  resize: initOffsetMenuWidth,
+  orientedChanged: initOffsetMenuWidth,
+});
+
+function initOffsetMenuWidth() {
+  $('.offset-menu').each(function () {
+    var thisWidth = $(this).outerWidth();
+    document.documentElement.style.setProperty('--omw', `${thisWidth}px`);
+  });
+}
