@@ -65,6 +65,24 @@ section {
   }
 }
 
+@keyframes text-anim {
+  0% {
+    color: $colors--black;
+  }
+
+  25% {
+    color: rgba($colors--black, 0.25);
+  }
+
+  100% {
+    color: $colors--black;
+  }
+}
+
+.text-anim {
+  animation: text-anim 750ms;
+}
+
 @keyframes img-ttb {
   0% {
     opacity: 1;

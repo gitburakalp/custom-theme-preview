@@ -1,0 +1,204 @@
+.offset-block {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background-color: $colors--white;
+
+  display: flex;
+  flex-wrap: wrap;
+  transition: opacity 350ms linear;
+
+  &:not(.is-shown) {
+    opacity: 0;
+    z-index: -1;
+    visibility: hidden;
+  }
+
+  @include media-breakpoint-down(sm) {
+    max-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  > * {
+    position: relative;
+    min-height: 1px;
+    width: auto;
+    max-width: 100%;
+  }
+
+  [data-dismiss] {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 3rem;
+    line-height: 1;
+    z-index: 9;
+    cursor: pointer;
+
+    color: rgba($colors--black, 0.5);
+    transition: color 350ms;
+
+    &:hover {
+      color: $colors--black;
+    }
+  }
+
+  &__text {
+    background-color: rgba($colors--black, 0.2);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 4px 0 rgba($colors--black, 0.5);
+
+    .title {
+      font-size: 2.5rem;
+      letter-spacing: 2.5 * 0.05;
+    }
+
+    @include media-breakpoint-down(sm) {
+      flex: 0 0 100%;
+      width: 100%;
+      padding: 2rem;
+    }
+
+    @include media-breakpoint-up(md) {
+      flex: 0 0 25%;
+      width: 25%;
+      max-width: 25%;
+
+      .title {
+        font-size: 3.5vw;
+        letter-spacing: 3.5vw * 0.05;
+      }
+    }
+  }
+
+  &__col {
+    flex-basis: 0;
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .book-block {
+      max-width: 325px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+
+      @include media-breakpoint-up(lg) {
+        max-width: vw(500, 1920);
+      }
+
+      .form-control {
+        font-family: $ff-gilroy;
+        font-weight: lighter;
+
+        border-left: none;
+        border-top: none;
+        border-right: none;
+        border-radius: 0;
+        border-color: rgba($colors--black, 0.5);
+        text-align: center;
+        cursor: pointer;
+        transition: color 350ms, border-color 350ms;
+
+        &.promotion-code {
+          transition: all 500ms !important;
+
+          &:not(:focus) {
+            border-bottom-color: transparent;
+            text-transform: capitalize;
+
+            &::placeholder {
+              font-family: $ff-sans-serif-2;
+              font-size: 2rem;
+              font-weight: 300;
+              letter-spacing: 2rem * 0.01;
+              color: $colors--black;
+
+              @include media-breakpoint-up(md) {
+                font-size: 3.5rem;
+                letter-spacing: 3.5rem * 0.1;
+              }
+            }
+          }
+
+          &:focus {
+            &::placeholder {
+              color: rgba($colors--black, 0);
+            }
+          }
+        }
+
+        @at-root .book-block input.form-control {
+          letter-spacing: 2.5rem * 0.05;
+          font-size: 2.5rem;
+
+          @include media-breakpoint-up(md) {
+            letter-spacing: 3.5rem * 0.05;
+            font-size: 3.5rem;
+          }
+        }
+
+        @at-root .book-block select.form-control {
+          letter-spacing: 2rem * 0.05;
+          font-size: 2rem;
+
+          @include media-breakpoint-up(md) {
+            letter-spacing: 3rem * 0.05;
+            font-size: 3rem;
+
+            option {
+              font-size: 1.4rem !important;
+            }
+          }
+        }
+
+        &:focus {
+          border-color: $colors--black;
+        }
+
+        &::placeholder {
+          color: rgba($colors--black, 0.5);
+        }
+      }
+
+      .row {
+        + .row {
+          margin-top: 3rem;
+        }
+      }
+
+      .title {
+        font-family: $ff-sans-serif-2;
+        font-size: 2rem;
+        font-weight: 300;
+        letter-spacing: 2rem * 0.01;
+
+        + * {
+          margin-top: 2rem;
+        }
+
+        @include media-breakpoint-up(md) {
+          font-size: 3.5rem;
+          letter-spacing: 3.5rem * 0.1;
+
+          + * {
+            margin-top: 3rem;
+          }
+        }
+      }
+    }
+  }
+}

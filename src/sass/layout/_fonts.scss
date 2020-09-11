@@ -34,12 +34,24 @@
 }
 
 .font-family {
+  &--sans-serif {
+    font-family: $ff-sans-serif !important;
+  }
+
+  &--sans-serif-2 {
+    font-family: $ff-sans-serif-2 !important;
+  }
+
+  &--gilroy {
+    font-family: $ff-gilroy !important;
+  }
+
   &--avant-garde {
-    font-family: $ff-avant-garde;
+    font-family: $ff-avant-garde !important;
   }
 
   &--serif {
-    font-family: $ff-serif;
+    font-family: $ff-serif !important;
   }
 }
 
@@ -79,4 +91,8 @@
       font-size: 3.6rem;
     }
   }
+}
+
+.font-weight-medium {
+  font-weight: 500 !important;
 }

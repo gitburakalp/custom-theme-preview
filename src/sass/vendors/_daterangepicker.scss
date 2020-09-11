@@ -1,0 +1,49 @@
+.date-picker-wrapper {
+  background-color: $colors--white;
+  border-color: transparent;
+
+  font-family: $ff-sans-serif;
+  z-index: 999;
+  right: 0;
+
+  .month {
+    &-wrapper {
+      border-color: transparent;
+
+      table {
+        width: 100%;
+      }
+    }
+
+    &-name {
+      color: $colors--black;
+      font-size: 2rem;
+      letter-spacing: 2rem * 0.05;
+      font-weight: 600;
+    }
+  }
+
+  .week {
+    &-name {
+      font-size: 1.4rem;
+      height: 4rem !important;
+
+      th {
+        color: $colors--black;
+      }
+    }
+  }
+
+  .day {
+    padding: 0.8rem 0 !important;
+    text-align: center;
+    font-size: 1.6rem !important;
+    min-width: 3rem;
+    min-height: 3.5rem;
+    font-weight: 400;
+
+    @include media-breakpoint-up(md) {
+      width: calc(19vw / 7);
+    }
+  }
+}
