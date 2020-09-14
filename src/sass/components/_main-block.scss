@@ -1,3 +1,13 @@
+@keyframes load-anim {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 .main-block {
   position: relative;
   max-height: 100vh;
@@ -8,6 +18,9 @@
 
   &--filtered {
     position: relative;
+
+    &.load-anim {
+    }
 
     &::before {
       content: '';
@@ -34,7 +47,6 @@
 
     @include media-breakpoint-up(md) {
       .title {
-        font-family: $ff-sans-serif;
         font-size: 7rem;
         font-weight: 300;
       }
@@ -42,6 +54,10 @@
   }
 
   .img {
+    img {
+      transition: none !important;
+    }
+
     @include media-breakpoint-down(sm) {
       height: calc(var(--vh, 1vh) * 100);
     }

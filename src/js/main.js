@@ -430,3 +430,13 @@ function initOffsetMenuWidth() {
     document.documentElement.style.setProperty('--omw', `${thisWidth}px`);
   });
 }
+
+$('.scroll-down').each(function () {
+  var $el = $(this).find('a');
+
+  $el.on('click', function () {
+    var nextElemPos = $(this).closest('section').next().offset().top;
+
+    scrollbar != undefined ? scrollbar.scrollTo(0, nextElemPos, 2000) : $('html,body').animate({ scrollTop: nextElemPos }, 2000);
+  });
+});

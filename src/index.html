@@ -137,6 +137,86 @@
         </div>
       </div>
     </div>
+    <div id="bookBlockv2" class="offset-block">
+      <div class="offset-block__text">
+        <h5 class="title font-family--avant-garde">book now</h5>
+      </div>
+      <div class="offset-block__col">
+        <div class="book-block">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-10">
+              <h3 class="title">check-in</h3>
+
+              <div class="form-control-block calendar">
+                <input id="inpCheckinDate" class="form-control" data-prop="datepicker--single" placeholder="11.09.2020" readonly />
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-8">
+              <h3 class="title">Nights</h3>
+
+              <div class="form-control-block minus-plus">
+                <i class="fal fa-minus"></i>
+                <input id="inpNights" class="form-control" value="2" readonly data-max="60" />
+                <i class="fal fa-plus"></i>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <h3 class="title">adult</h3>
+
+              <div class="form-control-block minus-plus">
+                <i class="fal fa-minus"></i>
+                <input id="inpAdultCount" class="form-control" value="2" readonly data-max="12" />
+                <i class="fal fa-plus"></i>
+              </div>
+            </div>
+            <div class="col-6">
+              <h3 class="title">child</h3>
+
+              <div class="form-control-block minus-plus">
+                <i class="fal fa-minus"></i>
+                <input id="inpChildCount" class="form-control" readonly data-max="3" value="0" />
+                <i class="fal fa-plus"></i>
+              </div>
+            </div>
+            <div class="col-12 mt-5 d-none" child-hidden>
+              <div class="row">
+                <div class="col-4 d-none">
+                  <select id="selectChild1" class="form-control">
+                    <option value="" selected>1. Yaş</option>
+                  </select>
+                </div>
+                <div class="col-4 d-none">
+                  <select id="selectChild2" class="form-control">
+                    <option value="" selected>2. Yaş</option>
+                  </select>
+                </div>
+                <div class="col-4 d-none">
+                  <select id="selectChild3" class="form-control">
+                    <option value="" selected>3. Yaş</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="form-control-block calendar">
+                <input id="#inpPromotionCode" class="form-control promotion-code" placeholder="promotion code" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 mt-md-5">
+              <a href="#" class="btn btn--transparent"> <span>ARA</span> </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <header class="header">
       <div class="header-container">
         <div class="header-container-left">
@@ -153,7 +233,10 @@
         </div>
         <div class="header-container-right">
           <div class="book-now">
-            <a class="book-now-button" data-toggle="offset-block" data-target="#bookBlock"> BOOK NOW </a>
+            <div class="book-now-button">
+              <a data-toggle="offset-block" data-target="#bookBlock">BOOK NOW</a> |
+              <a data-toggle="offset-block" data-target="#bookBlockv2"> BOOK NOW V2 </a>
+            </div>
           </div>
         </div>
       </div>
@@ -161,12 +244,15 @@
     <div id="body">
       <div id="scroller">
         <main class="main">
-          <section class="main-block main-block--filtered">
+          <section class="main-block main-block--filtered load-anim">
             <figure class="img">
               <img class="lazy parallax-image" data-src="images/backgrounds/hotel-front.jpg" />
             </figure>
             <div class="main-block_contents">
-              <h3 class="title title--hero" text-anim>Beyond your dreams.</h3>
+              <h3 class="title title--serif title--hero" text-anim>Beyond your dreams.</h3>
+            </div>
+            <div class="scroll-down">
+              <a><span></span></a>
             </div>
           </section>
           <section class="main-section main-section--white">
@@ -399,7 +485,7 @@
                   </li>
                   <li class="social-list-item">
                     <a class="social-list-link">
-                      <i class="fab fa-twitch"></i>
+                      <i class="fab fa-twitter"></i>
                     </a>
                   </li>
                   <li class="social-list-item">
