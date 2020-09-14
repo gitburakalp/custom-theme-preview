@@ -4,6 +4,7 @@ $darken: 10%;
 
 $colors--white: #fff;
 $colors--black: rgb(13, 13, 13);
+$colors--dirty-white: #e8e8e8;
 
 $colors: (
   primary: (
@@ -14,6 +15,7 @@ $colors: (
     backgroundColor: #f9f9f9,
     buttonTextColor: $colors--black,
     buttonHoverColor: rgba($colors--black, 0.5),
+    search: $colors--dirty-white,
   ),
 );
 

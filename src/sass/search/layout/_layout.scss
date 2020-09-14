@@ -1,0 +1,26 @@
+.search {
+  position: relative;
+
+  .main-search {
+    min-height: 200vh;
+    max-height: 75vh;
+
+    > * {
+      + {
+        padding-top: 2rem;
+      }
+    }
+  }
+}
+
+.no-gutters {
+  &--only-sm {
+    @include media-breakpoint-down(sm) {
+      > [class*='col'] {
+        padding-left: 0;
+        padding-right: 0;
+        overflow-x: hidden;
+      }
+    }
+  }
+}

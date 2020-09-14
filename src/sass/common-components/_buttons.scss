@@ -84,14 +84,23 @@ a {
 }
 
 .btn {
+  &--default {
+    padding: 0;
+    display: inline-block;
+  }
+
   &--transparent {
     position: relative;
     overflow: hidden;
     border: 1px solid $colors--black;
     font-size: 1.4rem;
     border-radius: 0;
-    padding: 2rem 5rem;
+    padding: 1.25rem 2.5rem;
     letter-spacing: 0.1rem;
+
+    @include media-breakpoint-up(md) {
+      padding: 2rem 5rem;
+    }
 
     &:before {
       content: '';

@@ -87,9 +87,7 @@ function commonScrollEvents() {
 
     if (!isHandheld && $thisSection.hasClass('is-active')) {
       var $this = $(this);
-      var thisH = $this.outerHeight();
-      var thisParentTop = $this.closest('section').position().top;
-      var transformVal = 'translate3d(0,' + (-thisH - (thisParentTop - windowHeight - pageY)) / 2 + 'px, 0)';
+      var transformVal = 'translate3d(0,' + pageY / 2 + 'px, 0)';
 
       $this.attr('style', `transform:${transformVal}`);
     }

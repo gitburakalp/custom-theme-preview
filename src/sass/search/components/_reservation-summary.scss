@@ -1,0 +1,76 @@
+.reservation-summary {
+  &-block {
+    padding: 2rem;
+    background-color: $colors--dirty-white;
+    box-shadow: 0 0 2px 0 rgba($colors--black, $alpha: 0.5);
+
+    @include media-breakpoint-up(md) {
+      background-color: rgba($colors--black, $alpha: 0.125);
+    }
+
+    > .row {
+      @include media-breakpoint-up(md) {
+        ~ .row {
+          position: relative;
+          padding-top: 1.5rem;
+
+          &::after {
+            content: '';
+            position: absolute;
+            left: 1.5rem;
+            right: 1.5rem;
+            height: 1px;
+            background-color: rgba($colors--black, $alpha: 0.25);
+
+            top: 0;
+          }
+        }
+      }
+
+      + .row {
+        margin-top: 1.5rem;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    box-shadow: 0 0 10px rgba($colors--black, $alpha: 0.125);
+
+    .fal {
+      transition: transform 350ms;
+    }
+
+    &:not(.is-shown) {
+      .reservation-summary-block {
+        > * {
+          &:not(:last-child) {
+            display: none;
+          }
+
+          &:last-child {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+
+    &.is-shown {
+      [res-trigger] {
+        .fal {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    position: sticky;
+    top: 0;
+    margin-top: 3rem;
+  }
+}

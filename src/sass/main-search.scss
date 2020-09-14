@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+@import 'overrides';
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Playfair+Display:wght@400;500;700&family=Oswald:wght@300;400;600&display=swap');
+
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
+@import '../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss';
+
+@import '../css/vendors/daterangepicker.min.css';
+
+/* Base Styles */
+@import 'abstracts/index.scss';
+@import 'base/index.scss';
+@import 'layout/index.scss';
+
+/* Component Styles */
+@import 'common-components/index.scss';
+@import 'search/index.scss';
+
+@import 'vendors/index.scss';

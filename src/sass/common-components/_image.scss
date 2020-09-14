@@ -6,6 +6,12 @@
     padding-bottom: 100%;
   }
 
+  &--background {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
   img {
     position: absolute;
     top: 0;

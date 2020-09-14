@@ -1,0 +1,15 @@
+.search-widget {
+  $swc: $colors--dirty-white;
+
+  position: relative;
+  padding: 2rem;
+
+  @include media-breakpoint-down(sm) {
+    background-color: $swc;
+  }
+
+  @include media-breakpoint-up(md) {
+    border: 1px solid $swc;
+    margin-top: 3rem;
+  }
+}

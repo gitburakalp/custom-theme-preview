@@ -1,0 +1,11 @@
+.main-block {
+  position: relative;
+
+  .img {
+    padding-bottom: 37%;
+
+    @include media-breakpoint-up(md) {
+      padding-bottom: 400 / 1920 * 100%;
+    }
+  }
+}

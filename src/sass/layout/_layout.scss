@@ -151,4 +151,9 @@ p {
   &-md-white--all {
     @extend %text-md-white--all;
   }
+
+  &-underline {
+    border-bottom: 1px solid;
+    padding-bottom: 0.5rem !important;
+  }
 }
