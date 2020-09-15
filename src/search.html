@@ -25,7 +25,7 @@
             </a>
             <div class="header-menu-block">
               <ul class="header-menu">
-                <li class="header-menu-item heading">HotelN</li>
+                <li class="header-menu-item heading">HOTELN LUXURY RESORT</li>
                 <li class="header-menu-item">
                   <a class="header-menu-link"> Hotel Info </a>
                 </li>
@@ -59,23 +59,48 @@
               <div class="row">
                 <div class="col-6">
                   <div class="date-input">
-                    <input class="form-control" placeholder="Check In" />
+                    <input class="form-control" placeholder="Check In" readonly />
                   </div>
                 </div>
                 <div class="col-6">
                   <div class="date-input">
-                    <input class="form-control" placeholder="Check Out" />
+                    <input class="form-control" placeholder="Check Out" readonly />
                   </div>
                 </div>
               </div>
             </div>
             <div class="guests">
               <p class="search-widget-title">GUESTS</p>
-              <span class="popover-trigger has-arrow-down"> 2 Adults, 0 Children </span>
-              <div class="popovers"></div>
+              <span class="popover-trigger has-arrow-down"> <span class="adult-count">2</span> Adults, <span class="child-count">0</span> Children </span>
+              <div class="popovers">
+                <div class="form-row">
+                  <div class="col-6">
+                    <h5 class="title font-size--md title--sans-serif-two text-center">Adults</h5>
+                    <div class="form-control-block minus-plus">
+                      <i class="fal fa-minus"></i>
+                      <input id="inpAdultCount" class="form-control" value="2" readonly data-max="12" data-related-item=".adult-count" readonly />
+                      <i class="fal fa-plus"></i>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <h5 class="title font-size--md title--sans-serif-two text-center">Childs</h5>
+                    <div class="form-control-block minus-plus">
+                      <i class="fal fa-minus"></i>
+                      <input id="inpChildCount" class="form-control" value="0" readonly data-max="3" data-related-item=".child-count" readonly />
+                      <i class="fal fa-plus"></i>
+                    </div>
+                  </div>
+                  <div class="col-12 mt-3">
+                    <a class="d-block btn btn--green close-btn">CLOSE</a>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="submit">
-              <a class="btn btn--black"> Search </a>
+              <a class="btn btn--green"> Search </a>
+              <div class="text-center py-3 d-md-none">
+                <a class="btn btn--default text-underline text-white">Minimize Search</a>
+              </div>
             </div>
           </div>
         </div>
@@ -214,5 +239,6 @@
     <script src="js/vendors/swiper.min.js"></script>
     <script src="js/vendors/smooth-scrollbar.js"></script>
     <script src="js/common.js"></script>
+    <script src="js/search.js"></script>
   </body>
 </html>

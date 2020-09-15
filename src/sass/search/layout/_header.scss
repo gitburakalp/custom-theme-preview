@@ -2,6 +2,12 @@
   position: relative;
   background-color: $colors--white;
   box-shadow: 0 0 2px 0 rgba($colors--black, 0.675);
+  z-index: 999;
+
+  @include media-breakpoint-down(sm) {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
 
   .brand {
     display: block;
@@ -72,11 +78,11 @@
             font-size: 1.6rem;
 
             &.heading {
-              padding-top: 2.2rem;
-              padding-bottom: 2.2rem;
-              background-color: rgba($colors--black, 0.25);
+              padding-top: 1.75rem;
+              padding-bottom: 1.75rem;
+              background-color: rgba($colors--black, 0.0675);
               text-align: center;
-              font-size: 2.4rem;
+              font-size: 1.6rem;
               font-family: $ff-sans-serif-2;
               letter-spacing: 2.4rem * 0.05;
               box-shadow: 0 0 4px 0 rgba($colors--black, 0.675);

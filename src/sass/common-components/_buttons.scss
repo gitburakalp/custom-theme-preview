@@ -2,8 +2,8 @@ a {
   transition: color 350ms;
   cursor: pointer;
 
-  &:not(:hover) {
-    color: color(primary, buttonTextColor);
+  &:not([href]) {
+    color: inherit;
   }
 
   &:hover {
@@ -84,6 +84,8 @@ a {
 }
 
 .btn {
+  border-radius: 0 !important;
+
   &--default {
     padding: 0;
     display: inline-block;
@@ -171,6 +173,20 @@ a {
       span {
         color: $colors--black;
       }
+    }
+  }
+
+  &--green {
+    font-size: inherit;
+    font-weight: 600;
+    letter-spacing: 0.125rem;
+    background-color: $colors--green;
+    border: 1px solid $colors--green;
+    color: $colors--white;
+
+    &:hover {
+      background-color: lighten($colors--green, 5%);
+      color: darken($colors--white, 5%);
     }
   }
 

@@ -1,25 +1,38 @@
 .search-widget {
+  position: relative;
+  background-color: rgba($colors--black, 0.675);
+  color: $colors--white;
+  z-index: 9;
+
+  @include media-breakpoint-down(sm) {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+
+    .form-control {
+      border-bottom: 1px solid $colors--white !important;
+      line-height: 2;
+    }
+  }
+
   @include media-breakpoint-up(md) {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: rgba($colors--black, 0.675);
-    color: $colors--white;
-  }
 
-  .destination {
-    border-right: 1px solid rgba(255, 255, 255, 0.25);
-    border-left: 1px solid rgba(255, 255, 255, 0.25);
-  }
+    .destination {
+      border-right: 1px solid rgba(255, 255, 255, 0.25);
+      border-left: 1px solid rgba(255, 255, 255, 0.25);
+    }
 
-  .dates {
-    border-right: 1px solid rgba(255, 255, 255, 0.25);
+    .dates {
+      border-right: 1px solid rgba(255, 255, 255, 0.25);
 
-    .row {
-      > * {
-        + * {
-          border-left: 1px solid rgba(255, 255, 255, 0.25);
+      .row {
+        > * {
+          + * {
+            border-left: 1px solid rgba(255, 255, 255, 0.25);
+          }
         }
       }
     }
@@ -38,7 +51,7 @@
       &:after {
         content: '\f078';
         font-family: 'Font Awesome 5 Pro';
-        font-size: 2rem;
+        font-size: 1.25rem;
         position: absolute;
         right: 0;
         top: 50%;
@@ -57,12 +70,25 @@
       z-index: 99;
       border-bottom-left-radius: 1rem;
       border-bottom-right-radius: 1rem;
-      max-height: 100%;
       overflow: hidden;
       transition: all 350ms;
+      color: $colors--black;
+
+      .minus-plus {
+        margin-top: 1rem;
+
+        .fal {
+          padding: 1rem;
+          font-size: 2rem;
+        }
+
+        input {
+          color: $colors--black;
+          text-align: center;
+        }
+      }
 
       &:not(.is-shown) {
-        max-height: 0px;
         opacity: 0;
         z-index: -1;
         visibility: hidden;
@@ -79,7 +105,7 @@
     > * {
       position: relative;
       min-height: 1px;
-      width: auto;
+      width: 100%;
       max-width: 100%;
 
       &.destination {
@@ -107,14 +133,23 @@
       }
 
       &.submit {
-        @include media-breakpoint-up(md) {
-          flex-basis: 0;
-          flex-grow: 1;
+        flex-basis: 0;
+        flex-grow: 1;
 
-          a {
-            display: flex !important;
-            align-items: center;
-            justify-content: center;
+        > .btn--green {
+          display: flex !important;
+          align-items: center;
+          justify-content: center;
+
+          font-size: 1.4rem;
+          font-weight: 400;
+
+          @include media-breakpoint-down(sm) {
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+          }
+
+          @include media-breakpoint-up(md) {
             height: 100%;
           }
         }
