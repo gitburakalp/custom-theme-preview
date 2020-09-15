@@ -128,6 +128,12 @@
   }
 }
 
+.text-color-md-white {
+  @include media-breakpoint-up(md) {
+    color: $colors--white !important;
+  }
+}
+
 .paragraph {
   padding: 5rem 5rem 5rem 2rem;
 

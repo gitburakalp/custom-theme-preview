@@ -47,10 +47,14 @@
           <img src="images/backgrounds/beach-front.jpg" />
         </figure>
         <div class="search-widget">
-          <div class="search-widget-block">
+          <div class="search-widget-block is-shown">
+            <div class="search-info">
+              <i class="fal fa-search font-size--lg mr-3"></i>
+              <p class="d-inline-block description text-white">HotelN Luxury Resorts, <span class="adult-count">2</span> Adults, <span class="child-count">0</span> Children</p>
+            </div>
             <div class="destination">
               <p class="search-widget-title">WHERE ARE YOU GOING?</p>
-              <select class="form-control white">
+              <select class="form-control">
                 <option value="">HotelN Luxury Resorts</option>
               </select>
             </div>
@@ -97,9 +101,9 @@
               </div>
             </div>
             <div class="submit">
-              <a class="btn btn--green"> Search </a>
+              <a class="btn btn--green text-color-md-white"> Search </a>
               <div class="text-center py-3 d-md-none">
-                <a class="btn btn--default text-underline text-white">Minimize Search</a>
+                <a class="btn btn--default text-underline text-white minimize-search">Minimize Search</a>
               </div>
             </div>
           </div>
@@ -129,19 +133,62 @@
                 <div class="rooms-block">
                   <div class="rooms-item">
                     <div class="row">
-                      <div class="col-12 col-md-4">
-                        <div class="rooms-image"></div>
-                      </div>
-                      <div class="col-12 col-md-8">
-                        <h3 class="title title--serif">Classic Room</h3>
-                        <div class="info-block">
-                          <span class="text-color--red"> Only two rooms left</span>
-                          <ul>
-                            <li>2 Person</li>
-                            <li>25 m<sup>2</sup></li>
-                          </ul>
+                      <div class="col-12 col-md-5 px-md-0">
+                        <div class="rooms-image-slider">
+                          <div class="rooms-image-wrapper">
+                            <div class="rooms-image-slide">
+                              <figure class="img">
+                                <img src="images/search/rooms/villa-pool.jpg" alt="villa pool" />
+                              </figure>
+                            </div>
+                            <div class="rooms-image-slide">
+                              <figure class="img">
+                                <img src="images/search/rooms/villa-pool-2.jpg" alt="villa pool" />
+                              </figure>
+                            </div>
+                            <div class="rooms-image-slide">
+                              <figure class="img">
+                                <img src="images/search/rooms/villa-pool-3.jpg" alt="villa pool" />
+                              </figure>
+                            </div>
+                            <div class="rooms-image-slide">
+                              <figure class="img">
+                                <img src="images/search/rooms/villa-pool-4.jpg" alt="villa pool" />
+                              </figure>
+                            </div>
+                          </div>
+                          <div class="rooms-image-controller">
+                            <i class="fal fa-chevron-left prev"></i>
+                            <i class="fal fa-chevron-right next"></i>
+                          </div>
                         </div>
-                        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, eius praesentium porro recusandae iure cum in adipisci debitis. Qui nihil neque quaerat inventore nobis nam deserunt quod. Velit, harum sed.</p>
+                      </div>
+                      <div class="col-12 col-md-7">
+                        <div class="rooms-content">
+                          <div class="form-row align-items-center">
+                            <div class="col-8">
+                              <h3 class="title title--serif">Classic Room</h3>
+                            </div>
+                            <div class="col-4 text-right">
+                              <h4 class="title font-family--sans-serif-2 font-size--xl old-val">1029.74 €</h4>
+                              <h3 class="title font-family--sans-serif-2 font-size--3xl">813.74 €</h3>
+                            </div>
+                          </div>
+                          <div class="info-block">
+                            <span class="text-color--red"> Only two rooms left</span>
+                            <ul>
+                              <li>2 Person</li>
+                              <li>25 m<sup>2</sup></li>
+                            </ul>
+                          </div>
+                          <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, eius praesentium porro recusandae iure cum in adipisci debitis. Qui nihil neque quaerat inventore nobis nam deserunt quod. Velit, harum sed.</p>
+                          <div class="row">
+                            <div class="col px-0">
+                              <a class="d-block btn"> DETAILS </a>
+                            </div>
+                            <div class="col px-0"><a class="btn btn--green text-white d-block"> SELECT </a></div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -208,20 +255,16 @@
                     <a href="#" class="btn btn--default font-size--xs text-underline font-weight-bold"><i class="edit-icon"></i> Edit Transfer </a>
                   </div>
                 </div>
-                <div class="row align-items-center" res-trigger>
-                  <div class="col">
-                    <i class="fal fa-angle-up d-md-none font-size--huge mr-3"></i>
-                    <p class="font-family--sans-serif-2 font-size--2xl d-inline-block">Toplam</p>
-                  </div>
-                  <div class="col-auto">
-                    <h4 class="font-family--sans-serif-2 font-size--huge font-weight-medium">2000 €</h4>
-                  </div>
-                </div>
               </div>
 
-              <div class="row mt-md-4">
-                <div class="col-12">
-                  <a class="d-block btn btn--black font-family--sans-serif-2"><span>CONTINUE BOOK</span></a>
+              <div class="row align-items-center mt-md-4" res-trigger>
+                <div class="col-7">
+                  <i class="fal fa-angle-up d-md-none font-size--huge mr-3"></i>
+                  <p class="font-family--sans-serif-2 font-size--2xl d-inline-block">Toplam</p>
+                  <h4 class="font-family--sans-serif-2 font-size--huge font-weight-medium">2000 €</h4>
+                </div>
+                <div class="col-5 px-0 px-md-3">
+                  <a class="btn btn--green continue-button"><span>CONTINUE BOOK</span></a>
                 </div>
               </div>
             </div>

@@ -2,10 +2,55 @@
   position: relative;
 
   &-item {
-    border: 1px solid rgba($colors--black, 0.25);
-    padding: 1.5rem;
+    + * {
+      margin-top: 1.5rem;
+    }
 
-    .col-md-8 {
+    @include media-breakpoint-up(md) {
+      box-shadow: 0 0 1px rgba($colors--black, 1);
+      padding-right: 1.5rem;
+      padding-left: 1.5rem;
+    }
+
+    .rooms-content {
+      padding: 1.5rem;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+
+      .btn {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        font-size: 1.2rem;
+
+        &:not(.btn--green) {
+          border-top: 1px solid rgba($colors--black, 0.25);
+        }
+
+        @include media-breakpoint-down(sm) {
+          border-top: 1px solid rgba($colors--black, 0.25);
+          border-bottom: 1px solid rgba($colors--black, 0.25);
+        }
+      }
+
+      .old-val {
+        opacity: 0.35 !important;
+        text-decoration: line-through;
+      }
+
+      @include media-breakpoint-up(md) {
+        padding-top: 1.5rem;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+
+        .description {
+          font-size: 1.3rem;
+        }
+      }
+
       > * {
         + * {
           margin-top: 1.5rem;
@@ -46,6 +91,63 @@
   }
 
   &-image {
+    &-slider {
+      @extend %slider-container;
+
+      .img {
+        padding-bottom: 258 / 460 * 100%;
+
+        @include media-breakpoint-up(md) {
+          padding-bottom: 3 / 4 * 100%;
+        }
+      }
+    }
+
+    &-wrapper {
+      @extend %slider-wrapper;
+    }
+
+    &-slide {
+      @extend %slider-slide;
+    }
+
+    &-controller {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 9;
+
+      > * {
+        position: absolute;
+        top: 50%;
+        color: $colors--white;
+        background-color: rgba($colors--black, 0.25);
+        border-radius: 50%;
+        height: 4rem;
+        width: 4rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        transform: translateY(-50%);
+        filter: drop-shadow(0 0 2px rgba($colors--black, 0.5));
+
+        &[class*='disabled'] {
+          opacity: 0.35;
+        }
+
+        &.prev {
+          left: 1.5rem;
+        }
+
+        &.next {
+          right: 1.5rem;
+        }
+      }
+    }
   }
 
   > * {

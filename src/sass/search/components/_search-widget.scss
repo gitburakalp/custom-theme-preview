@@ -8,6 +8,24 @@
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
 
+    &-block {
+      &:not(.is-shown) {
+        > * {
+          &:not(.search-info) {
+            display: none;
+          }
+        }
+      }
+
+      &.is-shown {
+        > * {
+          &.search-info {
+            display: none;
+          }
+        }
+      }
+    }
+
     .form-control {
       border-bottom: 1px solid $colors--white !important;
       line-height: 2;
@@ -15,23 +33,28 @@
   }
 
   @include media-breakpoint-up(md) {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    $borderColor: rgba($colors--black, 0.125);
+
+    color: $colors--black;
+    background-color: rgba($colors--black, 0.0375);
+    box-shadow: 0 0 2px rgba($colors--black, 0.5);
+
+    .search-info {
+      display: none;
+    }
 
     .destination {
-      border-right: 1px solid rgba(255, 255, 255, 0.25);
-      border-left: 1px solid rgba(255, 255, 255, 0.25);
+      border-right: 1px solid $borderColor;
+      border-left: 1px solid $borderColor;
     }
 
     .dates {
-      border-right: 1px solid rgba(255, 255, 255, 0.25);
+      border-right: 1px solid $borderColor;
 
       .row {
         > * {
           + * {
-            border-left: 1px solid rgba(255, 255, 255, 0.25);
+            border-left: 1px solid $borderColor;
           }
         }
       }
@@ -165,8 +188,16 @@
       padding-bottom: 0.5rem;
       height: auto;
 
+      @include media-breakpoint-up(md) {
+        color: $colors--black;
+      }
+
       &::placeholder {
         color: $colors--white;
+
+        @include media-breakpoint-up(md) {
+          color: $colors--black;
+        }
       }
     }
   }
@@ -176,5 +207,9 @@
     letter-spacing: 1.125rem * 0.05;
     color: darken($colors--white, 7.5%);
     padding-bottom: 1rem;
+
+    @include media-breakpoint-up(md) {
+      color: lighten($colors--black, 7.5%);
+    }
   }
 }
