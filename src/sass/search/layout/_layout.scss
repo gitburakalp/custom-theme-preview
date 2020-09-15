@@ -5,8 +5,8 @@
     min-height: 200vh;
     max-height: 75vh;
 
-    > * {
-      + {
+    > * > * {
+      + * {
         padding-top: 2rem;
       }
     }

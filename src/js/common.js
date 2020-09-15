@@ -82,3 +82,14 @@ function initParallaxImages() {
     }
   });
 }
+
+$('.btn--black').each(function () {
+  var hasSpan = $(this).find('span').length != 0;
+  var text = $(this).text().trim();
+
+  !hasSpan ? $(this).text('').append(`<span>${text}</span>`) : '';
+});
+
+$('.popover-trigger').on('click', function () {
+  $(this).siblings().toggleClass('is-shown');
+});

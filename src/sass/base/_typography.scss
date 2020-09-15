@@ -122,6 +122,10 @@
   &--gray {
     color: rgba($colors--black, $alpha: 0.65);
   }
+
+  &--red {
+    color: $colors--red !important;
+  }
 }
 
 .paragraph {

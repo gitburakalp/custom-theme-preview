@@ -1,0 +1,93 @@
+.search-steps {
+  position: relative;
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+
+  display: flex;
+  counter-reset: count;
+  margin-top: 3rem;
+
+  > * {
+    position: relative;
+    min-height: 1px;
+    width: auto;
+    max-width: 100%;
+
+    flex-basis: 0;
+    flex-grow: 1;
+  }
+
+  &-item {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+
+    &:not(:last-child) {
+      > * {
+        &:after {
+          content: '';
+          position: absolute;
+          top: calc((100% - 1rem - 1.4rem) / 2);
+          width: 100%;
+          left: 50%;
+          height: 2px;
+          background: lighten($colors--black, 50%);
+          z-index: 1;
+        }
+      }
+    }
+
+    &.active {
+      > * {
+        &:before {
+          filter: drop-shadow(0 0 4px rgba($colors--black, 0.125));
+        }
+
+        &::after {
+          background: linear-gradient(to right, lighten($colors--black, 75%), lighten($colors--black, 50%));
+        }
+      }
+    }
+
+    &:not(.active) {
+      > * {
+        color: rgba($colors--black, 0.5);
+
+        &:before {
+          background-color: color(primary, backgroundColor);
+        }
+      }
+    }
+  }
+
+  &-link {
+    position: relative;
+    display: block;
+
+    &:before {
+      counter-increment: count;
+      content: counter(count);
+
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      line-height: 1;
+
+      width: 30px;
+      height: 30px;
+
+      border-radius: 50%;
+      background-color: lighten($colors--black, 75%);
+      border: 1px solid lighten($colors--black, 50%);
+      z-index: 2;
+    }
+  }
+
+  &-block {
+    position: relative;
+  }
+}

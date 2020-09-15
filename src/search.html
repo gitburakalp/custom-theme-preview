@@ -44,21 +44,81 @@
     <main class="main">
       <section class="main-block">
         <figure class="img">
-          <img class="parallax-images" src="images/backgrounds/beach-front.jpg" />
+          <img src="images/backgrounds/beach-front.jpg" />
         </figure>
+        <div class="search-widget">
+          <div class="search-widget-block">
+            <div class="destination">
+              <p class="search-widget-title">WHERE ARE YOU GOING?</p>
+              <select class="form-control white">
+                <option value="">HotelN Luxury Resorts</option>
+              </select>
+            </div>
+            <div class="dates">
+              <p class="search-widget-title">DATES</p>
+              <div class="row">
+                <div class="col-6">
+                  <div class="date-input">
+                    <input class="form-control" placeholder="Check In" />
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="date-input">
+                    <input class="form-control" placeholder="Check Out" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="guests">
+              <p class="search-widget-title">GUESTS</p>
+              <span class="popover-trigger has-arrow-down"> 2 Adults, 0 Children </span>
+              <div class="popovers"></div>
+            </div>
+            <div class="submit">
+              <a class="btn btn--black"> Search </a>
+            </div>
+          </div>
+        </div>
       </section>
       <section class="container pt-0">
         <div class="row no-gutters--only-sm">
           <div class="col-12 col-md-8">
             <div class="main-search">
-              <div class="search-widget">
-                <div class="row align-items-center">
-                  <div class="col-md">
-                    <p class="description"><b>Stay Dates:</b> 10.09.2020 - 17.09.2020</p>
-                    <p class="description"><b>Guests:</b> 2 Adults</p>
-                  </div>
-                  <div class="col-md-auto mt-4 mt-md-0">
-                    <a href="#" class="d-block btn btn--transparent"> <span>SEARCH</span> </a>
+              <div class="main-search_rooms">
+                <div class="search-steps-block">
+                  <ul class="search-steps">
+                    <li class="search-steps-item active">
+                      <a class="search-steps-link"> ROOMS </a>
+                    </li>
+                    <li class="search-steps-item">
+                      <a class="search-steps-link"> TRANSFERS </a>
+                    </li>
+                    <li class="search-steps-item">
+                      <a class="search-steps-link"> GUESTS </a>
+                    </li>
+                    <li class="search-steps-item">
+                      <a class="search-steps-link"> CHECKOUT </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="rooms-block">
+                  <div class="rooms-item">
+                    <div class="row">
+                      <div class="col-12 col-md-4">
+                        <div class="rooms-image"></div>
+                      </div>
+                      <div class="col-12 col-md-8">
+                        <h3 class="title title--serif">Classic Room</h3>
+                        <div class="info-block">
+                          <span class="text-color--red"> Only two rooms left</span>
+                          <ul>
+                            <li>2 Person</li>
+                            <li>25 m<sup>2</sup></li>
+                          </ul>
+                        </div>
+                        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, eius praesentium porro recusandae iure cum in adipisci debitis. Qui nihil neque quaerat inventore nobis nam deserunt quod. Velit, harum sed.</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
