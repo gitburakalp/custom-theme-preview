@@ -42,11 +42,6 @@
         &.btn--details {
           border-top: 1px solid rgba($colors--black, 0.25);
         }
-
-        @include media-breakpoint-down(sm) {
-          border-top: 1px solid rgba($colors--black, 0.25);
-          border-bottom: 1px solid rgba($colors--black, 0.25);
-        }
       }
 
       .old-val {
@@ -73,7 +68,7 @@
 
       > * {
         + * {
-          margin-top: 0.5rem;
+          margin-top: 1rem;
         }
       }
     }
