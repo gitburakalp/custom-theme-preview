@@ -56,6 +56,7 @@
               <p class="search-widget-title">WHERE ARE YOU GOING?</p>
               <select class="form-control">
                 <option value="">HotelN Luxury Resorts</option>
+                <option value="">Paraiso Spa Resorts & Suites</option>
               </select>
             </div>
             <div class="dates">
@@ -111,7 +112,7 @@
       </section>
       <section class="container pt-0">
         <div class="row no-gutters--only-sm">
-          <div class="col-12 col-md-8">
+          <div class="col-12 col-lg-8">
             <div class="main-search">
               <div class="main-search_rooms">
                 <div class="search-steps-block">
@@ -161,10 +162,13 @@
                             <i class="fal fa-chevron-left prev"></i>
                             <i class="fal fa-chevron-right next"></i>
                           </div>
+                          <a class="gallery-button" data-toggle="modal" data-target="#roomDetailsModal">
+                            <i class="fal fa-images"></i>
+                          </a>
                         </div>
                       </div>
                       <div class="col-12 col-md-7">
-                        <div class="rooms-content">
+                        <div class="rooms-content justify-content-between">
                           <div class="form-row align-items-center">
                             <div class="col-8">
                               <h3 class="title title--serif">Classic Room</h3>
@@ -181,12 +185,104 @@
                               <li>25 m<sup>2</sup></li>
                             </ul>
                           </div>
-                          <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, eius praesentium porro recusandae iure cum in adipisci debitis. Qui nihil neque quaerat inventore nobis nam deserunt quod. Velit, harum sed.</p>
+                          <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, eius praesentium porro recusandae iure cum in adipisci debitis.</p>
                           <div class="row">
                             <div class="col px-0">
-                              <a class="d-block btn"> DETAILS </a>
+                              <a class="d-block btn btn--details"> DETAILS </a>
                             </div>
-                            <div class="col px-0"><a class="btn btn--green text-white d-block"> SELECT </a></div>
+                            <div class="col px-0"><a class="btn btn--green text-white d-block"> BOOK NOW </a></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rooms-item rooms-item--v2">
+                    <div class="row">
+                      <div class="col-12 col-md-5 px-md-0">
+                        <div class="rooms-image-slider">
+                          <div class="rooms-image-wrapper">
+                            <div class="rooms-image-slide">
+                              <figure class="img">
+                                <img src="images/search/rooms/villa-pool.jpg" alt="villa pool" />
+                              </figure>
+                            </div>
+                            <div class="rooms-image-slide">
+                              <figure class="img">
+                                <img src="images/search/rooms/villa-pool-2.jpg" alt="villa pool" />
+                              </figure>
+                            </div>
+                            <div class="rooms-image-slide">
+                              <figure class="img">
+                                <img src="images/search/rooms/villa-pool-3.jpg" alt="villa pool" />
+                              </figure>
+                            </div>
+                            <div class="rooms-image-slide">
+                              <figure class="img">
+                                <img src="images/search/rooms/villa-pool-4.jpg" alt="villa pool" />
+                              </figure>
+                            </div>
+                          </div>
+                          <div class="rooms-image-controller">
+                            <i class="fal fa-chevron-left prev"></i>
+                            <i class="fal fa-chevron-right next"></i>
+                          </div>
+                          <a class="gallery-button" data-toggle="modal" data-target="#roomDetailsModal">
+                            <i class="fal fa-images"></i>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-7">
+                        <div class="rooms-content">
+                          <div class="form-row align-items-center">
+                            <div class="col-8">
+                              <h3 class="title title--serif">Classic Room</h3>
+                            </div>
+                          </div>
+                          <div class="info-block">
+                            <span class="text-color--red"> Only two rooms left</span>
+                            <ul>
+                              <li>2 Person</li>
+                              <li>25 m<sup>2</sup></li>
+                            </ul>
+                          </div>
+                          <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, eius praesentium porro recusandae iure cum in adipisci debitis.</p>
+
+                          <div class="text-left">
+                            <a class="btn btn--default text-underline" data-toggle="modal" data-target="#roomDetailsModal"> Room Details <i class="fal fa-external-link-alt"></i></a>
+                          </div>
+
+                          <div class="rate-wrapper">
+                            <div class="row">
+                              <div class="col-md">
+                                <h3 class="title font-weight-bold font-size--md">Stay Longer. One night complimentary</h3>
+                                <p class="font-weight-bold font-size--xs mt-3"><i class="fal fa-coffee font-size--xl"></i> Breakfast Included</p>
+                                <p class="font-weight-bold font-size--xs mt-2"><i class="fal fa-briefcase font-size--xl"></i> Deopsit Required</p>
+                                <p class="description mt-3">With our Stay Longer rates your daily price breakdown will show every sixth night as free (local taxes and fees may still be applicable on free nights) -- Rate includes extensive</p>
+                              </div>
+                              <div class="col-md-4 text-md-right mt-3 mt-md-0">
+                                <h3 class="title font-family--sans-serif-2 font-size--xl mb-2">813.74 €</h3>
+                                <p class="description mb-2">Per Night</p>
+                                <p class="description mb-3">Including Taxes & Fees</p>
+                                <a class="btn btn--green text-white d-block"> SELECT </a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="rate-wrapper">
+                            <div class="row">
+                              <div class="col-md">
+                                <h3 class="title font-weight-bold font-size--md">Limited Time Offer Flexible Rate</h3>
+                                <p class="font-weight-bold font-size--xs mt-3"><i class="fal fa-coffee font-size--xl"></i> Breakfast Included</p>
+                                <p class="font-weight-bold font-size--xs mt-2"><i class="fal fa-briefcase font-size--xl"></i> Guaranteed with Credit Card</p>
+                                <p class="description mt-3">Exclusive discount available for stays in July and August only. Book now and receive 15% off your stay. Rate includes extensive Breakfastt and taxes. City tax to be paid at the Hotel directly</p>
+                              </div>
+                              <div class="col-md-4 text-md-right mt-3 mt-md-0">
+                                <h4 class="title font-family--sans-serif-2 font-size--md mb-2 old-val">1024.74 €</h4>
+                                <h3 class="title font-family--sans-serif-2 font-size--xl mb-2">813.74 €</h3>
+                                <p class="description mb-2">Per Night</p>
+                                <p class="description mb-3">Including Taxes & Fees</p>
+                                <a class="btn btn--green text-white d-block"> SELECT </a>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -196,7 +292,7 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-md-4">
+          <div class="col-12 col-lg-4">
             <div class="reservation-summary">
               <div class="reservation-summary-block">
                 <div class="row">
@@ -257,13 +353,13 @@
                 </div>
               </div>
 
-              <div class="row align-items-center mt-md-4" res-trigger>
+              <div class="row align-items-center mt-lg-4" res-trigger>
                 <div class="col-7">
-                  <i class="fal fa-angle-up d-md-none font-size--huge mr-3"></i>
+                  <i class="fal fa-angle-up d-lg-none font-size--huge mr-3"></i>
                   <p class="font-family--sans-serif-2 font-size--2xl d-inline-block">Toplam</p>
                   <h4 class="font-family--sans-serif-2 font-size--huge font-weight-medium">2000 €</h4>
                 </div>
-                <div class="col-5 px-0 px-md-3">
+                <div class="col-5 px-0 px-lg-3">
                   <a class="btn btn--green continue-button"><span>CONTINUE BOOK</span></a>
                 </div>
               </div>
@@ -274,8 +370,65 @@
     </main>
     <footer class="footer"></footer>
 
+    <!-- Room Details Modal -->
+    <div class="modal modal--room-details fade" id="roomDetailsModal" tabindex="-1" aria-labelledby="roomDetailsModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <i class="fal fa-times font-size--3xl"></i>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="row justify-content-center">
+              <div class="col-12">
+                <div class="rooms-image-slider modal-slider wide">
+                  <div class="rooms-image-wrapper">
+                    <div class="rooms-image-slide">
+                      <figure class="img">
+                        <img src="images/search/rooms/villa-pool@2x.jpg" alt="villa pool" />
+                      </figure>
+                    </div>
+                    <div class="rooms-image-slide">
+                      <figure class="img">
+                        <img src="images/search/rooms/villa-pool-2@2x.jpg" alt="villa pool" />
+                      </figure>
+                    </div>
+                    <div class="rooms-image-slide">
+                      <figure class="img">
+                        <img src="images/search/rooms/villa-pool-3@2x.jpg" alt="villa pool" />
+                      </figure>
+                    </div>
+                    <div class="rooms-image-slide">
+                      <figure class="img">
+                        <img src="images/search/rooms/villa-pool-4@2x.jpg" alt="villa pool" />
+                      </figure>
+                    </div>
+                  </div>
+                  <div class="rooms-image-controller">
+                    <i class="fal fa-chevron-left prev"></i>
+                    <i class="fal fa-chevron-right next"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-8 contents text-center">
+                <h2 class="title title--serif font-size--2xl" data-item-id="roomTitle">Classic Room</h2>
+                <ul class="room-prop-list justify-content-center">
+                  <li>2 Person</li>
+                  <li>25 m<sup>2</sup></li>
+                </ul>
+                <p class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi ipsa nesciunt ipsam molestias, et debitis. Magni consequuntur numquam in assumenda officia ad sint! Ad quia officia aliquam exercitationem culpa illum?</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="js/vendors/jquery.min.js"></script>
     <script src="js/vendors/moment.min.js"></script>
+    <script src="js/vendors/popper.min.js"></script>
+    <script src="js/vendors/bootstrap.min.js"></script>
     <script src="js/vendors/jquery.daterangepicker.min.js"></script>
     <script src="js/vendors/gsap.min.js"></script>
     <script src="js/vendors/ScrollTrigger.min.js"></script>

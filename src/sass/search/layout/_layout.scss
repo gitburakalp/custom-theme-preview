@@ -1,3 +1,19 @@
+html {
+  @include media-breakpoint-between(md, lg) {
+    font-size: 9px;
+  }
+}
+
+.container {
+  @include media-breakpoint-up(md) {
+    max-width: vw(738, 768);
+  }
+
+  @include media-breakpoint-up(lg) {
+    max-width: 85vw;
+  }
+}
+
 .search {
   position: relative;
 

@@ -1,0 +1,79 @@
+.modal {
+  &--room-details {
+    .modal-header {
+      border-bottom: none;
+      padding: 0;
+    }
+
+    [data-dismiss] {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 2rem;
+      margin: 0;
+      color: $colors--white;
+      transform: translateY(-150%);
+      opacity: 1;
+      padding: 0;
+
+      i {
+        color: inherit;
+      }
+    }
+
+    .modal-dialog {
+      margin-top: 5rem;
+
+      @include media-breakpoint-up(md) {
+        max-width: 738px;
+      }
+
+      @include media-breakpoint-up(lg) {
+        max-width: 1024px;
+      }
+    }
+
+    .modal-content {
+      border-radius: 0;
+      border: none;
+
+      .modal-body {
+        @include media-breakpoint-up(md) {
+          padding: 3rem;
+        }
+
+        .contents {
+          > * {
+            + * {
+              margin-top: 1.5rem;
+            }
+          }
+        }
+
+        .room-prop-list {
+          padding-left: 0;
+          margin-bottom: 0;
+          list-style: none;
+
+          display: flex;
+          flex-wrap: nowrap;
+
+          > * {
+            position: relative;
+            min-height: 1px;
+            width: auto;
+            max-width: 100%;
+            line-height: 1;
+            font-size: 1.25rem;
+
+            + * {
+              padding-left: 1rem;
+              margin-left: 1rem;
+              border-left: 1px solid;
+            }
+          }
+        }
+      }
+    }
+  }
+}

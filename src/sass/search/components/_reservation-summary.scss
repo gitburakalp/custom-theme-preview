@@ -4,13 +4,13 @@
     background-color: $colors--dirty-white;
     box-shadow: 0 0 2px 0 rgba($colors--black, $alpha: 0.5);
 
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
       padding: 2rem;
       background-color: rgba($colors--black, $alpha: 0.0375);
     }
 
     > .row {
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-up(lg) {
         ~ .row {
           position: relative;
           padding-top: 1.5rem;
@@ -44,12 +44,12 @@
     font-size: 1.4rem;
     color: $colors--white;
 
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
       padding: 2rem 1rem;
     }
   }
 
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -93,7 +93,7 @@
     }
   }
 
-  @include media-breakpoint-up(md) {
+  @include media-breakpoint-up(lg) {
     position: sticky;
     top: 0;
     margin-top: 3rem;

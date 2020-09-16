@@ -126,18 +126,18 @@ $('.search-widget').each(function () {
     });
 });
 
-$('.rooms-block').each(function () {
-  var $roomItem = $(this).find('.rooms-item')[0].outerHTML;
+// $('.rooms-block').each(function () {
+//   var $roomItem = $(this).find('.rooms-item')[0].outerHTML;
 
-  for (let i = 0; i < 10; i++) {
-    $(this).append($roomItem);
-  }
-});
+//   for (let i = 0; i < 10; i++) {
+//     $(this).append($roomItem);
+//   }
+// });
 
-$('.rooms-image-slider').each(function () {
-  var $this = $(this);
+function getConfigRoomsSlider(thisSlider) {
+  var $this = thisSlider;
 
-  var config = {
+  return {
     slidesPerView: 1,
     spaceBetween: 15,
     loop: true,
@@ -152,6 +152,20 @@ $('.rooms-image-slider').each(function () {
       prevEl: $this.find('.prev')[0],
     },
   };
+}
+
+var sliders = [];
+
+$('.rooms-image-slider:not(.modal-slider)').each(function (idx) {
+  var $this = $(this);
+  var config = getConfigRoomsSlider($this);
+
+  sliders[idx] = new Swiper($this[0], config);
+});
+
+$('#roomDetailsModal').on('shown.bs.modal', function () {
+  var $this = $(this).find('.rooms-image-slider');
+  var config = getConfigRoomsSlider($this);
 
   var slider = new Swiper($this[0], config);
 });
