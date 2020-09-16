@@ -53,11 +53,18 @@
               <p class="d-inline-block description text-white">HotelN Luxury Resorts, <span class="adult-count">2</span> Adults, <span class="child-count">0</span> Children</p>
             </div>
             <div class="destination">
-              <p class="search-widget-title">WHERE ARE YOU GOING?</p>
-              <select class="form-control">
-                <option value="">HotelN Luxury Resorts</option>
-                <option value="">Paraiso Spa Resorts & Suites</option>
-              </select>
+              <div class="row">
+                <div class="col-md-6">
+                  <p class="search-widget-title">WHERE ARE YOU GOING?</p>
+                  <select class="form-control">
+                    <option value="">HotelN Luxury Resorts</option>
+                    <option value="">Paraiso Spa Resorts & Suites</option>
+                  </select>
+                </div>
+                <div class="col-md-6 mt-3 mt-md-auto">
+                  <input class="form-control" placeholder="Have you Promotion Code ?" />
+                </div>
+              </div>
             </div>
             <div class="dates">
               <p class="search-widget-title">DATES</p>
@@ -186,11 +193,26 @@
                             </ul>
                           </div>
                           <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, eius praesentium porro recusandae iure cum in adipisci debitis.</p>
+                          <ul class="room-facilities flexible p-2">
+                            <li>
+                              <i class="icons air-conditioner-icon"></i>
+                              <p class="d-inline-block description font-size--xs">Air Conditioner</p>
+                            </li>
+                            <li>
+                              <i class="icons bathtub-icon"></i>
+                              <p class="d-inline-block description font-size--xs">Bathtub</p>
+                            </li>
+                            <li>
+                              <i class="icons tv-icon"></i>
+                              <p class="d-inline-block description font-size--xs">TV</p>
+                            </li>
+                            <li>
+                              <i class="icons coffee-maker-icon"></i>
+                              <p class="d-inline-block description font-size--xs">Coffee Maker</p>
+                            </li>
+                          </ul>
                           <div class="row">
-                            <div class="col px-0">
-                              <a class="d-block btn btn--details"> DETAILS </a>
-                            </div>
-                            <div class="col px-0"><a class="btn btn--green text-white d-block"> BOOK NOW </a></div>
+                            <div class="col-6 ml-auto px-0"><a class="btn btn--green text-white d-block"> BOOK NOW </a></div>
                           </div>
                         </div>
                       </div>
@@ -226,16 +248,34 @@
                             <i class="fal fa-chevron-left prev"></i>
                             <i class="fal fa-chevron-right next"></i>
                           </div>
-                          <a class="gallery-button" data-toggle="modal" data-target="#roomDetailsModal">
-                            <i class="fal fa-images"></i>
-                          </a>
                         </div>
+                        <ul class="room-facilities p-4">
+                          <li>
+                            <i class="icons air-conditioner-icon"></i>
+                            <p class="d-inline-block description font-size--xs ml-3">Air Conditioner</p>
+                          </li>
+                          <li>
+                            <i class="icons bathtub-icon"></i>
+                            <p class="d-inline-block description font-size--xs ml-3">Bathtub</p>
+                          </li>
+                          <li>
+                            <i class="icons tv-icon"></i>
+                            <p class="d-inline-block description font-size--xs ml-3">TV</p>
+                          </li>
+                          <li>
+                            <i class="icons coffee-maker-icon"></i>
+                            <p class="d-inline-block description font-size--xs ml-3">Coffee Maker</p>
+                          </li>
+                        </ul>
                       </div>
                       <div class="col-12 col-md-7">
                         <div class="rooms-content">
                           <div class="form-row align-items-center">
                             <div class="col-8">
                               <h3 class="title title--serif">Classic Room</h3>
+                            </div>
+                            <div class="col-4 text-right">
+                              <a class="btn btn--default text-underline" data-toggle="modal" data-target="#roomDetailsModal"> Room Details <i class="fal fa-images"></i></a>
                             </div>
                           </div>
                           <div class="info-block">
@@ -247,17 +287,13 @@
                           </div>
                           <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, eius praesentium porro recusandae iure cum in adipisci debitis.</p>
 
-                          <div class="text-left">
-                            <a class="btn btn--default text-underline" data-toggle="modal" data-target="#roomDetailsModal"> Room Details <i class="fal fa-external-link-alt"></i></a>
-                          </div>
-
                           <div class="rate-wrapper">
                             <div class="row">
                               <div class="col-md">
-                                <h3 class="title font-weight-bold font-size--md">Stay Longer. One night complimentary</h3>
-                                <p class="font-weight-bold font-size--xs mt-3"><i class="fal fa-coffee font-size--xl"></i> Breakfast Included</p>
-                                <p class="font-weight-bold font-size--xs mt-2"><i class="fal fa-briefcase font-size--xl"></i> Deopsit Required</p>
-                                <p class="description mt-3">With our Stay Longer rates your daily price breakdown will show every sixth night as free (local taxes and fees may still be applicable on free nights) -- Rate includes extensive</p>
+                                <h3 class="font-family--sans-serif-2 font-size--lg font-weight-medium">Stay Longer. One night complimentary</h3>
+                                <p class="font-family--sans-serif-2 font-size--sm font-weight-medium mt-3"><i class="fal fa-coffee font-size--xl"></i> Breakfast Included</p>
+                                <p class="font-family--sans-serif-2 font-size--sm mt-2"><i class="fal fa-briefcase font-size--xl"></i> Deopsit Required</p>
+                                <p class="description font-size--xs mt-3">With our Stay Longer rates your daily price breakdown will show every sixth night as free (local taxes and fees may still be applicable on free nights) -- Rate includes extensive</p>
                               </div>
                               <div class="col-md-4 text-md-right mt-3 mt-md-0">
                                 <h3 class="title font-family--sans-serif-2 font-size--xl mb-2">813.74 €</h3>
@@ -270,10 +306,10 @@
                           <div class="rate-wrapper">
                             <div class="row">
                               <div class="col-md">
-                                <h3 class="title font-weight-bold font-size--md">Limited Time Offer Flexible Rate</h3>
-                                <p class="font-weight-bold font-size--xs mt-3"><i class="fal fa-coffee font-size--xl"></i> Breakfast Included</p>
-                                <p class="font-weight-bold font-size--xs mt-2"><i class="fal fa-briefcase font-size--xl"></i> Guaranteed with Credit Card</p>
-                                <p class="description mt-3">Exclusive discount available for stays in July and August only. Book now and receive 15% off your stay. Rate includes extensive Breakfastt and taxes. City tax to be paid at the Hotel directly</p>
+                                <h3 class="font-family--sans-serif-2 font-size--lg font-weight-medium">Limited Time Offer Flexible Rate</h3>
+                                <p class="font-family--sans-serif-2 font-size--sm mt-3"><i class="fal fa-coffee font-size--xl"></i> Breakfast Included</p>
+                                <p class="font-family--sans-serif-2 font-size--sm mt-2"><i class="fal fa-briefcase font-size--xl"></i> Guaranteed with Credit Card</p>
+                                <p class="description font-size--xs mt-3">Exclusive discount available for stays in July and August only. Book now and receive 15% off your stay. Rate includes extensive Breakfastt and taxes. City tax to be paid at the Hotel directly</p>
                               </div>
                               <div class="col-md-4 text-md-right mt-3 mt-md-0">
                                 <h4 class="title font-family--sans-serif-2 font-size--md mb-2 old-val">1024.74 €</h4>
@@ -416,6 +452,28 @@
                 <ul class="room-prop-list justify-content-center">
                   <li>2 Person</li>
                   <li>25 m<sup>2</sup></li>
+                </ul>
+                <ul class="room-facilities flexible p-4">
+                  <li>
+                    <i class="icons air-conditioner-icon"></i>
+                    <p class="d-inline-block description font-size--xs">Air Conditioner</p>
+                  </li>
+                  <li>
+                    <i class="icons bathtub-icon"></i>
+                    <p class="d-inline-block description font-size--xs">Bathtub</p>
+                  </li>
+                  <li>
+                    <i class="icons tv-icon"></i>
+                    <p class="d-inline-block description font-size--xs">TV</p>
+                  </li>
+                  <li>
+                    <i class="icons coffee-maker-icon"></i>
+                    <p class="d-inline-block description font-size--xs">Coffee Maker</p>
+                  </li>
+                  <li>
+                    <i class="icons wifi-icon"></i>
+                    <p class="d-inline-block description font-size--xs">Wifi</p>
+                  </li>
                 </ul>
                 <p class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi ipsa nesciunt ipsam molestias, et debitis. Magni consequuntur numquam in assumenda officia ad sint! Ad quia officia aliquam exercitationem culpa illum?</p>
               </div>

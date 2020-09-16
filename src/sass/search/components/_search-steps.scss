@@ -41,22 +41,30 @@
 
     &.active {
       > * {
+        color: $colors--green;
+
         &:before {
-          filter: drop-shadow(0 0 4px rgba($colors--black, 0.125));
+          background-color: $colors--green;
+          color: $colors--white;
+          border-color: $colors--green;
         }
 
         &::after {
-          background: linear-gradient(to right, lighten($colors--black, 75%), lighten($colors--black, 50%));
+          background: linear-gradient(to right, $colors--green, lighten($colors--black, 50%));
         }
       }
     }
 
     &:not(.active) {
       > * {
-        color: rgba($colors--black, 0.5);
+        color: rgba($colors--black, 0.35);
 
         &:before {
           background-color: color(primary, backgroundColor);
+        }
+
+        &:after {
+          opacity: 0.35;
         }
       }
     }
@@ -81,8 +89,8 @@
       height: 30px;
 
       border-radius: 50%;
-      background-color: lighten($colors--black, 75%);
-      border: 1px solid lighten($colors--black, 50%);
+      background-color: #fcfcfc;
+      box-shadow: 0 0 1px rgba($colors--black, 0.5);
       z-index: 2;
     }
   }

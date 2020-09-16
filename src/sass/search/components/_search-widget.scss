@@ -33,11 +33,11 @@
   }
 
   @include media-breakpoint-up(md) {
-    $borderColor: rgba($colors--black, 0.125);
+    $borderColor: rgba($colors--black, 0.0125);
 
     color: $colors--black;
-    background-color: rgba($colors--black, 0.0375);
-    box-shadow: 0 0 2px rgba($colors--black, 0.5);
+    background-color: rgba($colors--black, 0.0125);
+    box-shadow: 0 0 1px rgba($colors--black, 0.5);
 
     .search-info {
       display: none;
@@ -204,6 +204,7 @@
 
   &-title {
     font-size: 1.125rem;
+    font-weight: 600;
     letter-spacing: 1.125rem * 0.05;
     color: darken($colors--white, 7.5%);
     padding-bottom: 1rem;

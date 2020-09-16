@@ -4,6 +4,10 @@ html {
   }
 }
 
+body {
+  background-color: $colors--white;
+}
+
 .container {
   @include media-breakpoint-up(md) {
     max-width: vw(738, 768);
