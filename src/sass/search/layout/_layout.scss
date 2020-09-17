@@ -16,6 +16,10 @@ body {
   @include media-breakpoint-up(lg) {
     max-width: 85vw;
   }
+
+  @media (min-width: 1440px) and (max-width: 1911.99px) {
+    max-width: 85vw !important;
+  }
 }
 
 .search {

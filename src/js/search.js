@@ -143,7 +143,13 @@ $('.rooms-block.v3').each(function () {
 });
 
 $('.rate-wrapper--expandable .trigger-row .btn').on('click', function () {
-  $(this).closest('.rate-wrapper--expandable').toggleClass('is-expanded');
+  var cssClass = 'is-expanded';
+  var $rwe = $(this).closest('.rate-wrapper--expandable');
+  var isThisElem = $rwe.hasClass(cssClass);
+
+  $(this).closest('.rooms-block.v3').find('*').removeClass(cssClass);
+
+  isThisElem ? $rwe.removeClass(cssClass) : $rwe.addClass(cssClass);
 });
 
 function getConfigRoomsSlider(thisSlider) {
