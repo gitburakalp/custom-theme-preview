@@ -1,6 +1,103 @@
 .rooms {
   position: relative;
 
+  &-block {
+    &.v3 {
+      @include media-breakpoint-down(sm) {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+
+        > * {
+          border: 1px solid rgba($colors--green, 0.5);
+
+          .rate-wrapper--expandable {
+            padding-bottom: 0;
+          }
+        }
+
+        .rooms-image-slider {
+          border-radius: 0 !important;
+        }
+      }
+
+      @include media-breakpoint-up(md) {
+        > * {
+          margin-top: 0;
+
+          &:not(:nth-child(1)) {
+            margin-left: 1.5rem;
+          }
+
+          &:nth-child(3n + 1) {
+            margin-left: 0;
+          }
+
+          &:nth-child(n + 4) {
+            margin-top: 1.5rem;
+          }
+        }
+      }
+
+      .rooms-image-slider {
+        border-bottom-left-radius: 1rem;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: linear-gradient(to bottom, transparent, transparent, transparent, rgba($colors--black, 0.5));
+          z-index: 9;
+        }
+
+        .gallery-button {
+          font-size: 1.75rem;
+        }
+      }
+
+      .rooms-content {
+        > * {
+          + * {
+            margin-top: 0.5rem;
+          }
+        }
+
+        .btn--green {
+          padding: 0.75rem;
+          font-size: 1rem;
+        }
+
+        .view-all-btn {
+          padding: 0.75rem;
+          font-size: 1rem;
+
+          border: 1px solid $colors--green;
+          font-weight: bold;
+
+          i {
+            font-size: 125%;
+          }
+        }
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      display: flex;
+      flex-wrap: wrap;
+
+      align-items: flex-start;
+
+      > * {
+        position: relative;
+        min-height: 1px;
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+
   &-item {
     @include media-breakpoint-up(md) {
       box-shadow: 0 0 1px rgba($colors--black, 0.5);
@@ -21,10 +118,100 @@
       }
     }
 
+    &.rooms-item--v3 {
+      @include media-breakpoint-up(md) {
+        $gap: 1.5rem;
+        $width: calc((100% - #{$gap * 2}) / 3);
+        flex: 0 0 $width;
+        max-width: $width;
+        box-shadow: 0 0 1px rgba($colors--green, 1);
+      }
+    }
+
     .rate-wrapper {
       padding-top: 1.5rem;
       margin-top: 1.5rem;
       border-top: 1px solid rgba($colors--black, 0.125);
+
+      &--expandable {
+        padding-top: 1rem;
+        margin-top: 1rem;
+        border-top: 1px solid rgba($colors--black, 0.125);
+        padding-bottom: 1.5rem;
+
+        display: flex;
+        flex-direction: column;
+
+        .discount-block {
+          display: flex;
+          flex-wrap: nowrap;
+          align-items: center;
+          justify-content: space-between;
+
+          .discount {
+            display: inline-block;
+            padding: 0.5rem;
+            line-height: 1;
+            border: 1px solid rgba($colors--green, 0.5);
+
+            .discount-box {
+              border-right: 1px solid rgba($colors--green, 0.5);
+              padding-right: 0.25rem;
+              margin-right: 0.25rem;
+              font-weight: bold;
+            }
+          }
+
+          > * {
+            position: relative;
+            min-height: 1px;
+            width: auto;
+            max-width: 100%;
+          }
+        }
+
+        &:not(.is-expanded) {
+          .trigger-row {
+            .hide-text {
+              display: none;
+            }
+
+            ~ * {
+              display: none;
+            }
+          }
+        }
+
+        &.is-expanded {
+          .trigger-row {
+            order: 100;
+
+            .view-text {
+              display: none;
+            }
+
+            i {
+              display: none;
+            }
+
+            ~ * {
+              position: relative;
+
+              margin-top: 1rem;
+              padding-top: 1rem;
+
+              &:before {
+                content: '';
+                position: absolute;
+                left: 5px;
+                top: 0;
+                right: 5px;
+                border-top: 1px solid $colors--green;
+              }
+            }
+          }
+        }
+      }
     }
 
     .rooms-content {

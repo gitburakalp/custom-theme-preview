@@ -12,8 +12,7 @@ body {
   background-color: color(primary, backgroundColor);
   color: color(primary, textColor);
   transition: background-color 1s;
-  -webkit-text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 
   * {
     &:focus {
@@ -160,4 +159,10 @@ p {
 
 .fal {
   vertical-align: middle;
+}
+
+.op {
+  &-05 {
+    opacity: 0.5;
+  }
 }

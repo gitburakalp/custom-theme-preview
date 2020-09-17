@@ -134,6 +134,18 @@ $('.search-widget').each(function () {
 //   }
 // });
 
+$('.rooms-block.v3').each(function () {
+  var $roomItem = $(this).find('.rooms-item')[0].outerHTML;
+
+  for (let i = 0; i < 5; i++) {
+    $(this).append($roomItem);
+  }
+});
+
+$('.rate-wrapper--expandable .trigger-row .btn').on('click', function () {
+  $(this).closest('.rate-wrapper--expandable').toggleClass('is-expanded');
+});
+
 function getConfigRoomsSlider(thisSlider) {
   var $this = thisSlider;
 

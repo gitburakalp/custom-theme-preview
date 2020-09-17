@@ -33,7 +33,7 @@
   }
 
   @include media-breakpoint-up(md) {
-    $borderColor: rgba($colors--black, 0.0125);
+    $borderColor: rgba($colors--black, 0.2);
 
     color: $colors--black;
     background-color: rgba($colors--black, 0.0125);

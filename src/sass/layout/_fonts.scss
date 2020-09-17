@@ -56,6 +56,10 @@
 }
 
 .font-size {
+  &--xxs {
+    font-size: 1rem !important;
+  }
+
   &--xs {
     font-size: 1.2rem !important;
   }
