@@ -1,0 +1,15 @@
+.form-control {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  line-height: 1;
+  height: auto;
+  border-color: rgba($colors--black, 0.325);
+
+  &:focus {
+    border-color: $colors--black;
+  }
+}
+
+select.form-control {
+  line-height: 1.375;
+}

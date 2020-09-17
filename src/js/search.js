@@ -181,9 +181,32 @@ $('.rooms-image-slider:not(.modal-slider)').each(function (idx) {
   sliders[idx] = new Swiper($this[0], config);
 });
 
+$('.transfer-fields-box').each(function () {
+  $('input[type="checkbox"]').change(function () {
+    $(this).siblings().find("input[type='radio']").prop('checked', false);
+  });
+});
+
 $('#roomDetailsModal').on('shown.bs.modal', function () {
   var $this = $(this).find('.rooms-image-slider');
   var config = getConfigRoomsSlider($this);
 
   var slider = new Swiper($this[0], config);
+});
+
+$('.main-search .btn--green').on('click', function () {
+  var next = $('.main-search > *.is-shown').next().attr('class');
+
+  $('.search-steps > *').removeClass('active');
+  $(`.search-steps > *[data-rel="${next}"]`).addClass('active');
+
+  $('.main-search > *').removeClass('is-shown');
+  $(`.main-search > .${next}`).addClass('is-shown');
+
+  $('html,body').animate(
+    {
+      scrollTop: $('.main-search > .main-search_transfers').offset().top - 200,
+    },
+    1500,
+  );
 });

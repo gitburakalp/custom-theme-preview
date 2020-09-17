@@ -1,0 +1,11 @@
+.box {
+  position: relative;
+  padding: 1.5rem;
+
+  &--primary {
+    @extend .box;
+
+    background-color: $colors--white;
+    box-shadow: 0 0 1px rgba($colors--black, 0.5);
+  }
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
@@ -120,24 +120,24 @@
       <section class="container pt-0">
         <div class="row no-gutters--only-sm">
           <div class="col-12 col-lg-8">
+            <div class="search-steps-block mb-3">
+              <ul class="search-steps">
+                <li class="search-steps-item active" data-rel="main-search_rooms">
+                  <a class="search-steps-link"> ROOMS </a>
+                </li>
+                <li class="search-steps-item" data-rel="main-search_transfers">
+                  <a class="search-steps-link"> TRANSFERS </a>
+                </li>
+                <li class="search-steps-item" data-rel="main-search_guests">
+                  <a class="search-steps-link"> GUESTS </a>
+                </li>
+                <li class="search-steps-item">
+                  <a class="search-steps-link"> CHECKOUT </a>
+                </li>
+              </ul>
+            </div>
             <div class="main-search">
-              <div class="main-search_rooms">
-                <div class="search-steps-block">
-                  <ul class="search-steps">
-                    <li class="search-steps-item active">
-                      <a class="search-steps-link"> ROOMS </a>
-                    </li>
-                    <li class="search-steps-item">
-                      <a class="search-steps-link"> TRANSFERS </a>
-                    </li>
-                    <li class="search-steps-item">
-                      <a class="search-steps-link"> GUESTS </a>
-                    </li>
-                    <li class="search-steps-item">
-                      <a class="search-steps-link"> CHECKOUT </a>
-                    </li>
-                  </ul>
-                </div>
+              <div class="main-search_rooms is-shown">
                 <div class="rooms-block">
                   <div class="rooms-item">
                     <div class="row">
@@ -438,6 +438,190 @@
                       </div>
                     </div>
                   </div>
+                </div>
+              </div>
+              <div class="main-search_transfers">
+                <div class="text-underline d-flex align-items-center justify-content-between">
+                  <h4 class="font-family--serif font-size--xl py-3">SELECT TRANSFER</h4>
+                  <a class="d-inline-block btn btn--green text-white py-3 text-uppercase"> Continue Without Transfer </a>
+                </div>
+
+                <div class="transfer-fields-box box--primary mt-4">
+                  <div class="form-row">
+                    <div class="col-12 mb-4">
+                      <input id="inpHasArrival" type="checkbox" class="mr-2" />
+                      <label for="inpHasArrival" class="font-family--sans-serif-2 font-size--lg mb-0">Arrival Transfer</label>
+
+                      <div class="transfer-section mt-4">
+                        <ul class="transfer-list">
+                          <li class="transfer-list-item">
+                            <div class="box--primary">
+                              <input id="inpHelicopterTransferArrival" type="radio" name="transfersArrival" />
+                              <label for="inpHelicopterTransferArrival">
+                                <figure class="img">
+                                  <img src="images/transfers/helicopter-transfer.png" />
+                                </figure>
+
+                                <div class="transfer-list-contents">
+                                  <h3 class="title">Helicpoter Transfer</h3>
+                                  <span class="cost">500 €</span>
+                                </div>
+
+                                <span class="select-button">Select</span>
+                              </label>
+                            </div>
+                          </li>
+                          <li class="transfer-list-item">
+                            <div class="box--primary">
+                              <input id="inpVIPTransferArrival" type="radio" name="transfersArrival" />
+                              <label for="inpVIPTransferArrival">
+                                <figure class="img">
+                                  <img src="images/transfers/vip-transfer.png" />
+                                </figure>
+
+                                <div class="transfer-list-contents">
+                                  <h3 class="title">VIP Transfer</h3>
+                                  <span class="cost">150 €</span>
+                                </div>
+
+                                <span class="select-button">Select</span>
+                              </label>
+                            </div>
+                          </li>
+                          <li class="transfer-list-item">
+                            <div class="box--primary">
+                              <input id="inpExclusiveTransferArrival" type="radio" name="transfersArrival" />
+                              <label for="inpExclusiveTransferArrival">
+                                <figure class="img">
+                                  <img src="images/transfers/exclusive-transfer.png" />
+                                </figure>
+
+                                <div class="transfer-list-contents">
+                                  <h3 class="title">Exclusive Transfer</h3>
+                                  <span class="cost">100 €</span>
+                                </div>
+
+                                <span class="select-button">Select</span>
+                              </label>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div class="form-row mt-4">
+                        <div class="col-3">
+                          <select class="form-control">
+                            <option value="">Please Select Airport</option>
+                          </select>
+                        </div>
+                        <div class="col-2">
+                          <select class="form-control">
+                            <option value="">Guest Count</option>
+                          </select>
+                        </div>
+                        <div class="col-2">
+                          <input class="form-control" type="text" placeholder="Flight Number" />
+                        </div>
+                        <div class="col-2">
+                          <input class="form-control" type="text" placeholder="Flight Time" />
+                        </div>
+                        <div class="col">
+                          <input class="form-control" type="text" placeholder="Notes" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="transfer-fields-box box--primary mt-4">
+                  <div class="form-row">
+                    <div class="col-12 mb-4">
+                      <input id="inpHasDeparture" type="checkbox" class="mr-2" />
+                      <label for="inpHasDeparture" class="font-family--sans-serif-2 font-size--lg mb-0">Departure Transfer</label>
+
+                      <div class="transfer-section mt-4">
+                        <ul class="transfer-list">
+                          <li class="transfer-list-item">
+                            <div class="box--primary">
+                              <input id="inpHelicopterTransferDeparture" type="radio" name="transfersDeparture" />
+                              <label for="inpHelicopterTransferDeparture">
+                                <figure class="img">
+                                  <img src="images/transfers/helicopter-transfer.png" />
+                                </figure>
+
+                                <div class="transfer-list-contents">
+                                  <h3 class="title">Helicpoter Transfer</h3>
+                                  <span class="cost">500 €</span>
+                                </div>
+
+                                <span class="select-button">Select</span>
+                              </label>
+                            </div>
+                          </li>
+                          <li class="transfer-list-item">
+                            <div class="box--primary">
+                              <input id="inpVIPTransferDeparture" type="radio" name="transfersDeparture" />
+                              <label for="inpVIPTransferDeparture">
+                                <figure class="img">
+                                  <img src="images/transfers/vip-transfer.png" />
+                                </figure>
+
+                                <div class="transfer-list-contents">
+                                  <h3 class="title">VIP Transfer</h3>
+                                  <span class="cost">150 €</span>
+                                </div>
+
+                                <span class="select-button">Select</span>
+                              </label>
+                            </div>
+                          </li>
+                          <li class="transfer-list-item">
+                            <div class="box--primary">
+                              <input id="inpExclusiveTransferDeparture" type="radio" name="transfersDeparture" />
+                              <label for="inpExclusiveTransferDeparture">
+                                <figure class="img">
+                                  <img src="images/transfers/exclusive-transfer.png" />
+                                </figure>
+
+                                <div class="transfer-list-contents">
+                                  <h3 class="title">Exclusive Transfer</h3>
+                                  <span class="cost">100 €</span>
+                                </div>
+
+                                <span class="select-button">Select</span>
+                              </label>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div class="form-row mt-4">
+                        <div class="col-3">
+                          <select class="form-control">
+                            <option value="">Please Select Airport</option>
+                          </select>
+                        </div>
+                        <div class="col-2">
+                          <select class="form-control">
+                            <option value="">Guest Count</option>
+                          </select>
+                        </div>
+                        <div class="col-2">
+                          <input class="form-control" type="text" placeholder="Flight Number" />
+                        </div>
+                        <div class="col-2">
+                          <input class="form-control" type="text" placeholder="Flight Time" />
+                        </div>
+                        <div class="col">
+                          <input class="form-control" type="text" placeholder="Notes" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="main-search_guests">
+                <div class="text-underline d-flex align-items-center justify-content-between">
+                  <h4 class="font-family--serif font-size--xl py-3">GUEST INFORMATION</h4>
                 </div>
               </div>
             </div>

@@ -15,3 +15,14 @@
     }
   }
 }
+
+.main {
+  &-search {
+    &_transfers {
+      @include media-breakpoint-down(sm) {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+    }
+  }
+}

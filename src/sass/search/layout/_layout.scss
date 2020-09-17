@@ -28,6 +28,12 @@ body {
   .main-search {
     min-height: 100vh;
 
+    > * {
+      &:not(.is-shown) {
+        display: none;
+      }
+    }
+
     > * > * {
       + * {
         padding-top: 2rem;
