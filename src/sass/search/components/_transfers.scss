@@ -138,6 +138,16 @@
   }
 
   &-fields-box {
+    @include media-breakpoint-down(sm) {
+      .form-row {
+        [class*='col-md'] {
+          + * {
+            margin-top: 1.5rem;
+          }
+        }
+      }
+    }
+
     input {
       + label {
         user-select: none;
