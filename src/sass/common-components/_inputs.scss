@@ -1,7 +1,7 @@
 .form-control {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   border-radius: 0;
-  border-color: rgba($colors--black, 0.5);
+  border-color: rgba($colors--light-grey, 0.5);
 
   &[readonly] {
     background-color: transparent;
@@ -76,6 +76,119 @@ select {
 
         &.fa-plus {
           right: 0;
+        }
+      }
+    }
+  }
+}
+
+.custom-checkbox {
+  + * {
+    margin-top: 1rem;
+  }
+
+  input[type='checkbox'],
+  input[type='radio'] {
+    position: absolute;
+    left: -9999px;
+
+    + label {
+      position: relative;
+      padding-left: 1.8rem + 1rem;
+      padding-top: 0.375rem;
+      font-size: 1.25rem;
+      letter-spacing: 1.25rem * 0.01;
+      cursor: pointer;
+      user-select: none;
+      color: rgba($colors--black, 0.875);
+
+      &:before {
+        content: '';
+        width: 1.8rem;
+        height: 1.8rem;
+        position: absolute;
+        top: 3px;
+        left: 0;
+        border: 1px solid rgba($colors--light-grey, 0.875);
+        background-color: rgba($colors--light-grey, 0.0375);
+        border-radius: 3px;
+
+        transition: background-color 350ms;
+      }
+
+      &:after {
+        content: '\f00c';
+
+        position: absolute;
+        top: 3px;
+        left: 3px;
+
+        font-size: 1.3rem;
+        font-family: 'Font Awesome 5 Pro';
+        color: $colors--white;
+        opacity: 0;
+        transition: opacity 350ms;
+      }
+    }
+
+    &:checked {
+      + label {
+        &:before {
+          background-color: $colors--blue;
+          border-color: $colors--blue;
+        }
+
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.custom-radio {
+  input[type='radio'] {
+    position: absolute;
+    left: -9999px;
+
+    + label {
+      position: relative;
+      font-size: 1.4rem;
+      padding-left: 1.8rem + 1rem;
+      cursor: pointer;
+
+      &:before {
+        content: '';
+        width: 2rem;
+        height: 2rem;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: $colors--white;
+        border: 1px solid rgba($colors--warm-grey, 0.5);
+        box-shadow: inset 0 1px 1px 0 rgba($colors--black, 0.25);
+        border-radius: 50%;
+      }
+    }
+
+    &:checked {
+      + label {
+        &:before {
+          background-color: $colors--blue;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+
+          top: (2rem - 0.8rem) / 2;
+          left: (2rem - 0.8rem) / 2;
+
+          width: 0.8rem;
+          height: 0.8rem;
+          border-radius: 50%;
+          background-color: $colors--white;
+          border: 1px solid white;
         }
       }
     }

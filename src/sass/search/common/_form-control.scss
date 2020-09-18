@@ -1,13 +1,22 @@
 .form-control {
   padding-top: 1rem;
   padding-bottom: 1rem;
+  padding-left: 1.3rem;
   line-height: 1;
   height: auto;
-  border-color: rgba($colors--black, 0.325);
+  color: #555555;
+
+  &:placeholder {
+    color: #555555;
+  }
 
   &:focus {
     border-color: $colors--black;
   }
+}
+
+textarea.form-control {
+  resize: none;
 }
 
 select.form-control {

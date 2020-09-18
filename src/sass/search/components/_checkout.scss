@@ -1,0 +1,112 @@
+.checkout {
+  &-tabs {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    &-content {
+      > * {
+        &:not(.is-shown):not(:last-child) {
+          display: none;
+        }
+
+        &.money-order {
+          @include media-breakpoint-down(sm) {
+            [class*='col-md-6'] {
+              + * {
+                margin-top: 1.5rem;
+              }
+            }
+          }
+
+          @include media-breakpoint-up(md) {
+            [class*='col-md-6'] {
+              &:nth-child(n + 3) {
+                margin-top: 3rem;
+              }
+            }
+          }
+        }
+      }
+
+      .tbl {
+        .hire-row {
+          padding: 1rem;
+
+          + * {
+            margin-top: 0;
+          }
+
+          &:nth-child(odd) {
+            background-color: rgba($colors--warm-grey, 0.05);
+          }
+
+          input {
+            position: absolute;
+            left: -9999px;
+
+            + label {
+              position: relative;
+              display: block;
+              font-size: 1.3rem;
+              cursor: pointer;
+
+              padding-left: 2rem;
+
+              &:before {
+                content: '';
+                position: absolute;
+                top: 0.35rem;
+                left: 0;
+                width: 1.2rem;
+                height: 1.2rem;
+                border: 1px solid rgba($colors--warm-grey, 0.5);
+                border-radius: 50%;
+              }
+
+              &:after {
+                content: '';
+                position: absolute;
+                top: 0.6rem;
+                width: 0.8rem;
+                height: 0.8rem;
+                left: (1.2rem - 0.8rem)/ 2;
+                border-radius: 50%;
+                background-color: $colors--blue;
+                opacity: 0;
+              }
+            }
+
+            &:checked {
+              + label {
+                &:after {
+                  opacity: 1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    > * {
+      position: relative;
+      min-height: 1px;
+      width: auto;
+      max-width: 100%;
+
+      font-weight: bold;
+
+      &:not(.active) {
+        font-weight: 400;
+      }
+
+      + * {
+        margin-left: 1.5rem;
+      }
+    }
+  }
+}

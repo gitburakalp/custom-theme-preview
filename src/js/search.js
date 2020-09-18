@@ -182,9 +182,43 @@ $('.rooms-image-slider:not(.modal-slider)').each(function (idx) {
 });
 
 $('.transfer-fields-box').each(function () {
-  $('input[type="checkbox"]').change(function () {
-    $(this).siblings().find("input[type='radio']").prop('checked', false);
-  });
+  var oldRadio = '';
+  var selected = [];
+  var $this = $(this);
+
+  $(this)
+    .find("input[type='radio']")
+    .on('click', function () {
+      if (oldRadio == '') {
+        oldRadio = $(this).attr('id');
+      } else if (oldRadio == $(this).attr('id')) {
+        $(this).prop('checked', false);
+        $(this).trigger('change');
+        oldRadio = '';
+      } else {
+        oldRadio = $(this).attr('id');
+      }
+    });
+
+  $(this)
+    .find('input[type="radio"]')
+    .change(function () {
+      selected = [];
+
+      $this.find("input[type='radio']").each(function () {
+        selected.push($(this).prop('checked'));
+      });
+
+      if (selected.includes(true)) {
+        $(this).closest('.transfer-section').addClass('is-selected');
+      } else {
+        $(this).closest('.transfer-section').removeClass('is-selected');
+      }
+    });
+});
+
+$('#inpFillFieldOfAllGuests').change(function () {
+  $(this).siblings('.search-blocks--hidden').slideToggle(500);
 });
 
 $('#roomDetailsModal').on('shown.bs.modal', function () {
@@ -194,7 +228,7 @@ $('#roomDetailsModal').on('shown.bs.modal', function () {
   var slider = new Swiper($this[0], config);
 });
 
-$('.main-search .btn--green').on('click', function () {
+$('.main-search .btn--green,.reservation-summary .btn--green').on('click', function () {
   var next = $('.main-search > *.is-shown').next().attr('class');
 
   $('.search-steps > *').removeClass('active');
@@ -209,4 +243,13 @@ $('.main-search .btn--green').on('click', function () {
     },
     1500,
   );
+});
+
+$('.checkout-tabs > li').on('click', function () {
+  var thisTab = $(this).data('rel');
+  $('.checkout-tabs > li').removeClass('active');
+
+  $('.checkout-tabs-content > *').removeClass('is-shown');
+  $('.checkout-tabs-content > ' + thisTab).addClass('is-shown');
+  $(this).addClass('active');
 });

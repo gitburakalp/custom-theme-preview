@@ -137,6 +137,7 @@
               </ul>
             </div>
             <div class="main-search">
+              <!-- ROOMS BEGIN -->
               <div class="main-search_rooms is-shown">
                 <div class="rooms-block">
                   <div class="rooms-item">
@@ -440,6 +441,9 @@
                   </div>
                 </div>
               </div>
+              <!-- ROOMS END -->
+
+              <!-- TRANSFERS BEGIN -->
               <div class="main-search_transfers">
                 <div class="text-underline d-flex align-items-center justify-content-between">
                   <h4 class="font-family--serif font-size--xl py-3">SELECT TRANSFER</h4>
@@ -449,8 +453,7 @@
                 <div class="transfer-fields-box box--primary mt-4">
                   <div class="form-row">
                     <div class="col-12 mb-4">
-                      <input id="inpHasArrival" type="checkbox" class="mr-2" />
-                      <label for="inpHasArrival" class="font-family--sans-serif-2 font-size--lg mb-0">Arrival Transfer</label>
+                      <label class="font-family--sans-serif-2 font-size--lg mb-0">Arrival Transfer</label>
 
                       <div class="transfer-section mt-4">
                         <ul class="transfer-list">
@@ -509,6 +512,9 @@
                       </div>
 
                       <div class="form-row mt-4">
+                        <div class="col-12 mb-3">
+                          <h3 class="font-family--sans-serif-2 font-size--lg mb-0">Please fill all fields</h3>
+                        </div>
                         <div class="col-md-3">
                           <select class="form-control">
                             <option value="">Please Select Airport</option>
@@ -535,8 +541,7 @@
                 <div class="transfer-fields-box box--primary mt-4">
                   <div class="form-row">
                     <div class="col-12 mb-4">
-                      <input id="inpHasDeparture" type="checkbox" class="mr-2" />
-                      <label for="inpHasDeparture" class="font-family--sans-serif-2 font-size--lg mb-0">Departure Transfer</label>
+                      <label class="font-family--sans-serif-2 font-size--lg mb-0">Departure Transfer</label>
 
                       <div class="transfer-section mt-4">
                         <ul class="transfer-list">
@@ -595,6 +600,9 @@
                       </div>
 
                       <div class="form-row mt-4">
+                        <div class="col-12 mb-3">
+                          <h3 class="font-family--sans-serif-2 font-size--lg mb-0">Please fill all fields</h3>
+                        </div>
                         <div class="col-md-3">
                           <select class="form-control">
                             <option value="">Please Select Airport</option>
@@ -619,11 +627,336 @@
                   </div>
                 </div>
               </div>
+              <!-- TRANSFERS END -->
+
+              <!-- GUESTS BEGIN -->
               <div class="main-search_guests">
-                <div class="text-underline d-flex align-items-center justify-content-between">
-                  <h4 class="font-family--serif font-size--xl py-3">GUEST INFORMATION</h4>
+                <div class="text-underline d-flex align-items-center justify-content-between px-4 px-md-0">
+                  <h4 class="font-family--serif font-size--xl py-3 text-uppercase">Reservation Contacts And Billing Information</h4>
+                </div>
+
+                <div class="search-blocks">
+                  <div class="row mb-2">
+                    <div class="col-12">
+                      <div class="custom-checkbox mb-4">
+                        <input id="inpFillFieldOfAllGuests" type="checkbox" />
+                        <label for="inpFillFieldOfAllGuests">I want to fill the information of all guests. </label>
+                        <div class="search-blocks--hidden mt-3">
+                          <div class="form-row">
+                            <div class="col-12">
+                              <h4 class="font-family--sans-serif-2 font-size--lg mb-4">1. Guest Information</h4>
+                            </div>
+                            <div class="col-md-3">
+                              <select class="form-control">
+                                <option value="">Cinsiyet</option>
+                                <option value="Erkek">Erkek</option>
+                                <option value="Kadın">Kadın</option>
+                              </select>
+                            </div>
+                            <div class="col-md-3">
+                              <input id="inpGuest1Name" class="form-control" placeholder="Name" />
+                            </div>
+                            <div class="col-md-3">
+                              <input id="inpGuest1Surname" class="form-control" placeholder="Surname" />
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="col-12">
+                              <h4 class="font-family--sans-serif-2 font-size--lg mb-4">2. Guest Information</h4>
+                            </div>
+                            <div class="col-md-3">
+                              <select class="form-control">
+                                <option value="">Cinsiyet</option>
+                                <option value="Erkek">Erkek</option>
+                                <option value="Kadın">Kadın</option>
+                              </select>
+                            </div>
+                            <div class="col-md-3">
+                              <input id="inpGuest2Name" class="form-control" placeholder="Name" />
+                            </div>
+                            <div class="col-md-3">
+                              <input id="inpGuest2Surname" class="form-control" placeholder="Surname" />
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="col-12">
+                              <h4 class="font-family--sans-serif-2 font-size--lg mb-4">1. Child Information</h4>
+                            </div>
+                            <div class="col-md-3">
+                              <select class="form-control">
+                                <option value="">Cinsiyet</option>
+                                <option value="Erkek">Erkek</option>
+                                <option value="Kadın">Kadın</option>
+                              </select>
+                            </div>
+                            <div class="col-md-3">
+                              <input id="inpChild1Name" class="form-control" placeholder="Name" />
+                            </div>
+                            <div class="col-md-3">
+                              <input id="inpChild1Surname" class="form-control" placeholder="Surname" />
+                            </div>
+                            <div class="col-md-3">
+                              <select id="inpChild1Age" class="form-control">
+                                <option value="">1. Child Age</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="search-blocks">
+                  <div class="row">
+                    <div class="col-12">
+                      <p class="description">Please enter the information to be contacted about the bookings for fast check-in.</p>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-3">
+                      <input id="inpName" class="form-control" placeholder="Name" />
+                    </div>
+                    <div class="col-md-3">
+                      <input id="inpSurname" class="form-control" placeholder="Surname" />
+                    </div>
+                    <div class="col-md-6">
+                      <input id="inpEmail" class="form-control" placeholder="E-mail" />
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-3">
+                      <select class="form-control">
+                        <option value="">Select Country</option>
+                      </select>
+                    </div>
+                    <div class="col-md-3">
+                      <input id="inpPassportNo" class="form-control" placeholder="Passport No" />
+                    </div>
+                    <div class="col-md-6">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <select class="form-control">
+                            <option value="+90">+90</option>
+                          </select>
+                        </div>
+                        <input type="text" class="form-control" placeholder="XXX XX XX" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col-md-6">
+                      <textarea id="txtReservationNote" rows="5" class="form-control" placeholder="Reservation Note"></textarea>
+                    </div>
+                    <div class="col-md-6">
+                      <textarea id="txtAddress" rows="5" class="form-control" placeholder="Address"></textarea>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="custom-checkbox">
+                        <input id="inpDiffBillingDetails" type="checkbox" />
+                        <label for="inpDiffBillingDetails"> My billing details are not the above. </label>
+                      </div>
+
+                      <div class="custom-checkbox">
+                        <input id="inpCheckAgreement" type="checkbox" />
+                        <label for="inpCheckAgreement">I have read the <a class="text-underline">Personal Data Protection</a> and <a class="text-underline">Privacy Policy</a>. </label>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
+              <!-- GUESTS END -->
+
+              <!-- CHECKOUT BEGIN -->
+              <div class="main-search_checkout">
+                <div class="text-underline d-flex align-items-center justify-content-between px-4 px-md-0">
+                  <h4 class="font-family--serif font-size--xl py-3 text-uppercase">CHECKOUT</h4>
+                </div>
+
+                <div class="search-blocks">
+                  <ul class="checkout-tabs">
+                    <li class="active" data-rel=".credit-card">
+                      <div class="custom-radio">
+                        <input type="radio" id="inpCreditCard" name="checkout" checked />
+                        <label for="inpCreditCard"><i class="icons credit-card-icon mr-2"></i>KREDİ KARTI</label>
+                      </div>
+                    </li>
+                    <li data-rel=".money-order">
+                      <div class="custom-radio">
+                        <input type="radio" id="inpMoneyOrder" name="checkout" />
+                        <label for="inpMoneyOrder"><i class="icons money-order-icon mr-2"></i>HAVALE</label>
+                      </div>
+                    </li>
+                  </ul>
+
+                  <div class="checkout-tabs-content">
+                    <div class="credit-card is-shown">
+                      <div class="form-row">
+                        <div class="col-md-6"></div>
+                        <div class="col-md-6">
+                          <h4 class="font-family--sans-serif-2 font-size--lg mb-3">Reservation Cost</h4>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-row">
+                            <div class="col-12">
+                              <select class="form-control">
+                                <option value="">Bonus</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="col-12">
+                              <input class="form-control" placeholder="Kart Numarası" />
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="col-12">
+                              <input class="form-control" placeholder="Kartın Üzerinde Yazan İsim Soyisim" />
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="col-4">
+                              <select class="form-control">
+                                <option value="">Ay</option>
+                              </select>
+                            </div>
+                            <div class="col-4 mt-0">
+                              <select class="form-control">
+                                <option value="">Yıl</option>
+                              </select>
+                            </div>
+                            <div class="col-4 mt-0">
+                              <input class="form-control" placeholder="CVV" />
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="tbl">
+                            <div class="hire-row">
+                              <input id="inpHire1" type="radio" name="hires" checked />
+                              <label for="inpHire1">
+                                <div class="row">
+                                  <div class="col">Tek Çekim</div>
+                                  <div class="col text-center">21.546</div>
+                                  <div class="col text-right font-weight-bold">21.546</div>
+                                </div>
+                              </label>
+                            </div>
+                            <div class="hire-row">
+                              <input id="inpHire2" type="radio" name="hires" />
+                              <label for="inpHire2">
+                                <div class="row">
+                                  <div class="col">2 Taksit</div>
+                                  <div class="col text-center">8.973</div>
+                                  <div class="col text-right font-weight-bold">21.546</div>
+                                </div>
+                              </label>
+                            </div>
+                            <div class="hire-row">
+                              <input id="inpHire3" type="radio" name="hires" />
+                              <label for="inpHire3">
+                                <div class="row">
+                                  <div class="col">6 Taksit</div>
+                                  <div class="col text-center">5.797</div>
+                                  <div class="col text-right font-weight-bold">21.546</div>
+                                </div>
+                              </label>
+                            </div>
+                            <div class="hire-row">
+                              <input id="inpHire4" type="radio" name="hires" />
+                              <label for="inpHire4">
+                                <div class="row">
+                                  <div class="col">9 Taksit</div>
+                                  <div class="col text-center">4.789</div>
+                                  <div class="col text-right font-weight-bold">21.546</div>
+                                </div>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="money-order">
+                      <div class="row mt-5">
+                        <div class="col-12">
+                          <div class="box--primary">
+                            <h4 class="font-family--sans-serif-2 font-size--lg">IMPORTANT NOTE!</h4>
+                            <p class="description mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores eveniet error amet suscipit similique ducimus, fugiat vel ipsa fuga odio inventore non neque doloribus ipsum dolorem, officia culpa qui perspiciatis?</p>
+                            <p class="description mt-4">Maiores eveniet error amet suscipit similique ducimus, fugiat vel ipsa fuga odio inventore non neque doloribus ipsum dolorem?</p>
+                            <p class="description mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores eveniet error amet suscipit similique ducimus, fugiat vel ipsa fuga odio inventore non neque doloribus ipsum dolorem, officia culpa qui perspiciatis?</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row mt-5">
+                        <div class="col-md-6">
+                          <div class="box--primary">
+                            <div class="custom-radio">
+                              <input type="radio" id="inpMoneyOrder1" name="money-order" checked />
+                              <label for="inpMoneyOrder1">
+                                <h4 class="font-weight-bold font-family--sans-serif-2">Finansbank Kurumsal</h4>
+                                <p class="description font-size--sm mt-3">
+                                  Hesap No: 413 - 6299538<br />
+                                  IBAN : TR24 0006 2000 4130 0006 2995 38<br />
+                                  Swift Code : TGBATRISXXX
+                                </p>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="box--primary">
+                            <div class="custom-radio">
+                              <input type="radio" id="inpMoneyOrder2" name="money-order" checked />
+                              <label for="inpMoneyOrder2">
+                                <h4 class="font-weight-bold font-family--sans-serif-2">Türk Ekonomi Bankası - Trakya Kurumsal</h4>
+                                <p class="description font-size--sm mt-3">
+                                  Hesap No: 413 - 6299538<br />
+                                  IBAN : TR24 0006 2000 4130 0006 2995 38<br />
+                                  Swift Code : TGBATRISXXX
+                                </p>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="box--primary">
+                            <div class="custom-radio">
+                              <input type="radio" id="inpMoneyOrder3" name="money-order" checked />
+                              <label for="inpMoneyOrder3">
+                                <h4 class="font-weight-bold font-family--sans-serif-2">Garanti Bankası Kurumsal</h4>
+                                <p class="description font-size--sm mt-3">
+                                  Hesap No: 413 - 6299538<br />
+                                  IBAN : TR24 0006 2000 4130 0006 2995 38<br />
+                                  Swift Code : TGBATRISXXX
+                                </p>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row mt-5">
+                      <div class="col-12">
+                        <div class="custom-checkbox">
+                          <input id="inpCheckAgreement2" type="checkbox" />
+                          <label for="inpCheckAgreement2"><a class="text-underline">Online Sales Agreement</a> read and commit.</label>
+                        </div>
+                        <div class="custom-checkbox">
+                          <input id="inpInfo" type="checkbox" />
+                          <label for="inpInfo">Inform me about offers and promotions detailed information.</label>
+                        </div>
+                      </div>
+                      <div class="col-12 mt-4">
+                        <textarea id="txtReservationNote" class="form-control" rows="5" placeholder="Reservation Note"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- CHECKOUT END -->
             </div>
           </div>
           <div class="col-12 col-lg-4">

@@ -9,6 +9,12 @@
 
     .box--primary {
       text-align: center;
+      transition: box-shadow 350ms;
+      user-select: none;
+
+      &:hover {
+        box-shadow: 0 0 3px rgba($colors--black, 0.5);
+      }
 
       input {
         position: absolute;
@@ -138,6 +144,8 @@
   }
 
   &-fields-box {
+    user-select: none;
+
     @include media-breakpoint-down(sm) {
       .form-row {
         [class*='col-md'] {
@@ -147,32 +155,26 @@
         }
       }
     }
+  }
 
-    input {
-      + label {
+  &-section {
+    position: relative;
+    transition: opacity 350ms;
+
+    &:not(.is-selected) {
+      opacity: 0.35;
+      user-select: none;
+
+      + * {
+        opacity: 0.35;
         user-select: none;
-        cursor: pointer;
-
-        &:hover {
-          ~ * {
-            opacity: 1 !important;
-          }
-        }
-
-        ~ * {
-          transition: opacity 350ms;
-        }
+        pointer-events: none;
       }
+    }
 
-      &:not(:checked) {
-        + label {
-          ~ * {
-            opacity: 0.35;
-            user-select: none;
-            pointer-events: none;
-          }
-        }
-      }
+    &:hover {
+      opacity: 1;
+      pointer-events: all;
     }
   }
 }

@@ -31,6 +31,23 @@
   background-position: center;
 
   min-width: 4rem;
+  vertical-align: middle;
+
+  &.money-order-icon {
+    min-width: 2.5rem;
+    width: 2.5rem;
+    height: 2rem;
+
+    background-image: url('../../images/svg/money-order-icon.svg');
+  }
+
+  &.credit-card-icon {
+    min-width: 2.25rem;
+    width: 2.25rem;
+    height: 2rem;
+
+    background-image: url('../../images/svg/credit-card-icon.svg');
+  }
 
   &.air-conditioner-icon {
     width: 4rem;
