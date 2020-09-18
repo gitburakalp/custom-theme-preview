@@ -142,6 +142,10 @@
       &.dates {
         padding: 1rem;
 
+        .row {
+          position: relative;
+        }
+
         @include media-breakpoint-up(md) {
           width: 30%;
         }

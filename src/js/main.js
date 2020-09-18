@@ -343,42 +343,6 @@ $('.offset-block').each(function () {
   });
 });
 
-$("[data-prop*='datepicker']").each(function () {
-  var config = {
-    separator: '-',
-    container: $(this).parent(),
-    startOfWeek: lang != 'en' ? 'monday' : 'sunday',
-    format: lang != 'en' ? 'DD.MM.YYYY' : 'MM.DD.YYYY',
-    language: lang,
-    singleMonth: true,
-    showShortcuts: false,
-    showTopbar: false,
-    startDate: moment(),
-    selectForward: true,
-    customArrowPrevSymbol: '<i class="fal fa-angle-left"></i>',
-    customArrowNextSymbol: '<i class="fal fa-angle-right"></i>',
-    setValue: function (s) {
-      if (!$(this).attr('readonly') || !$(this).is(':disabled')) {
-        var selectedDates = s.split('-');
-
-        $(this).val(selectedDates[0].trim());
-        $('#inpCheckoutDate').val(selectedDates[1].trim());
-      }
-    },
-  };
-
-  $(this)
-    .dateRangePicker(config)
-    .bind('datepicker-open', function () {
-      $('html,body').animate(
-        {
-          scrollTop: $('.date-picker-wrapper:visible').offset().top + 250,
-        },
-        5000,
-      );
-    });
-});
-
 $(window).on({
   load: initOffsetMenuWidth,
   resize: initOffsetMenuWidth,

@@ -1,3 +1,5 @@
+var lang = $('html').attr('lang');
+
 $('.btn--black').each(function () {
   var hasSpan = $(this).find('span').length != 0;
   var text = $(this).text().trim();
@@ -40,4 +42,37 @@ $('.form-control-block.minus-plus').each(function () {
       }
     }
   });
+});
+
+$("[data-prop*='datepicker']").each(function () {
+  var $this = $(this);
+  var isBooking = $this.hasClass('mode-booking');
+  var isSingle = $this.data('prop') == 'datepicker--single';
+  var container = isBooking ? $this.closest('.row') : $this.parent();
+
+  var config = {
+    separator: '-',
+    container: container,
+    startOfWeek: lang != 'en' ? 'monday' : 'sunday',
+    format: lang != 'en' ? 'DD.MM.YYYY' : 'MM.DD.YYYY',
+    language: lang,
+    singleMonth: true,
+    singleDate: isSingle,
+    showShortcuts: false,
+    showTopbar: false,
+    startDate: moment(),
+    selectForward: true,
+    customArrowPrevSymbol: '<i class="fal fa-angle-left"></i>',
+    customArrowNextSymbol: '<i class="fal fa-angle-right"></i>',
+    setValue: function (s) {
+      if (!$(this).attr('readonly') || !$(this).is(':disabled')) {
+        var selectedDates = s.split('-');
+
+        $(this).val(selectedDates[0].trim());
+        !isSingle ? $('#inpCheckoutDate').val(selectedDates[1].trim()) : '';
+      }
+    },
+  };
+
+  $(this).dateRangePicker(config);
 });
