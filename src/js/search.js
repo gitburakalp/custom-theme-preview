@@ -1,6 +1,7 @@
 var isHandheld = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 var pageY;
 var windowHeight;
+var isMobile = $(window).outerWidth() < 768;
 
 var $parallaxImages;
 
@@ -252,4 +253,13 @@ $('.checkout-tabs > li').on('click', function () {
   $('.checkout-tabs-content > *').removeClass('is-shown');
   $('.checkout-tabs-content > ' + thisTab).addClass('is-shown');
   $(this).addClass('active');
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  if (isMobile) {
+    var headerHeight = $('header').outerHeight();
+    var resTriggerHeight = $('[res-trigger]').outerHeight();
+    document.documentElement.style.setProperty('--hh', `${headerHeight}px`);
+    document.documentElement.style.setProperty('--rth', `${resTriggerHeight}px`);
+  }
 });

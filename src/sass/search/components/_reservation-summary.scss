@@ -66,7 +66,8 @@
     }
 
     &-block {
-      max-height: 55vh;
+      max-height: calc(100vh - (var(--hh) + var(--rth)));
+      height: 100%;
       overflow-y: auto;
     }
 
@@ -84,6 +85,8 @@
     }
 
     &.is-shown {
+      top: var(--hh);
+
       [res-trigger] {
         .fal {
           transform: rotate(-180deg);
