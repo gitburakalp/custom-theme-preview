@@ -48,7 +48,7 @@ $("[data-prop*='datepicker']").each(function () {
   var $this = $(this);
   var isBooking = $this.hasClass('mode-booking');
   var isSingle = $this.data('prop') == 'datepicker--single';
-  var container = isBooking ? $this.closest('.row') : $this.parent();
+  var container = isBooking ? '.dates' : $this.parent();
 
   var config = {
     separator: '-',

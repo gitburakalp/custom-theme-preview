@@ -59,6 +59,21 @@
     justify-content: center;
     box-shadow: 0 0 4px 0 rgba($colors--black, 0.5);
 
+    #typewriter {
+      max-width: 80%;
+      font-family: $ff-serif;
+      font-size: 2.125rem;
+      letter-spacing: 2.125rem * 0.025;
+
+      span {
+        font-weight: bold;
+        background: $colors--red;
+        transition: 0.5s;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
     .title {
       font-size: 2.5rem;
       letter-spacing: 2.5 * 0.05;

@@ -112,8 +112,9 @@
       width: 100%;
       max-width: 100%;
 
-      font-size: 1.4rem;
-      font-family: $ff-sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 1.6rem * 0.025;
+      font-family: $ff-sans-serif-2;
 
       &.heading {
         @include media-breakpoint-up(md) {
