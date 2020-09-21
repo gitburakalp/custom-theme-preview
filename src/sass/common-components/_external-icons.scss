@@ -38,7 +38,7 @@
     width: 2.5rem;
     height: 2rem;
 
-    background-image: url('../../images/svg/money-order-icon.svg');
+    background-image: url($imagePath + '/svg/money-order-icon.svg');
   }
 
   &.credit-card-icon {
@@ -46,33 +46,33 @@
     width: 2.25rem;
     height: 2rem;
 
-    background-image: url('../../images/svg/credit-card-icon.svg');
+    background-image: url($imagePath + '/svg/credit-card-icon.svg');
   }
 
   &.air-conditioner-icon {
     width: 4rem;
     height: 2.5rem;
 
-    background-image: url('../../images/svg/air-conditioner-icon.svg');
+    background-image: url($imagePath + '/svg/air-conditioner-icon.svg');
   }
 
   &.bathtub-icon {
     height: 2rem;
-    background-image: url('../../images/svg/bathtub-icon.svg');
+    background-image: url($imagePath + '/svg/bathtub-icon.svg');
   }
 
   &.tv-icon {
     height: 2.5rem;
-    background-image: url('../../images/svg/tv-icon.svg');
+    background-image: url($imagePath + '/svg/tv-icon.svg');
   }
 
   &.coffee-maker-icon {
     height: 2.5rem;
-    background-image: url('../../images/svg/coffee-maker-icon.svg');
+    background-image: url($imagePath + '/svg/coffee-maker-icon.svg');
   }
 
   &.wifi-icon {
     height: 2.5rem;
-    background-image: url('../../images/svg/wifi-icon.svg');
+    background-image: url($imagePath + '/svg/wifi-icon.svg');
   }
 }

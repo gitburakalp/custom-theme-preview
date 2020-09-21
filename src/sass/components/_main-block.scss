@@ -54,10 +54,6 @@
   }
 
   .img {
-    img {
-      transition: none !important;
-    }
-
     @include media-breakpoint-down(sm) {
       height: calc(var(--vh, 1vh) * 100);
     }
