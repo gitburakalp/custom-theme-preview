@@ -66,9 +66,10 @@
     }
 
     &-block {
-      max-height: calc(100vh - (var(--hh) + var(--rth)));
+      max-height: calc((var(--vh) * 100) - (var(--hh) + var(--rth)));
       height: 100%;
       overflow-y: auto;
+      transition: max-height 350ms;
     }
 
     .fal {

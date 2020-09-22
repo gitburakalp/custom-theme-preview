@@ -30,7 +30,7 @@ label {
   position: relative;
 
   @include media-breakpoint-down(sm) {
-    padding-bottom: 100px;
+    padding-bottom: var(--rth);
   }
 
   &-blocks {
@@ -72,6 +72,10 @@ label {
 
   .main-search {
     min-height: 100vh;
+
+    @include media-breakpoint-down(sm) {
+      overflow: hidden;
+    }
 
     > * {
       &:not(.is-shown) {

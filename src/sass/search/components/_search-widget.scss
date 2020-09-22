@@ -61,64 +61,6 @@
     }
   }
 
-  .popover-trigger {
-    display: block;
-    cursor: pointer;
-
-    &.has-arrow-down {
-      position: relative;
-      font-size: 1.4rem;
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
-
-      &:after {
-        content: '\f078';
-        font-family: 'Font Awesome 5 Pro';
-        font-size: 1.25rem;
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-    }
-
-    + .popovers {
-      position: absolute;
-      left: 0;
-      right: 0;
-      margin-top: 1.15rem;
-      background-color: $colors--white;
-      padding: 2rem;
-      border: 1px solid rgba($colors--black, 0.25);
-      z-index: 99;
-      border-bottom-left-radius: 1rem;
-      border-bottom-right-radius: 1rem;
-      overflow: hidden;
-      transition: all 350ms;
-      color: $colors--black;
-
-      .minus-plus {
-        margin-top: 1rem;
-
-        .fal {
-          padding: 1rem;
-          font-size: 2rem;
-        }
-
-        input {
-          color: $colors--black;
-          text-align: center;
-        }
-      }
-
-      &:not(.is-shown) {
-        opacity: 0;
-        z-index: -1;
-        visibility: hidden;
-      }
-    }
-  }
-
   &-block {
     @extend .container;
 
@@ -215,6 +157,64 @@
 
     @include media-breakpoint-up(md) {
       color: lighten($colors--black, 7.5%);
+    }
+  }
+}
+
+.popover-trigger {
+  display: block;
+  cursor: pointer;
+
+  &.has-arrow-down {
+    position: relative;
+    font-size: 1.4rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    &:after {
+      content: '\f078';
+      font-family: 'Font Awesome 5 Pro';
+      font-size: 1.25rem;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  + .popovers {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-top: 1.15rem;
+    background-color: $colors--white;
+    padding: 2rem;
+    border: 1px solid rgba($colors--black, 0.25);
+    z-index: 99;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    overflow: hidden;
+    transition: all 350ms;
+    color: $colors--black;
+
+    .minus-plus {
+      margin-top: 1rem;
+
+      .fal {
+        padding: 1rem;
+        font-size: 2rem;
+      }
+
+      input {
+        color: $colors--black;
+        text-align: center;
+      }
+    }
+
+    &:not(.is-shown) {
+      opacity: 0;
+      z-index: -1;
+      visibility: hidden;
     }
   }
 }

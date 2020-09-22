@@ -44,10 +44,12 @@ $('.search').each(function () {
   $('.header-menu-block').on('click', function (e) {
     var target = $(e.target);
 
-    $('.header-menu-block').removeClass('is-shown');
+    if (target.closest('.header-menu').length == 0) {
+      $('.header-menu-block').removeClass('is-shown');
+    }
   });
 
-  $('[res-trigger]').on('click', function () {
+  $('[res-trigger] p').on('click', function () {
     var $closest = $(this).closest('.reservation-summary');
 
     $closest.toggleClass('is-shown');
@@ -256,6 +258,14 @@ $('.checkout-tabs > li').on('click', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
+  var vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+  window.addEventListener('scroll', function () {
+    var vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  });
+
   if (isMobile) {
     var headerHeight = $('header').outerHeight();
     var resTriggerHeight = $('[res-trigger]').outerHeight();

@@ -21,27 +21,30 @@
   left: 0;
   right: 0;
   top: 0;
-  padding: 2rem 1rem;
   z-index: 9;
+  background-color: transparent;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  transition: background-color $duration;
 
-  @include media-breakpoint-up(md) {
-    padding: 2rem;
+  &:not(.scrolled) {
+    > * {
+      border-bottom: 1px solid rgba($colors--black, 0.25);
+    }
   }
 
   &.scrolled {
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      // background-color: rgba($colors--white, 0.85);
-      background: linear-gradient(to bottom, rgba($colors--white, 1), rgba($colors--white, 0.75), rgba($colors--white, 0.5), rgba($colors--white, 0.25));
-      box-shadow: 0 0 3px rgba($colors--black, 0.15);
-      transition: background-color 350ms;
-      animation: headerAnim 1s;
-      z-index: 1;
+    background-color: $colors--white;
+    box-shadow: 0 0 4px rgba($colors--black, 0.5);
+  }
+
+  > * {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    @include media-breakpoint-up(md) {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
     }
   }
 
@@ -53,6 +56,12 @@
     justify-content: space-between;
     z-index: 2;
 
+    @include media-breakpoint-up(md) {
+      max-width: 85vw;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     .brand {
       position: absolute;
       width: 9rem;
@@ -60,7 +69,7 @@
       transform: translateX(-50%);
 
       @include media-breakpoint-up(md) {
-        width: 20rem;
+        width: 14rem;
       }
     }
   }

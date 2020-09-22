@@ -1,8 +1,15 @@
 .header {
   position: relative;
-  background-color: $colors--white;
   box-shadow: 0 0 2px 0 rgba($colors--black, 0.675);
   z-index: 999;
+
+  > * {
+    border-color: transparent !important;
+  }
+
+  @include media-breakpoint-up(md) {
+    background-color: $colors--white;
+  }
 
   @include media-breakpoint-down(sm) {
     padding-top: 1rem;
@@ -12,8 +19,19 @@
     left: 0;
     right: 0;
 
+    > * {
+      position: relative;
+      z-index: 2;
+    }
+
     + main {
       margin-top: var(--hh);
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .menu-trigger-button {
+      display: none;
     }
   }
 
@@ -35,9 +53,76 @@
     }
   }
 
-  @include media-breakpoint-up(md) {
-    .menu-trigger-button {
-      display: none;
+  .language {
+    + .popovers {
+      border-radius: 0;
+      padding: 0;
+
+      @include media-breakpoint-down(sm) {
+        position: relative;
+        right: unset;
+        border-color: transparent;
+
+        max-height: 100%;
+        transition: max-height $duration;
+
+        &:not(.is-shown) {
+          max-height: 0px;
+          margin-top: 0;
+        }
+
+        .list {
+          &-item {
+            padding-left: 0 !important;
+
+            &.active {
+              border-bottom: 1px solid;
+            }
+          }
+        }
+      }
+
+      @include media-breakpoint-up(md) {
+        min-width: 275px;
+        left: unset;
+        border-color: rgba($colors--black, 0.175);
+        box-shadow: 2px 4px 2px rgba($colors--black, 0.175);
+      }
+
+      .list {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0;
+
+        &-item {
+          font-family: $ff-serif;
+          font-size: 1.5rem;
+          padding: 0.75rem;
+          transition: background-color $duration, color $duration;
+
+          &:hover {
+            background-color: rgba($colors--black, 0.125);
+
+            > * {
+              color: $colors--white !important;
+            }
+          }
+
+          &.active {
+            font-weight: bold;
+            opacity: 1;
+
+            @include media-breakpoint-up(md) {
+              background-color: rgba($colors--black, 0.25);
+              color: $colors--white;
+            }
+          }
+        }
+
+        &-link {
+          display: block;
+        }
+      }
     }
   }
 
@@ -84,6 +169,10 @@
           > * {
             padding-left: 2rem;
             font-size: 1.6rem;
+
+            @include media-breakpoint-down(sm) {
+              padding-right: 2rem;
+            }
 
             &.heading {
               padding-top: 1.75rem;

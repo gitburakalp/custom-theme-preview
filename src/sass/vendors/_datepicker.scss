@@ -7,6 +7,11 @@
   left: 1rem !important;
   right: 1rem !important;
 
+  @include media-breakpoint-down(sm) {
+    left: 0 !important;
+    right: 0 !important;
+  }
+
   @include media-breakpoint-up(md) {
     margin-top: 1rem;
   }

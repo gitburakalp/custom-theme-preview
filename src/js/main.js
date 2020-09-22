@@ -38,17 +38,7 @@ function initVerticalScroll() {
   } else {
     scrollType = 'native';
 
-    $('#body').css({
-      overflow: 'visible',
-      'will-change': 'transform',
-    });
-
-    $('#scroller').css({
-      'will-change': 'transform',
-      'overflow-x': 'hidden',
-    });
-
-    $(window).scroll(function () {
+    $(window).on('scroll', function () {
       pageY = window.pageYOffset;
       commonScrollEvents();
     });
@@ -292,7 +282,7 @@ $('[data-toggle]').on('click', function () {
 function callTypewriteString() {
   $('#typewriter').empty();
 
-  var text = `When you choose to official website, you choose
+  var text = `When you choose to official website,<br /> you choose
   <span class="txt-rotate" data-period="2000" data-rotate='[ "best rate quaranteed.", "free transfer.", "free cancellation."]'></span>`;
 
   $('#typewriter').append(text);

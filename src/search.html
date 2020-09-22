@@ -26,14 +26,28 @@
             <div class="header-menu-block">
               <ul class="header-menu">
                 <li class="header-menu-item heading">HOTELN LUXURY RESORT</li>
+
                 <li class="header-menu-item">
-                  <a class="header-menu-link"> Hotel Info </a>
+                  <a href="find-reservations.html" class="header-menu-link"> Find Reservations </a>
                 </li>
                 <li class="header-menu-item">
-                  <a class="header-menu-link"> Find Reservations </a>
-                </li>
-                <li class="header-menu-item">
-                  <a class="header-menu-link"> Languages </a>
+                  <a class="header-menu-link language popover-trigger"> Languages <i class="fal fa-angle-down font-size--xl"></i> </a>
+                  <div class="popovers">
+                    <ul class="list">
+                      <li class="list-item active">
+                        <a class="list-link"> English </a>
+                      </li>
+                      <li class="list-item">
+                        <a class="list-link"> Turkish </a>
+                      </li>
+                      <li class="list-item">
+                        <a class="list-link"> Russian </a>
+                      </li>
+                      <li class="list-item">
+                        <a class="list-link"> German </a>
+                      </li>
+                    </ul>
+                  </div>
                 </li>
                 <li class="header-menu-item">
                   <a class="header-menu-link"> Currencies </a>
@@ -64,8 +78,9 @@
                     <option value="">Paraiso Spa Resorts & Suites</option>
                   </select>
                 </div>
-                <div class="col-md-6 mt-3 mt-md-auto">
-                  <input class="form-control" placeholder="Have you Promotion Code ?" />
+                <div class="col-md-6 mt-3 mt-md-auto d-flex d-md-block">
+                  <input class="form-control search-widget-title pt-0 pb-3" placeholder="HAVE YOU PROMOTION CODE?" />
+                  <input class="form-control search-widget-title pt-0 pt-md-2 pb-3 ml-3 ml-md-0" placeholder="ROYALTY CARD MEMBER?" />
                 </div>
               </div>
             </div>
@@ -74,7 +89,7 @@
               <div class="row">
                 <div class="col-6">
                   <div class="date-input">
-                    <input id="inpCheckinDate" class="form-control mode-booking" placeholder="Check In" readonly data-prop="datepicker--single"/>
+                    <input id="inpCheckinDate" class="form-control mode-booking" placeholder="Check In" readonly data-prop="datepicker--single" />
                   </div>
                 </div>
                 <div class="col-6">
@@ -1038,7 +1053,55 @@
         </div>
       </section>
     </main>
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <div class="container-fluid px-0">
+        <div class="row no-gutters">
+          <div class="col-md-3 d-none d-md-block text-center">
+            <h4 class="title--big font-family--avant-garde">SITEMAP</h4>
+
+            <a class="d-block font-size--3xl py-5">
+              <i class="fal fa-sitemap"></i>
+            </a>
+          </div>
+          <div class="col-12 col-md-2">
+            <h4 class="title font-family--serif text-center">Follow Us</h4>
+            <ul class="social-list mt-5">
+              <li class="social-list-item">
+                <a class="social-list-link">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li class="social-list-item">
+                <a class="social-list-link">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li class="social-list-item">
+                <a class="social-list-link">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-12 col-md order-md-4">
+            <div class="footer-brand">
+              <a class="brand">
+                <img src="images/hotel-brand.svg" alt="" srcset="" />
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-md-2">
+            <div class="footer-address">
+              <p class="footer-address-desc">Kemer Lorem Sokak, 5A</p>
+              <p class="footer-address-desc">07070 Antalya</p>
+              <p class="footer-address-desc">TURKIYE</p>
+              <a class="footer-address-phone"> tel: +90 242 00 00 00 </a>
+              <a class="footer-address-phone"> fax: +90 242 00 00 01 </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <!-- Room Details Modal -->
     <div class="modal modal--room-details fade" id="roomDetailsModal" tabindex="-1" aria-labelledby="roomDetailsModal" aria-hidden="true">

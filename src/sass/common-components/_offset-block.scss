@@ -60,10 +60,16 @@
     box-shadow: 0 0 4px 0 rgba($colors--black, 0.5);
 
     #typewriter {
-      max-width: 80%;
+      max-width: 98%;
       font-family: $ff-serif;
-      font-size: 2.125rem;
-      letter-spacing: 2.125rem * 0.025;
+      font-size: 1.8rem;
+      letter-spacing: 1.8rem * 0.025;
+
+      @include media-breakpoint-up(md) {
+        max-width: 80%;
+        font-size: 2.125rem;
+        letter-spacing: 2.125rem * 0.025;
+      }
 
       span {
         font-weight: bold;
@@ -77,6 +83,10 @@
     .title {
       font-size: 2.5rem;
       letter-spacing: 2.5 * 0.05;
+
+      @include media-breakpoint-down(sm) {
+        font-size: 3.5rem;
+      }
     }
 
     @include media-breakpoint-down(sm) {
@@ -84,9 +94,9 @@
     }
 
     @include media-breakpoint-up(md) {
-      flex: 0 0 25%;
-      width: 25%;
-      max-width: 25%;
+      flex: 0 0 29%;
+      width: 29%;
+      max-width: 29%;
 
       .title {
         font-size: 3.5vw;

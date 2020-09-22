@@ -6,6 +6,10 @@ a {
     color: inherit;
   }
 
+  &[href] {
+    color: inherit;
+  }
+
   &:hover {
     color: color(primary, buttonHoverColor);
     text-decoration: none;
@@ -35,20 +39,30 @@ a {
   }
 
   &-button {
-    width: 2.5rem;
+    width: calc(2rem + 2rem);
     padding-bottom: 0.4rem;
     display: inline-block;
     cursor: pointer;
+    border: 1px solid rgba($colors--black, 0.25);
+    padding: 1rem;
+
+    @include media-breakpoint-up(md) {
+      width: calc(3rem + 2rem);
+      padding: 1.7rem 1.5rem;
+    }
 
     > {
       div {
         float: right;
-        margin-top: 0.4rem;
         width: 100%;
         border-top: 2px solid;
-        border-color: inherit;
+        border-color: $colors--black;
         transform-origin: right center;
         transition: all 0.33s cubic-bezier(0.33, 0, 0.2, 1);
+
+        + * {
+          margin-top: 0.4rem;
+        }
 
         &:nth-child(1) {
           transform-origin: right top;
@@ -66,19 +80,19 @@ a {
   &-button {
     display: inline-block;
     padding: 1rem;
-    background-color: $colors--black;
-    color: $colors--white;
+    border: 1px solid rgba($colors--black, 0.25);
+    color: $colors--black;
     font-weight: bold;
     font-size: 1.2rem;
+
+    @include media-breakpoint-up(md) {
+      padding: 1.5rem 2rem;
+    }
 
     a {
       &:hover {
         text-decoration: underline !important;
       }
-    }
-
-    @include media-breakpoint-up(md) {
-      padding: 2rem;
     }
   }
 }
@@ -183,6 +197,20 @@ a {
     background-color: $colors--green;
     border: 1px solid $colors--green;
     color: $colors--white;
+
+    &-transparent {
+      font-size: inherit;
+      font-weight: 600;
+      letter-spacing: 0.125rem;
+      background-color: transparent;
+      border: 1px solid $colors--green;
+      color: $colors--green !important;
+
+      &:hover {
+        background-color: $colors--green;
+        color: $colors--white !important;
+      }
+    }
 
     &:hover {
       background-color: lighten($colors--green, 5%);
