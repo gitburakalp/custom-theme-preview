@@ -45,9 +45,9 @@ $('.form-control-block.minus-plus').each(function () {
 });
 
 $("[data-prop*='datepicker']").each(function () {
+  var ww = $(window).outerWidth();
   var $this = $(this);
   var isBooking = $this.hasClass('mode-booking');
-  var isSingle = $this.data('prop') == 'datepicker--single';
   var container = isBooking ? '.dates' : $this.parent();
 
   var config = {
@@ -56,8 +56,7 @@ $("[data-prop*='datepicker']").each(function () {
     startOfWeek: lang != 'en' ? 'monday' : 'sunday',
     format: lang != 'en' ? 'DD.MM.YYYY' : 'MM.DD.YYYY',
     language: lang,
-    singleMonth: true,
-    singleDate: isSingle,
+    stickyMonths: true,
     showShortcuts: false,
     showTopbar: false,
     startDate: moment(),
@@ -69,7 +68,7 @@ $("[data-prop*='datepicker']").each(function () {
         var selectedDates = s.split('-');
 
         $(this).val(selectedDates[0].trim());
-        !isSingle ? $('#inpCheckoutDate').val(selectedDates[1].trim()) : '';
+        $('#inpCheckoutDate').val(selectedDates[1].trim());
       }
     },
   };

@@ -1,0 +1,783 @@
+@using System.Web
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Klonbits.CMSBits.Presentation.Web.Services
+@using Klonbits.CMSBits.Presentation.Web.Models.Book
+@using System.Text.RegularExpressions;
+@using Klonbits.CMSBits.Common.Constants
+@model Klonbits.CMSBits.Presentation.Web.ViewModels.Book.RoomsListViewModel
+@inject IViewLocalizer T
+@inject ISessionProvider _sessionProvider;
+@{ ViewData["Step"] = "Rooms";
+ViewData["Title"] = T["exploreRooms"];
+
+var convertedCurrency = _sessionProvider.Get<CurrencyModel>(BookingSessionKeys.ConvertedCurrency);
+
+    HashSet<Klonbits.CMSBits.Presentation.Web.Models.Book.ApiModels.RoomFacility> filterFacilityList = new HashSet
+        <Klonbits.CMSBits.Presentation.Web.Models.Book.ApiModels.RoomFacility>(); }
+
+            <style>
+                .rooms-slide {
+                    text-align: center
+                }
+
+                .rooms-slide img {
+                    width: 100%;
+                    max-width: 768px;
+                }
+
+                @@media (min-width: 768px) {
+                    .modal-dialog {
+                        max-width: 65vw;
+                    }
+                }
+            </style>
+            @if (ViewBag.ShowResultPanel)
+            {
+            <form id="bookForm" method="post" class="active" action="@Url.RouteUrl(" public-booking", new
+                {action="Rooms" })">
+                <input id="selectedRoomId" name="id" type="hidden" />
+                <div class="rooms">
+                    @for (int i = 0; i < Model.Rooms.Count(); i++) { var room=Model.Rooms[i]; var isLujoSelected=false;
+                        <div class="rooms__item @(isLujoSelected ? " lujo-selected":"")"
+                        data-facilities-filter="@(String.Join(" ,", room.RoomFacilities.Where(x=>
+                        x.IsFilter).Select(x=>x.Id)))">
+                        <div class="rooms__images">
+                            <div class="rooms-container">
+                                <div class="rooms-wrapper">
+                                    @foreach (var roomImage in room.Gallery.Photos)
+                                    {
+                                    string url = roomImage.Url;
+                                    if (!url.Contains("https"))
+                                    {
+                                    url = url.Replace("http", "https");
+                                    }
+                                    string fileName = Regex.Match(url, "[ \\w-]+?(?=\\.(jpe?g|png))").ToString();
+                                    string urlThumb = Regex.Replace(url, "[ \\w-]+?(?=\\.(jpe?g|png))",
+                                    $"{fileName}_Thumb");
+                                    <div class="rooms-slide">
+                                        <img class="lazy" data-src="@urlThumb">
+                                    </div>}
+                                </div>
+                                <div class="rooms-controller">
+                                    <div class="prev">
+                                    </div>
+                                    <div class="next">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rooms-details-section">
+                                <a class="rooms-details details-btn" data-roomid="@room.Id"
+                                    data-searchid="@ViewBag.SearchResultKey" data-modal-type="room-details">
+                                    <i class="fal fa-info-circle"></i>
+                                    @T["roomDetails"]
+                                </a>
+                            </div>
+                        </div>
+                        <div class="rooms__info">
+                            <div class="row">
+                                <div class="col-12">
+                                    @{ var text = room.Title;
+
+                                    if (text.Contains('-'))
+                                    {
+                                    int index = text.IndexOf('-');
+                                    var roomTitle = text.Substring(0, index);
+                                    var roomSubtitle = text.Substring(index + 1);
+
+                                    <h3 class="rooms__info-title font-weight-bold">
+                                        @Html.Raw(HttpUtility.HtmlDecode(roomTitle))
+                                    </h3>
+                                    @if (!room.AvailableForMinStay)
+                                    {
+                                    var value = T["minimumStayRuleMessage"].Value;
+                                    var descc = value.Replace("{MinStay}", room.MinStay.ToString());
+                                    <h4 data-att="first-if-on--"> @Html.Raw(HttpUtility.HtmlDecode(descc))</h4>
+                                    }
+
+                                    <p class="rooms__info-description text-italic subtitle">
+                                        @Html.Raw(HttpUtility.HtmlDecode(roomSubtitle))
+                                    </p>
+                                    }
+                                    else if (text.Contains("(*"))
+                                    {
+                                    int index = text.IndexOf('*');
+
+                                    var roomTitle = text.Substring(0, index).Replace("(", "");
+                                    var roomSubtitle = text.Substring(index + 1).Replace(")", "");
+
+                                    <h3 class="rooms__info-title font-weight-bold">
+                                        @Html.Raw(HttpUtility.HtmlDecode(roomTitle))
+                                    </h3>
+                                    @if (!room.AvailableForMinStay)
+                                    {
+                                    var value = T["minimumStayRuleMessage"].Value;
+                                    var descc = value.Replace("{MinStay}", room.MinStay.ToString());
+                                    <h4 data-att="second-if-on--"> @Html.Raw(HttpUtility.HtmlDecode(descc))</h4>
+                                    }
+                                    <p class="rooms__info-description text-italic subtitle">
+                                        @Html.Raw(HttpUtility.HtmlDecode(roomSubtitle))
+                                    </p>
+                                    }
+                                    else
+                                    {
+                                    <h3 class="rooms__info-title font-weight-bold">
+                                        @Html.Raw(HttpUtility.HtmlDecode(text))
+                                    </h3>
+                                    @if (!room.AvailableForMinStay)
+                                    {
+                                    var value = T["minimumStayRuleMessage"].Value;
+                                    var descc = value.Replace("{MinStay}", room.MinStay.ToString());
+                                    <h4 data-att="first-else-on--"> @Html.Raw(HttpUtility.HtmlDecode(descc))</h4>
+                                    }
+                                    }
+                                    }
+                                </div>
+                            </div>
+                            @{ var nextRoom = Model.Rooms.Count() > (i + 1) ? Model.Rooms[i + 1] : null; }
+
+                            @if (nextRoom != null && room.ExternalRoomId == nextRoom.ExternalRoomId &&
+                            room.AvailableForMinStay)
+                            {
+                            var nonRefundableRoom = room.IsNonRefundableEntity ? room : nextRoom;
+                            var refundableRoom = room.IsNonRefundableEntity ? nextRoom : room;
+                            i++;
+                            nonRefundableRoom.LastPrice.Amount += Model.FlightAmount;
+                            nonRefundableRoom.OldPrice.Amount += Model.FlightAmount;
+
+                            refundableRoom.LastPrice.Amount += Model.FlightAmount;
+                            refundableRoom.OldPrice.Amount += Model.FlightAmount;
+
+                            if (!isLujoSelected)
+                            {
+                            <div class="rate-wrapper">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <p class="rooms__info-description font-size-xsmall">
+                                            @T["startingPrice"]
+                                        </p>
+                                        <span class="price-new">
+                                            <price price="@nonRefundableRoom.LastPrice"
+                                                converted-currency="@convertedCurrency"></price>
+                                        </span>
+                                    </div>
+                                    <div class="col-5">
+                                        @if (nonRefundableRoom.IsAvailable)
+                                        {
+                                        <a class="btn d-block @(nonRefundableRoom.IsBooked ? " btn--selected"
+                                            : "btn--select" )" data-book="book" data-id="@nonRefundableRoom.Id">
+                                            @(nonRefundableRoom.IsBooked ? T["selected"] : T["select"])
+                                        </a> }
+                                        else
+                                        {
+                                        @T["notAvailableOnSelectedDates"]}
+                                    </div>
+                                </div>
+                            </div> }
+
+                            <div class="rate-wrapper--hidden @(isLujoSelected ? " lujo-selected":"")">
+                                <div class="rate-wrapper">
+                                    <div class="row">
+                                        <div class="col-7 pr-0">
+                                            <p
+                                                class="book-description font-size-small font-weight-bold font-color-brownish-grey">
+                                                @T["nonRefundable"]
+                                            </p>
+                                            <div class="mt-2">
+                                                <a class="details-btn" data-toggle="popover" data-placement="top"
+                                                    data-content="@T[" nonRefundableText"]">
+                                                    @T["details"]
+                                                </a>
+                                                <!-- <a class="details-btn" data-roomid="@nonRefundableRoom.Id" data-searchid="@ViewBag.SearchResultKey" data-modal-type="daily-rates">
+                        @T["dailyRates"]
+                    </a> -->
+                                            </div>
+                                        </div>
+                                        <div class="col pl-0 text-right">
+                                            <span class="price-old">
+                                                <price price="@nonRefundableRoom.OldPrice"
+                                                    converted-currency="@convertedCurrency"></price>
+                                            </span>
+                                            <span class="price-new">
+                                                <price price="@nonRefundableRoom.LastPrice"
+                                                    converted-currency="@convertedCurrency"></price>
+                                            </span>
+
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3 select-button-block">
+                                        <div class="col-7 pr-0 d-flex">
+                                            @if (nonRefundableRoom.HasEbDiscount && nonRefundableRoom.EbDicountRatio >
+                                            0)
+                                            {
+                                            <div class="discount-box">
+                                                <span class="discount-box__val">
+                                                    -%@((nonRefundableRoom.EbDicountRatio+nonRefundableRoom.NonRefundableRatio).ToString("N0"))
+                                                </span>
+                                                <span class="discount-box__text">
+                                                    @T["earlyBookingDisc"]
+                                                </span>
+                                            </div>}
+                                            @if (room.CouponModel != null && room.CouponModel.HasCoupon &&
+                                            room.CouponModel.CouponPercentage > 0)
+                                            {
+
+                                            <div class="discount-box">
+                                                @if (room.CouponModel.CouponName.Contains("2"))
+                                                {
+                                                <span class="discount-box__val">
+                                                    -%@room.CouponModel.CouponPercentage.ToString("N0")
+                                                </span>}
+                                                <span class="discount-box__text">
+                                                    @T[room.CouponModel.CouponName]
+                                                </span>
+                                            </div>}
+                                            @if (nonRefundableRoom.HasLoyalty && nonRefundableRoom.LoyaltyRatio > 0)
+                                            {
+                                            <div class="discount-box">
+                                                <span class="discount-box__val">
+                                                    -%@nonRefundableRoom.LoyaltyRatio.ToString("N0")
+                                                </span>
+                                                <span class="discount-box__text">
+                                                    Joyalty Card
+                                                </span>
+                                            </div>}
+                                        </div>
+                                        <div class="col pl-0 text-right">
+                                            @if (nonRefundableRoom.IsAvailable)
+                                            {
+                                            <a class="btn d-block @(nonRefundableRoom.IsBooked ? " btn--selected"
+                                                : "btn--select" )" data-book="book" data-id="@nonRefundableRoom.Id">
+                                                @(nonRefundableRoom.IsBooked ? T["selected"] : T["select"])
+                                            </a> }
+                                            else
+                                            {
+                                            @T["notAvailableOnSelectedDates"]}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                @if (Model.FlightAmount <= 0) { <div class="rate-wrapper">
+                                    <div class="row">
+                                        <div class="col-7 pr-0">
+                                            <p
+                                                class="book-description font-size-small font-weight-bold font-color-brownish-grey">
+                                                @T["refundable"]
+                                            </p>
+
+                                            <div class="mt-2">
+                                                <a class="details-btn" data-toggle="popover" data-placement="top"
+                                                    data-content="@T[" refundableText"]">
+                                                    @T["details"]
+                                                </a>
+                                                <!-- <a class="details-btn" data-roomid="@refundableRoom.Id" data-searchid="@ViewBag.SearchResultKey" data-modal-type="daily-rates">
+                    @T["dailyRates"]
+                </a> -->
+                                            </div>
+                                        </div>
+                                        <div class="col pl-0 text-right">
+                                            @if (refundableRoom.LastPrice.Amount < nonRefundableRoom.OldPrice.Amount) {
+                                                <span class="price-old">
+                                                <price price="@nonRefundableRoom.OldPrice"
+                                                    converted-currency="@convertedCurrency"></price>
+                                                </span>}
+                                                <span class="price-new">
+                                                    <price price="@refundableRoom.LastPrice"
+                                                        converted-currency="@convertedCurrency"></price>
+                                                </span>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-7 pr-0 d-flex">
+                                            @if (room.HasEbDiscount && room.EbDicountRatio > 0)
+                                            {
+                                            <div class="discount-box">
+                                                <span class="discount-box__val">
+                                                    -%@(room.EbDicountRatio.ToString("N0"))
+                                                </span>
+                                                <span class="discount-box__text">
+                                                    @T["earlyBookingDisc"]
+                                                </span>
+                                            </div>}
+                                            @if (room.CouponModel != null && room.CouponModel.HasCoupon &&
+                                            room.CouponModel.CouponPercentage > 0)
+                                            {
+
+                                            <div class="discount-box">
+                                                @if (room.CouponModel.CouponName.Contains("2"))
+                                                {
+                                                <span class="discount-box__val">
+                                                    -%@room.CouponModel.CouponPercentage.ToString("N0")
+                                                </span>}
+                                                <span class="discount-box__text">
+                                                    @T[room.CouponModel.CouponName]
+                                                </span>
+                                            </div>}
+                                            @if (refundableRoom.HasLoyalty && refundableRoom.LoyaltyRatio > 0)
+                                            {
+                                            <div class="discount-box">
+                                                <span class="discount-box__val">
+                                                    -%@refundableRoom.LoyaltyRatio.ToString("N0")
+                                                </span>
+                                                <span class="discount-box__text">
+                                                    Joyalty Card
+                                                </span>
+                                            </div>}
+                                        </div>
+                                        <div class="col pl-0 text-right">
+                                            @if (refundableRoom.AvailableForMinStay)
+                                            {
+                                            @if (refundableRoom.IsAvailable)
+                                            {
+                                            <a class="btn d-block @(room.IsBooked ? " btn--selected" : "btn--select" )"
+                                                data-book="book" data-id="@refundableRoom.Id">
+                                                @(room.IsBooked ? T["selected"] : T["select"])
+                                            </a> }
+                                            else
+                                            {
+                                            @T["notAvailableOnSelectedDates"]}}
+                                        </div>
+                                    </div>
+                            </div>}
+
+
+
+                            <div class="rate-wrapper rooms-prop">
+                                <ul class="rooms-prop-list">
+                                    @foreach (var facility in room.RoomFacilities)
+                                    {
+                                    if (facility.IsFilter)
+                                    {@((filterFacilityList.Add(facility)).ToString().Replace("True", "")) }
+
+                                    <li class="rooms-prop-list-item" data-facility-id="@facility.Id">
+                                        <a class="rooms-prop-icon @(!isLujoSelected ? " with-circle" : "" )"
+                                            title="@facility.Description">
+                                            <img class="rooms-prop-icon-img" src="@(!facility.IconUrl.Contains("
+                                                https")?facility.IconUrl.Replace("http","https"):"")" alt="" />
+                                        </a>
+                                        <h4 class="book-title font-weight-normal font-size-small font-color-warm-grey">
+                                            @facility.Name
+                                        </h4>
+                                    </li>}
+                                </ul>
+                            </div>
+                        </div> }
+
+                        else if (room.ShowOnlyNonrefundableRoom)
+                        {
+                        <div class="rate-wrapper--hidden @(isLujoSelected ? " lujo-selected":"")">
+                            <div class="rate-wrapper">
+                                <div class="row">
+                                    <div class="col-7 pr-0">
+                                        <p
+                                            class="book-description font-size-small font-weight-bold font-color-brownish-grey">
+                                            @T["nonRefundable"]
+                                        </p>
+                                        <div class="mt-2">
+                                            <a class="details-btn" data-toggle="popover" data-placement="top"
+                                                data-content="@T[" nonRefundableText"]">
+                                                @T["details"]
+                                            </a>
+                                            <!-- <a class="details-btn" data-roomid="@room.Id" data-searchid="@ViewBag.SearchResultKey" data-modal-type="daily-rates">
+                        @T["dailyRates"]
+                    </a> -->
+                                        </div>
+                                    </div>
+                                    <div class="col pl-0 text-right">
+                                        <span class="price-old">
+                                            <price price="@room.OldPrice" converted-currency="@convertedCurrency">
+                                            </price>
+                                        </span>
+                                        <span class="price-new">
+                                            <price price="@room.LastPrice" converted-currency="@convertedCurrency">
+                                            </price>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row mt-3 select-button-block">
+                                    <div class="col-7 pr-0 d-flex">
+                                        @if (room.HasEbDiscount && room.EbDicountRatio > 0)
+                                        {
+                                        <div class="discount-box">
+                                            <span class="discount-box__val">
+                                                -%@room.EbDicountRatio.ToString("N0")
+                                            </span>
+                                            <span class="discount-box__text">
+                                                @T["earlyBookingDisc"]
+                                            </span>
+                                        </div>}
+                                        @if (room.CouponModel != null && room.CouponModel.HasCoupon &&
+                                        room.CouponModel.CouponPercentage > 0)
+                                        {
+
+                                        <div class="discount-box">
+                                            @if (room.CouponModel.CouponName.Contains("2"))
+                                            {
+                                            <span class="discount-box__val">
+                                                -%@room.CouponModel.CouponPercentage.ToString("N0")
+                                            </span>}
+                                            <span class="discount-box__text">
+                                                @T[room.CouponModel.CouponName]
+                                            </span>
+                                        </div>}
+                                        @if (room.HasLoyalty && room.LoyaltyRatio > 0)
+                                        {
+                                        <div class="discount-box">
+                                            <span class="discount-box__val">
+                                                -%@room.LoyaltyRatio.ToString("N0")
+                                            </span>
+                                            <span class="discount-box__text">
+                                                Joyalty Card
+                                            </span>
+                                        </div>}
+                                    </div>
+                                    <div class="col pl-0 text-right">
+                                        @if (room.IsAvailable)
+                                        {
+                                        <a class="btn d-block @(room.IsBooked ? " btn--selected" : "btn--select" )"
+                                            data-book="book" data-id="@room.Id">
+                                            @(room.IsBooked ? T["selected"] : T["select"])
+                                        </a> }
+                                        else
+                                        {
+                                        @T["notAvailableOnSelectedDates"]}
+                                    </div>
+                                </div>
+                            </div>
+                        </div> }
+                        else
+                        {
+                        if (room.AvailableForMinStay)
+                        {
+                        room.TotalPrice.Amount += Model.FlightAmount;
+
+                        <div class="row justify-content-between align-items-center">
+                            <div class="col-12 col-md">
+                                <a class="details-btn" data-toggle="popover" data-placement="top" data-content="@T["
+                                    refundableText"]">
+                                    @T["details"]
+                                </a>
+                                <!-- <a class="details-btn" data-modal-type="daily-rates" data-roomid="@room.Id" data-searchid="@ViewBag.SearchResultKey">
+            @T["dailyRates"]
+        </a> -->
+                            </div>
+                            <div class="col-12 text-right text-md-left col-md-auto mb-md-2">
+                                @if (room.CouponModel != null && room.CouponModel.HasCoupon &&
+                                room.CouponModel.CouponPercentage > 0)
+                                {
+                                <div class="discount-box">
+                                    @*<span
+                                        class="discount-box__val">-%@room.CouponModel.CouponPercentage.ToString("N0")</span>*@
+                                    <span class="discount-box__text">
+                                        @T[room.CouponModel.CouponName]
+                                    </span>
+                                </div>}
+                                <span class="price-new">
+                                    <price price="@room.TotalPrice" converted-currency="@convertedCurrency"></price>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-md-auto mt-3 mt-lg-0 ml-auto">
+                                @if (room.AvailableForMinStay)
+                                {
+                                @if (room.IsAvailable)
+                                {
+                                <a class="btn d-block @(room.IsBooked ? " btn--selected" : "btn--select" )"
+                                    data-book="book" data-id="@room.Id">
+                                    @(room.IsBooked ? T["selected"] : T["select"])
+                                </a> }
+                                else
+                                {
+                                @T["notAvailableOnSelectedDates"]}}
+                            </div>
+                        </div>}
+                        }
+
+                        <div class="rate-wrapper--hidden @(isLujoSelected ? " lujo-selected":"")">
+                            <div class="white-boxes__blocks rooms-section">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h3 class="book-title--huge font-weight-normal font-velour">
+                                            @T["roomDetails"]
+                                        </h3>
+                                        <p class="rooms__info-description">
+                                            @{ var desc = string.Empty;
+
+                                            if (room.AvailableForMinStay)
+                                            {
+                                            desc = room.Description;
+                                            }
+                                            else
+                                            {
+                                            var value = T["minimumStayRuleMessage"].Value;
+                                            desc = value.Replace("{MinStay}", room.MinStay.ToString());
+                                            } }
+                                            @Html.Raw(HttpUtility.HtmlDecode(desc))
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                @if (!isLujoSelected)
+                {
+                @*<div class="rooms-details-block">
+                    <i class="fal fa-search"></i>
+                    <i class="fal fa-times"></i>
+                    <span class="details">@T["clickForDetails"]</span>
+                    <span class="span-close">@T["close"]</span>
+                </div>*@ }
+                </div>}
+                </div>
+            </form>}
+            @section Scripts
+            {
+            <script>
+                var currentLang = $('html').attr('lang').toLowerCase();
+
+                $("[data-toggle=popover]").popover();
+
+                $('body').on('click', function (e) {
+                    if ($(e.target).data('toggle') !== 'popover'
+                        && $(e.target).parents('.popover').length === 0) {
+                        $('[data-toggle="popover"]').popover('hide');
+                    }
+                });
+
+                $('[data-book="book"]').click(function () {
+                    var id = $(this).data('id');
+                    $('#selectedRoomId').val();
+                    $('#selectedRoomId').val(id);
+                    $('#bookForm').submit();
+                });
+
+                $('.details-btn:not([data-toggle="popover"])').click(function () {
+                    var modalType = $(this).data('modal-type');
+                    var $bookingModal = $('#bookingModal');
+                    var $bookingModalBody = $bookingModal.find('[class*=modal-body]');
+                    var roomid = $(this).data('roomid');
+                    var searchid = $(this).data('searchid');
+
+                    var url = ("/" + currentLang + "/book-getRoomDetails?searchid=" + searchid + "&roomid=" + roomid);
+                    $("#bookingModal").find('* .modal-body').empty();
+
+                    if (modalType != undefined && modalType == "room-details") {
+                        $('[class*=modal-dialog]').removeClass('modal--daily-rates');
+
+                        var modalSliderHtml = `<div id="modalSlider" class="rooms-container"><div class="rooms-wrapper"></div><div class="rooms-controller"><div class="prev"></div><div class="next"></div></div></div>`;
+                        var $modalSlider = null;
+                        var modalSlider = null;
+
+                        $.get(url, (response) => {
+                            var title = response.title;
+                            var photos = response.gallery.photos;
+                            var description = response.description;
+                            var longDescription = response.longDescription;
+
+                            console.table(response)
+
+                            $bookingModalBody.append(modalSliderHtml);
+                            $bookingModalBody.append(`<h1 class="book-title--lg text-center">${title}</h1>`);
+                            $bookingModalBody.append(`<p class="book-description font-size-normal">${longDescription}</p>`);
+                            $bookingModal.find('[class*=modal-body] .book-description').html($bookingModal.find('[class*=modal-body] .book-description').text());
+
+                            $modalSlider = $('#modalSlider');
+
+                            $.each(photos, function (idx, e) {
+                                if (!e.url.includes('https')) {
+                                    e.url = e.url.replace('http', 'https')
+                                }
+                                $modalSlider.find('.rooms-wrapper').append(`<div class="rooms-slide"><img src="${e.url}" /></div>`);
+                            });
+
+                            //lazyImages();
+
+                            if (modalSlider == null)
+                                modalSlider = new Swiper('#modalSlider.rooms-container', {
+                                    slidesPerView: 1,
+                                    spaceBetween: 14,
+                                    loop: true,
+                                    containerModifierClass: "rooms-container--",
+                                    wrapperClass: "rooms-wrapper",
+                                    slideClass: "rooms-slide",
+                                    slideActiveClass: "rooms-slide--active",
+                                    slideNextClass: "rooms-slide--next",
+                                    slidePrevClass: "rooms-slide--prev",
+                                    navigation: {
+                                        nextEl: '#modalSlider .next',
+                                        prevEl: '#modalSlider .prev'
+                                    }
+                                });
+
+                            if ($('#modalSlider')[0].swiper != undefined)
+                                $('#modalSlider')[0].swiper.update()
+                        })
+                    }
+                    else if (modalType != undefined && modalType == "daily-rates") {
+                        $('[class*=modal-dialog]').addClass('modal--daily-rates');
+
+                        let getValueOfDate = (date) => {
+
+                            var days = {
+                                tr: [
+                                    "Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"
+                                ],
+                                en: [
+                                    "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+                                ],
+                                de: ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'],
+                                ru: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота']
+                            }
+
+                            var thisDate = new Date(date);
+                            var dayIndex = thisDate.getDay();
+
+                            var currentDay = (thisDate.getDate()).toString().padStart(2, "0");
+                            var currentMonth = (thisDate.getMonth() + 1).toString().padStart(2, "0");
+                            var currentYear = thisDate.getFullYear();
+
+                            var convertedDate = currentLang == "en" ? `${currentMonth}.${currentDay}.${currentYear}` : `${currentDay}.${currentMonth}.${currentYear}`;
+
+                            return `${convertedDate} ${days[currentLang][dayIndex]}`;
+                        }
+
+                        $.get(url, (response) => {
+                            var title = "Tarihler";
+                            if (currentLang != null) {
+
+                                switch (currentLang) {
+                                    case "tr": title = "Tarihler";
+                                        break;
+                                    case "en": title = "Dates";
+                                        break;
+                                    case "ru": title = "даты";
+                                        break;
+                                    case "de": title = "Termine";
+                                        break;
+                                }
+                            }
+
+                            var prices = response.prices;
+
+                            console.log(response);
+
+                            $bookingModalBody.append(`<h1 class="book-title">${title}</h1>`);
+
+                            $.each(prices, function (idx, e) {
+                                var dateValue = getValueOfDate(e.date);
+                                var oldAmount = e.oldAmount != e.amount ? `<div class="col ml-auto"><h2 class="book-title old-cost">${(Math.round(e.oldAmount * 100) / 100).toFixed(2)} ${e.currency}</h2></div>` : "";
+
+                                $bookingModalBody.append(`<div class="row justify-content-center align-items-center mt-5"><div class="col"><p class="book-description font-color-black font-size-normal font-weight-bold">${dateValue}</p></div>${oldAmount}<div class="col ml-auto"><h2 class="book-title">${(Math.round(e.amount * 100) / 100).toFixed(2)} ${e.currency}</h2></div></div>`)
+                            });
+                        })
+                    }
+
+                    $("#bookingModal").modal('show');
+                });
+
+                var slidersInit = () => {
+                    var sliders = [];
+
+                    var sliderElems = document.querySelectorAll(".rooms-container");
+
+                    sliderElems.forEach(e => {
+                        sliders.push(
+                            new Swiper(e, {
+                                slidesPerView: 1,
+                                spaceBetween: 14,
+                                loop: true,
+                                containerModifierClass: "rooms-container--",
+                                wrapperClass: "rooms-wrapper",
+                                slideClass: "rooms-slide",
+                                slideActiveClass: "rooms-slide--active",
+                                slideNextClass: "rooms-slide--next",
+                                slidePrevClass: "rooms-slide--prev",
+                                navigation: {
+                                    nextEl: e.querySelector(".next"),
+                                    prevEl: e.querySelector(".prev")
+                                }
+                            })
+                        );
+                    });
+                };
+
+                slidersInit();
+
+                var roomfilterInit = () => {
+                    let filterData = @(Html.Raw(Json.Serialize(filterFacilityList)));
+                    console.log(filterData);
+
+                    if (filterData && filterData.length > 0) {
+                        let div = document.getElementById('bookingSteps').parentElement;
+
+                        let html = `<div>`;
+                        for (let i = 0; i < filterData.length; i++) {
+                            const filter = filterData[i];
+                            filter.textValues = JSON.parse(filter.textValues);
+                            html += `<div class="unique-checkbox">
+                                <input type="checkbox" id="inpFilter${filter.id}" onclick="roomfilterSet(${filter.id})">
+                                <label for="inpFilter${filter.id}" class="text-uppercase mr-3">
+                                    ${filter.textValues.en}
+                                </label>
+                             </div>`;
+                        }
+                        html += `</div>`;
+                        div.insertAdjacentHTML('beforeend', html);
+                    }
+                }
+                var roomfilterSetIds = [];
+                var roomfilterSet = (id) => {
+                    if (!roomfilterSetIds.includes(id.toString())) {
+                        roomfilterSetIds.push(id.toString());
+                    }
+                    else {
+                        const index = roomfilterSetIds.indexOf(id.toString());
+                        if (index !== -1) roomfilterSetIds.splice(index, 1);
+                    }
+
+                    var filterrooms = document.querySelectorAll('[data-facilities-filter]');
+                    for (let i = 0; i < filterrooms.length; i++) {
+                        const room = filterrooms[i];
+                        const roomFilterValue = room.getAttribute("data-facilities-filter").split(',');
+
+                        if (roomfilterSetIds.length > 0) {
+                            if (roomFilterValue.includes(...roomfilterSetIds)) {
+                                room.style.display = "";
+                            } else {
+                                room.style.display = "none";
+                            }
+                        } else {
+                            room.style.display = "";
+                        }
+
+                    }
+                }
+
+                document.addEventListener('DOMContentLoaded', function () {
+                    var ww = $(window).width();
+
+                    if (isNullModel && $(".search-results").find("#bookForm").length == 0) {
+                        triggerSearchbar(ww);
+                    }
+
+                    roomfilterInit();
+                });
+
+                window.addEventListener('load', function () {
+                    $('.btn--selected').each(function () {
+                        var roomOffsetTop = $(this).closest('.rooms__item').offset().top - 100;
+
+                        $('html,body').animate({
+                            scrollTop: roomOffsetTop
+                        }, 500);
+                    });
+                });
+
+                window.addEventListener('resize', function () {
+                    var ww = $(window).width();
+
+                    if (isNullModel && $(".search-results").find("#bookForm").length == 0) {
+                        triggerSearchbar(ww);
+                    }
+                })
+            </script>
+            }

@@ -7,6 +7,24 @@
     background-color: transparent;
     cursor: pointer;
   }
+
+  &[class*=validation-error] {
+    border-color: $colors--red !important;
+  }
+
+  + [class*=field-validation] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.125rem;
+    color: $colors--red;
+    transform: translate(-225%,-100%);
+    line-height: 1;
+  }
+}
+
+.order--1 {
+  order:-1 !important;
 }
 
 select {

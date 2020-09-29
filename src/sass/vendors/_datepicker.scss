@@ -1,59 +1,76 @@
 .date-picker-wrapper {
-  font-family: $ff-sans-serif;
+  font-family: $ff-serif;
   border-color: transparent;
   background-color: $colors--white;
   z-index: 99;
   min-width: 299px;
-  left: 1rem !important;
-  right: 1rem !important;
-
-  @include media-breakpoint-down(sm) {
-    left: 0 !important;
-    right: 0 !important;
-  }
+  left: 0 !important;
+  right: 0 !important;
 
   @include media-breakpoint-up(md) {
     margin-top: 1rem;
+    min-width: 600px;
+    left: 1rem !important;
+    right: 1rem !important;
   }
 
-  &.single-month {
-    .month-wrapper {
-      table {
-        table-layout: fixed;
-        width: 100%;
+  .prev,
+  .next {
+    font-size: 2.5rem;
+  }
 
-        .caption {
-          height: 6rem;
-        }
-
-        .week-name {
-          height: 4rem;
-        }
-
-        td,
-        th {
-          width: calc(100% / 7);
-        }
-
-        th[colspan='5'] {
-          width: calc((100% / 7) * 5);
-        }
-      }
-    }
+  .gap {
+    visibility: hidden !important;
   }
 
   .month-wrapper {
     border-color: transparent;
 
+    @include media-breakpoint-up(md) {
+      width: 600px !important;
+    }
+
     .month-element {
-      font-size: 1.8rem;
+      font-size: 2.2rem;
+      font-weight: 400;
       color: $colors--black;
+      text-transform: capitalize;
     }
 
     table {
-      .day {
+      table-layout: fixed;
+      width: 100%;
+
+      @include media-breakpoint-up(md) {
+        width: calc((100% - 35px) / 2) !important;
+      }
+
+      .caption {
+        height: 6rem;
+      }
+
+      .week-name {
+        height: 2rem;
         font-size: 1.4rem;
-        line-height: 2;
+        text-transform: capitalize;
+
+        > * {
+          font-weight: 400;
+        }
+      }
+
+      td,
+      th {
+        width: calc(100% / 7) !important;
+      }
+
+      th[colspan='5'] {
+        width: calc((100% / 7) * 5) !important;
+      }
+
+      .day {
+        font-size: 1.8rem;
+        line-height: 1.75;
 
         &.real-today {
           background-color: $colors--black;
