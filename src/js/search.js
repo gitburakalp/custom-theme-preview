@@ -190,20 +190,6 @@ $('.transfer-fields-box').each(function () {
   var $this = $(this);
 
   $(this)
-    .find("input[type='radio']")
-    .on('click', function () {
-      if (oldRadio == '') {
-        oldRadio = $(this).attr('id');
-      } else if (oldRadio == $(this).attr('id')) {
-        $(this).prop('checked', false);
-        $(this).trigger('change');
-        oldRadio = '';
-      } else {
-        oldRadio = $(this).attr('id');
-      }
-    });
-
-  $(this)
     .find('input[type="radio"]')
     .change(function () {
       selected = [];
@@ -224,29 +210,22 @@ $('#inpFillFieldOfAllGuests').change(function () {
   $(this).siblings('.search-blocks--hidden').slideToggle(500);
 });
 
-$('#roomDetailsModal').on('shown.bs.modal', function () {
-  var $this = $(this).find('.rooms-image-slider');
-  var config = getConfigRoomsSlider($this);
+//$('.main-search .btn--green,.reservation-summary .btn--green').on('click', function () {
+//  var next = $('.main-search > *.is-shown').next().attr('class');
 
-  var slider = new Swiper($this[0], config);
-});
+//  $('.search-steps > *').removeClass('active');
+//  $(`.search-steps > *[data-rel="${next}"]`).addClass('active');
 
-$('.main-search .btn--green,.reservation-summary .btn--green').on('click', function () {
-  var next = $('.main-search > *.is-shown').next().attr('class');
+//  $('.main-search > *').removeClass('is-shown');
+//  $(`.main-search > .${next}`).addClass('is-shown');
 
-  $('.search-steps > *').removeClass('active');
-  $(`.search-steps > *[data-rel="${next}"]`).addClass('active');
-
-  $('.main-search > *').removeClass('is-shown');
-  $(`.main-search > .${next}`).addClass('is-shown');
-
-  $('html,body').animate(
-    {
-      scrollTop: $('.main-search > .main-search_transfers').offset().top - 200,
-    },
-    1500,
-  );
-});
+//  $('html,body').animate(
+//    {
+//      scrollTop: $('.main-search > .main-search_transfers').offset().top - 200,
+//    },
+//    1500,
+//  );
+//});
 
 $('.checkout-tabs > li').on('click', function () {
   var thisTab = $(this).data('rel');
@@ -272,4 +251,135 @@ document.addEventListener('DOMContentLoaded', function () {
     document.documentElement.style.setProperty('--hh', `${headerHeight}px`);
     document.documentElement.style.setProperty('--rth', `${resTriggerHeight}px`);
   }
+});
+
+$("[data-toggle='popover']").popover();
+
+/* Guest Page Scripts */
+
+$('#inpBillingDetails').on('change', function (e) {
+  e.preventDefault();
+  $('.billing-details').toggleClass('d-none');
+});
+
+$('#inpHoneymoon').on('change', function () {
+  $('.honeymoonTrigger').next().toggleClass('d-none');
+});
+
+$('#roomDetailsModal').on('show.bs.modal', function (e) {
+  var $this = $(this);
+  var $relatedTarget = $(e.relatedTarget);
+  var type = $relatedTarget.data('modal-type');
+  var roomid = $relatedTarget.data('roomid');
+  var searchid = $relatedTarget.data('searchid');
+
+  function getRoomDetails() {
+    var url = '/' + currentLang + '/book-getRoomDetails?searchid=' + searchid + '&roomid=' + roomid;
+
+    var $title = $this.find('[data-item-id="roomTitle"]');
+    var $description = $this.find('[data-item-id="roomDescription"]');
+    var $roomImageSlider = $this.find('[data-item-id="roomImageSlider"]');
+
+    var config = getConfigRoomsSlider($roomImageSlider);
+
+    if ($roomImageSlider[0].swiper != undefined) {
+      $roomImageSlider[0].swiper.destroy();
+      $roomImageSlider.find('.rooms-image-wrapper').empty();
+    }
+
+    $.get(url, res => {
+      var titleValue = res.title;
+      var descriptionValue = res.longDescription;
+      var photos = res.gallery.photos;
+
+      $title.html(titleValue);
+      $description.html(descriptionValue);
+
+      $.each(photos, (idx, e) => {
+        var sliderSlides = `<div class="rooms-image-slide"><figure class="img"><img src="${e.url}" alt="" /></figure></div>`;
+
+        $roomImageSlider.find('.rooms-image-wrapper').append(sliderSlides);
+      });
+
+      var slider = new Swiper($roomImageSlider[0], config);
+    });
+  }
+
+  function getDailyRates() {}
+
+  if (type == 'room-details') {
+    getRoomDetails();
+  } else {
+    getDailyRates();
+  }
+});
+
+const copyToClipboard = str => {
+  const el = document.createElement('textarea');
+  el.value = str;
+  el.setAttribute('readonly', '');
+  el.style.position = 'absolute';
+  el.style.left = '-9999px';
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+};
+
+$('.copyIcon').each(function () {
+  $(this).on('click', function () {
+    var $this = $(this);
+    var val = $this.parent().find('span').text().trim();
+    var $copySuccessfulText = $this.next();
+
+    copyToClipboard(val);
+
+    setTimeout(function () {
+      $copySuccessfulText.fadeIn(250);
+    }, 150);
+
+    setTimeout(function () {
+      $copySuccessfulText.fadeOut(250);
+    }, 2500);
+  });
+});
+
+$('#inpLoyaltyCard').on('keypress change', function () {
+  var $this = $(this);
+  var count = $this.val().replace(/ /g, '').length + 1;
+
+  if (count <= 16) {
+    $this.val(function (idx, value) {
+      return value.replace(/\W/gi, '').replace(/(.{4})/g, '$1 ');
+    });
+  } else return false;
+});
+
+$('.hotel-select-block').each(function () {
+  var $triggerElem = $(this).find('[data-trigger]');
+  var $inpSelectedHotel = $(this).find('#inpSelectedHotel');
+
+  $triggerElem.text($(this).find('.hotel-select-item input[type=radio]:checked').next().text());
+  $inpSelectedHotel.val($(this).find('.hotel-select-item input[type=radio]:checked').val());
+
+  $triggerElem.on('click', function () {
+    var el = $(this).data('trigger');
+
+    $(el).toggleClass('is-shown');
+  });
+
+  $(this)
+    .find('.hotel-select-item input[type=radio]')
+    .on('change', function () {
+      $triggerElem.text($(this).next().text());
+      $inpSelectedHotel.val($(this).attr('value'));
+    });
+
+  $('html,body').on('click', function (e) {
+    var $target = $(e.target);
+
+    if ($target.closest('.hotel-select-block').length == 0) {
+      $('.hotel-select--hidden').removeClass('is-shown');
+    }
+  });
 });

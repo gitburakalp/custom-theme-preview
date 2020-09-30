@@ -1,455 +1,494 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="css/main-search.min.css" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  </head>
 
-  <body class="search">
-    <header class="header">
-      <div class="container">
-        <div class="row justify-content-between align-items-center">
-          <div class="col-auto">
-            <a href="/" class="brand">
-              <img src="images/hotel-brand.svg" />
-            </a>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="css/main-search.min.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+</head>
+
+<body class="search">
+  <header class="header">
+    <div class="container">
+      <div class="row justify-content-between align-items-center">
+        <div class="col-auto">
+          <a href="/" class="brand">
+            <img src="images/hotel-brand.svg" />
+          </a>
+        </div>
+        <div class="col-auto">
+          <a class="menu-trigger-button">
+            <div></div>
+            <div></div>
+            <div></div>
+          </a>
+          <div class="header-menu-block">
+            <ul class="header-menu">
+              <li class="header-menu-item heading">HOTELN LUXURY RESORT</li>
+              <li class="header-menu-item">
+                <a data-toggle="modal" data-target="#LoyaltyModal" class="header-menu-link"> Loyalty Card Member </a>
+              </li>
+              <li class="header-menu-item">
+                <a href="find-reservations.html" class="header-menu-link"> Find Reservations </a>
+              </li>
+              <li class="header-menu-item">
+                <a class="header-menu-link language popover-trigger"> Languages <i
+                    class="fal fa-angle-down font-size--xl"></i> </a>
+                <div class="popovers">
+                  <ul class="list">
+                    <li class="list-item active">
+                      <a class="list-link"> English </a>
+                    </li>
+                    <li class="list-item">
+                      <a class="list-link"> Turkish </a>
+                    </li>
+                    <li class="list-item">
+                      <a class="list-link"> Russian </a>
+                    </li>
+                    <li class="list-item">
+                      <a class="list-link"> German </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="header-menu-item">
+                <a class="header-menu-link"> Currencies </a>
+              </li>
+            </ul>
           </div>
-          <div class="col-auto">
-            <a class="menu-trigger-button">
-              <div></div>
-              <div></div>
-              <div></div>
-            </a>
-            <div class="header-menu-block">
-              <ul class="header-menu">
-                <li class="header-menu-item heading">HOTELN LUXURY RESORT</li>
-
-                <li class="header-menu-item">
-                  <a href="find-reservations.html" class="header-menu-link"> Find Reservations </a>
-                </li>
-                <li class="header-menu-item">
-                  <a class="header-menu-link language popover-trigger"> Languages <i class="fal fa-angle-down font-size--xl"></i> </a>
-                  <div class="popovers">
-                    <ul class="list">
-                      <li class="list-item active">
-                        <a class="list-link"> English </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <section class="main-block">
+      <figure class="img">
+        <img src="images/backgrounds/beach-front.jpg" />
+      </figure>
+      <div class="search-widget">
+        <div class="search-widget-block is-shown">
+          <div class="search-info">
+            <i class="fal fa-search font-size--lg mr-3"></i>
+            <p class="d-inline-block description text-white">HotelN Luxury Resorts, <span class="adult-count">2</span>
+              Adults, <span class="child-count">0</span> Children</p>
+          </div>
+          <div class="destination">
+            <div class="row">
+              <div class="col-md-6">
+                <p class="search-widget-title">WHERE ARE YOU GOING?</p>
+                <div class="hotel-select-block has-arrow-down">
+                  <p class="hotel-select-info form-control" data-trigger=".hotel-select--hidden"></p>
+                  <input type="hidden" id="inpSelectedHotel" />
+                  <div class=" hotel-select--hidden">
+                    <ul class="hotel-select">
+                      <li class="hotel-select-item">
+                        <input id="inpParaisoHotel" type="radio" name="select-hotel" value="3" checked />
+                        <label for="inpParaisoHotel">Paraiso Spa Resorts & Suites <i class="tree-palm-2"></i></label>
                       </li>
-                      <li class="list-item">
-                        <a class="list-link"> Turkish </a>
-                      </li>
-                      <li class="list-item">
-                        <a class="list-link"> Russian </a>
-                      </li>
-                      <li class="list-item">
-                        <a class="list-link"> German </a>
+                      <li class="hotel-select-item">
+                        <input id="inpHotelN" type="radio" name="select-hotel" value="5" />
+                        <label for="inpHotelN">HotelN Luxury Resorts <i class="tree-palm"></i></label>
                       </li>
                     </ul>
                   </div>
-                </li>
-                <li class="header-menu-item">
-                  <a class="header-menu-link"> Currencies </a>
-                </li>
-              </ul>
+                </div>
+              </div>
+              <div class="col-md-6 mt-3 mt-md-auto d-flex d-md-block promotion-icon">
+                <input class="form-control search-widget-title pr-5" placeholder="HAVE YOU PROMOTION CODE?" />
+              </div>
+            </div>
+          </div>
+          <div class="dates">
+            <p class="search-widget-title">DATES</p>
+            <div class="row">
+              <div class="col-6">
+                <div class="date-input">
+                  <input id="inpCheckinDate" class="form-control mode-booking" placeholder="Check In" readonly
+                    data-prop="datepicker--single" />
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="date-input">
+                  <input id="inpCheckoutDate" class="form-control mode-booking" placeholder="Check Out" readonly
+                    data-prop="datepicker--single" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="guests">
+            <p class="search-widget-title">GUESTS</p>
+            <span class="popover-trigger has-arrow-down"> <span class="adult-count">2</span> Adults, <span
+                class="child-count">0</span> Children </span>
+            <div class="popovers">
+              <div class="form-row">
+                <div class="col-6">
+                  <h5 class="title font-size--md title--sans-serif-two text-center">Adults</h5>
+                  <div class="form-control-block minus-plus">
+                    <i class="fal fa-minus"></i>
+                    <input id="inpAdultCount" class="form-control" value="2" readonly data-max="12"
+                      data-related-item=".adult-count" readonly />
+                    <i class="fal fa-plus"></i>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <h5 class="title font-size--md title--sans-serif-two text-center">Childs</h5>
+                  <div class="form-control-block minus-plus">
+                    <i class="fal fa-minus"></i>
+                    <input id="inpChildCount" class="form-control" value="0" readonly data-max="3"
+                      data-related-item=".child-count" readonly />
+                    <i class="fal fa-plus"></i>
+                  </div>
+                </div>
+                <div class="col-12 mt-3">
+                  <a class="d-block btn btn--green close-btn text-white">CLOSE</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="submit">
+            <a class="btn btn--green text-color-md-white"> Search </a>
+            <div class="text-center py-3 d-md-none">
+              <a class="btn btn--default text-underline text-white minimize-search">Minimize Search</a>
             </div>
           </div>
         </div>
       </div>
-    </header>
-    <main class="main">
-      <section class="main-block">
-        <figure class="img">
-          <img src="images/backgrounds/beach-front.jpg" />
-        </figure>
-        <div class="search-widget">
-          <div class="search-widget-block is-shown">
-            <div class="search-info">
-              <i class="fal fa-search font-size--lg mr-3"></i>
-              <p class="d-inline-block description text-white">HotelN Luxury Resorts, <span class="adult-count">2</span> Adults, <span class="child-count">0</span> Children</p>
-            </div>
-            <div class="destination">
-              <div class="row">
-                <div class="col-md-6">
-                  <p class="search-widget-title">WHERE ARE YOU GOING?</p>
-                  <select class="form-control">
-                    <option value="">HotelN Luxury Resorts</option>
-                    <option value="">Paraiso Spa Resorts & Suites</option>
-                  </select>
-                </div>
-                <div class="col-md-6 mt-3 mt-md-auto d-flex d-md-block">
-                  <input class="form-control search-widget-title pt-0 pb-3" placeholder="HAVE YOU PROMOTION CODE?" />
-                  <input class="form-control search-widget-title pt-0 pt-md-2 pb-3 ml-3 ml-md-0" placeholder="ROYALTY CARD MEMBER?" />
-                </div>
-              </div>
-            </div>
-            <div class="dates">
-              <p class="search-widget-title">DATES</p>
-              <div class="row">
-                <div class="col-6">
-                  <div class="date-input">
-                    <input id="inpCheckinDate" class="form-control mode-booking" placeholder="Check In" readonly data-prop="datepicker--single" />
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="date-input">
-                    <input id="inpCheckoutDate" class="form-control mode-booking" placeholder="Check Out" readonly data-prop="datepicker--single" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="guests">
-              <p class="search-widget-title">GUESTS</p>
-              <span class="popover-trigger has-arrow-down"> <span class="adult-count">2</span> Adults, <span class="child-count">0</span> Children </span>
-              <div class="popovers">
-                <div class="form-row">
-                  <div class="col-6">
-                    <h5 class="title font-size--md title--sans-serif-two text-center">Adults</h5>
-                    <div class="form-control-block minus-plus">
-                      <i class="fal fa-minus"></i>
-                      <input id="inpAdultCount" class="form-control" value="2" readonly data-max="12" data-related-item=".adult-count" readonly />
-                      <i class="fal fa-plus"></i>
-                    </div>
-                  </div>
-                  <div class="col-6">
-                    <h5 class="title font-size--md title--sans-serif-two text-center">Childs</h5>
-                    <div class="form-control-block minus-plus">
-                      <i class="fal fa-minus"></i>
-                      <input id="inpChildCount" class="form-control" value="0" readonly data-max="3" data-related-item=".child-count" readonly />
-                      <i class="fal fa-plus"></i>
-                    </div>
-                  </div>
-                  <div class="col-12 mt-3">
-                    <a class="d-block btn btn--green close-btn text-white">CLOSE</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="submit">
-              <a class="btn btn--green text-color-md-white"> Search </a>
-              <div class="text-center py-3 d-md-none">
-                <a class="btn btn--default text-underline text-white minimize-search">Minimize Search</a>
-              </div>
-            </div>
+    </section>
+    <section class="container pt-0">
+      <div class="row no-gutters--only-sm">
+        <div class="col-12 col-lg-8">
+          <div class="search-steps-block mb-3">
+            <ul class="search-steps">
+              <li class="search-steps-item active" data-rel="main-search_rooms">
+                <a class="search-steps-link"> ROOMS </a>
+              </li>
+              <li class="search-steps-item" data-rel="main-search_transfers">
+                <a class="search-steps-link"> TRANSFERS </a>
+              </li>
+              <li class="search-steps-item" data-rel="main-search_guests">
+                <a class="search-steps-link"> GUESTS </a>
+              </li>
+              <li class="search-steps-item">
+                <a class="search-steps-link"> CHECKOUT </a>
+              </li>
+            </ul>
           </div>
-        </div>
-      </section>
-      <section class="container pt-0">
-        <div class="row no-gutters--only-sm">
-          <div class="col-12 col-lg-8">
-            <div class="search-steps-block mb-3">
-              <ul class="search-steps">
-                <li class="search-steps-item active" data-rel="main-search_rooms">
-                  <a class="search-steps-link"> ROOMS </a>
-                </li>
-                <li class="search-steps-item" data-rel="main-search_transfers">
-                  <a class="search-steps-link"> TRANSFERS </a>
-                </li>
-                <li class="search-steps-item" data-rel="main-search_guests">
-                  <a class="search-steps-link"> GUESTS </a>
-                </li>
-                <li class="search-steps-item">
-                  <a class="search-steps-link"> CHECKOUT </a>
-                </li>
-              </ul>
-            </div>
-            <div class="main-search">
-              <!-- ROOMS BEGIN -->
-              <div class="main-search_rooms is-shown">
-                <div class="rooms-block">
-                  <div class="rooms-item">
-                    <div class="row">
-                      <div class="col-12 col-md-5 px-md-0">
-                        <div class="rooms-image-slider">
-                          <div class="rooms-image-wrapper">
-                            <div class="rooms-image-slide">
-                              <figure class="img">
-                                <img src="images/search/rooms/villa-pool.jpg" alt="villa pool" />
-                              </figure>
-                            </div>
-                            <div class="rooms-image-slide">
-                              <figure class="img">
-                                <img src="images/search/rooms/villa-pool-2.jpg" alt="villa pool" />
-                              </figure>
-                            </div>
-                            <div class="rooms-image-slide">
-                              <figure class="img">
-                                <img src="images/search/rooms/villa-pool-3.jpg" alt="villa pool" />
-                              </figure>
-                            </div>
-                            <div class="rooms-image-slide">
-                              <figure class="img">
-                                <img src="images/search/rooms/villa-pool-4.jpg" alt="villa pool" />
-                              </figure>
-                            </div>
+          <div class="main-search">
+            <!-- ROOMS BEGIN -->
+            <div class="main-search_rooms is-shown">
+              <div class="rooms-block">
+                <div class="rooms-item">
+                  <div class="row">
+                    <div class="col-12 col-md-5 px-md-0">
+                      <div class="rooms-image-slider">
+                        <div class="rooms-image-wrapper">
+                          <div class="rooms-image-slide">
+                            <figure class="img">
+                              <img src="images/search/rooms/villa-pool.jpg" alt="villa pool" />
+                            </figure>
                           </div>
-                          <div class="rooms-image-controller">
-                            <i class="fal fa-chevron-left prev"></i>
-                            <i class="fal fa-chevron-right next"></i>
+                          <div class="rooms-image-slide">
+                            <figure class="img">
+                              <img src="images/search/rooms/villa-pool-2.jpg" alt="villa pool" />
+                            </figure>
                           </div>
-                          <a class="gallery-button" data-toggle="modal" data-target="#roomDetailsModal">
-                            <i class="fal fa-images"></i>
-                          </a>
-                        </div>
-                      </div>
-                      <div class="col-12 col-md-7">
-                        <div class="rooms-content justify-content-between">
-                          <div class="form-row align-items-center">
-                            <div class="col-8">
-                              <h3 class="title title--serif">Classic Room</h3>
-                              <a class="btn btn--default font-size--xxs py-0 mt-2 text-left">Cancellation Policy</a>
-                              <a class="btn btn--default font-size--xxs py-0 mt-2 ml-3 text-left">Daily Rates</a>
-                            </div>
-                            <div class="col-4 text-right">
-                              <h4 class="title font-family--sans-serif-2 font-size--xl old-val">1029.74 €</h4>
-                              <h3 class="title font-family--sans-serif-2 font-size--3xl">813.74 €</h3>
-                            </div>
+                          <div class="rooms-image-slide">
+                            <figure class="img">
+                              <img src="images/search/rooms/villa-pool-3.jpg" alt="villa pool" />
+                            </figure>
                           </div>
-                          <div class="info-block">
-                            <span class="text-color--red"> Only two rooms left</span>
-                            <ul>
-                              <li>2 Person</li>
-                              <li>25 m<sup>2</sup></li>
-                            </ul>
-                          </div>
-                          <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, eius praesentium porro recusandae iure cum in adipisci debitis.</p>
-                          <ul class="room-facilities flexible">
-                            <li>
-                              <i class="icons air-conditioner-icon"></i>
-                              <p class="d-inline-block description font-size--xs">Air Conditioner</p>
-                            </li>
-                            <li>
-                              <i class="icons bathtub-icon"></i>
-                              <p class="d-inline-block description font-size--xs">Bathtub</p>
-                            </li>
-                            <li>
-                              <i class="icons tv-icon"></i>
-                              <p class="d-inline-block description font-size--xs">TV</p>
-                            </li>
-                            <li>
-                              <i class="icons coffee-maker-icon"></i>
-                              <p class="d-inline-block description font-size--xs">Coffee Maker</p>
-                            </li>
-                          </ul>
-                          <div class="row">
-                            <div class="col-md-6 ml-auto px-md-0"><a class="btn btn--green text-white d-block"> BOOK NOW </a></div>
+                          <div class="rooms-image-slide">
+                            <figure class="img">
+                              <img src="images/search/rooms/villa-pool-4.jpg" alt="villa pool" />
+                            </figure>
                           </div>
                         </div>
+                        <div class="rooms-image-controller">
+                          <i class="fal fa-chevron-left prev"></i>
+                          <i class="fal fa-chevron-right next"></i>
+                        </div>
+                        <a class="gallery-button" data-toggle="modal" data-target="#roomDetailsModal">
+                          <i class="fal fa-images"></i>
+                        </a>
                       </div>
                     </div>
-                  </div>
-                  <div class="rooms-item rooms-item--v2">
-                    <div class="row">
-                      <div class="col-12 col-md-5 px-md-0">
-                        <div class="rooms-image-slider">
-                          <div class="rooms-image-wrapper">
-                            <div class="rooms-image-slide">
-                              <figure class="img">
-                                <img src="images/search/rooms/villa-pool.jpg" alt="villa pool" />
-                              </figure>
-                            </div>
-                            <div class="rooms-image-slide">
-                              <figure class="img">
-                                <img src="images/search/rooms/villa-pool-2.jpg" alt="villa pool" />
-                              </figure>
-                            </div>
-                            <div class="rooms-image-slide">
-                              <figure class="img">
-                                <img src="images/search/rooms/villa-pool-3.jpg" alt="villa pool" />
-                              </figure>
-                            </div>
-                            <div class="rooms-image-slide">
-                              <figure class="img">
-                                <img src="images/search/rooms/villa-pool-4.jpg" alt="villa pool" />
-                              </figure>
-                            </div>
+                    <div class="col-12 col-md-7">
+                      <div class="rooms-content justify-content-between">
+                        <div class="form-row align-items-center">
+                          <div class="col-8">
+                            <h3 class="title title--serif">Classic Room</h3>
+                            <a class="btn btn--default font-size--xxs py-0 mt-2 text-left">Cancellation Policy</a>
+                            <a class="btn btn--default font-size--xxs py-0 mt-2 ml-3 text-left">Daily Rates</a>
                           </div>
-                          <div class="rooms-image-controller">
-                            <i class="fal fa-chevron-left prev"></i>
-                            <i class="fal fa-chevron-right next"></i>
+                          <div class="col-4 text-right">
+                            <h4 class="title font-family--sans-serif-2 font-size--xl old-val">1029.74 €</h4>
+                            <h3 class="title font-family--sans-serif-2 font-size--3xl">813.74 €</h3>
                           </div>
                         </div>
-                        <ul class="room-facilities p-4">
+                        <div class="info-block">
+                          <span class="text-color--red"> Only two rooms left</span>
+                          <ul>
+                            <li>2 Person</li>
+                            <li>25 m<sup>2</sup></li>
+                          </ul>
+                        </div>
+                        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, eius
+                          praesentium porro recusandae iure cum in adipisci debitis.</p>
+                        <ul class="room-facilities flexible">
                           <li>
                             <i class="icons air-conditioner-icon"></i>
-                            <p class="d-inline-block description font-size--xs ml-3">Air Conditioner</p>
+                            <p class="d-inline-block description font-size--xs">Air Conditioner</p>
                           </li>
                           <li>
                             <i class="icons bathtub-icon"></i>
-                            <p class="d-inline-block description font-size--xs ml-3">Bathtub</p>
+                            <p class="d-inline-block description font-size--xs">Bathtub</p>
                           </li>
                           <li>
                             <i class="icons tv-icon"></i>
-                            <p class="d-inline-block description font-size--xs ml-3">TV</p>
+                            <p class="d-inline-block description font-size--xs">TV</p>
                           </li>
                           <li>
                             <i class="icons coffee-maker-icon"></i>
-                            <p class="d-inline-block description font-size--xs ml-3">Coffee Maker</p>
+                            <p class="d-inline-block description font-size--xs">Coffee Maker</p>
                           </li>
                         </ul>
+                        <div class="row">
+                          <div class="col-md-6 ml-auto px-md-0"><a class="btn btn--green text-white d-block"> BOOK NOW
+                            </a></div>
+                        </div>
                       </div>
-                      <div class="col-12 col-md-7">
-                        <div class="rooms-content">
+                    </div>
+                  </div>
+                </div>
+                <div class="rooms-item rooms-item--v2">
+                  <div class="row">
+                    <div class="col-12 col-md-5 px-md-0">
+                      <div class="rooms-image-slider">
+                        <div class="rooms-image-wrapper">
+                          <div class="rooms-image-slide">
+                            <figure class="img">
+                              <img src="images/search/rooms/villa-pool.jpg" alt="villa pool" />
+                            </figure>
+                          </div>
+                          <div class="rooms-image-slide">
+                            <figure class="img">
+                              <img src="images/search/rooms/villa-pool-2.jpg" alt="villa pool" />
+                            </figure>
+                          </div>
+                          <div class="rooms-image-slide">
+                            <figure class="img">
+                              <img src="images/search/rooms/villa-pool-3.jpg" alt="villa pool" />
+                            </figure>
+                          </div>
+                          <div class="rooms-image-slide">
+                            <figure class="img">
+                              <img src="images/search/rooms/villa-pool-4.jpg" alt="villa pool" />
+                            </figure>
+                          </div>
+                        </div>
+                        <div class="rooms-image-controller">
+                          <i class="fal fa-chevron-left prev"></i>
+                          <i class="fal fa-chevron-right next"></i>
+                        </div>
+                      </div>
+                      <ul class="room-facilities p-4">
+                        <li>
+                          <i class="icons air-conditioner-icon"></i>
+                          <p class="d-inline-block description font-size--xs ml-3">Air Conditioner</p>
+                        </li>
+                        <li>
+                          <i class="icons bathtub-icon"></i>
+                          <p class="d-inline-block description font-size--xs ml-3">Bathtub</p>
+                        </li>
+                        <li>
+                          <i class="icons tv-icon"></i>
+                          <p class="d-inline-block description font-size--xs ml-3">TV</p>
+                        </li>
+                        <li>
+                          <i class="icons coffee-maker-icon"></i>
+                          <p class="d-inline-block description font-size--xs ml-3">Coffee Maker</p>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-12 col-md-7">
+                      <div class="rooms-content">
+                        <div class="form-row align-items-center">
+                          <div class="col-8">
+                            <h3 class="title title--serif">Classic Room</h3>
+                          </div>
+                          <div class="col-4 text-right">
+                            <a class="btn btn--default text-underline" data-toggle="modal"
+                              data-target="#roomDetailsModal"> Room Details <i class="fal fa-images"></i></a>
+                          </div>
+                        </div>
+                        <div class="info-block">
+                          <span class="text-color--red"> Only two rooms left</span>
+                          <ul>
+                            <li>2 Person</li>
+                            <li>25 m<sup>2</sup></li>
+                          </ul>
+                        </div>
+                        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, eius
+                          praesentium porro recusandae iure cum in adipisci debitis.</p>
+
+                        <div class="rate-wrapper">
+                          <div class="row">
+                            <div class="col-md">
+                              <h3 class="font-family--sans-serif-2 font-size--lg font-weight-medium">Stay Longer. One
+                                night complimentary</h3>
+                              <a class="btn btn--default font-size--xxs py-0 mt-2 text-left">Cancellation Policy</a>
+                              <a class="btn btn--default font-size--xxs py-0 mt-2 ml-3 text-left">Daily Rates</a>
+                              <p class="font-family--sans-serif-2 font-size--sm font-weight-medium mt-3"><i
+                                  class="fal fa-coffee font-size--xl"></i> Breakfast Included</p>
+                              <p class="font-family--sans-serif-2 font-size--sm mt-2"><i
+                                  class="fal fa-briefcase font-size--xl"></i> Deopsit Required</p>
+                              <p class="description font-size--xs mt-3">With our Stay Longer rates your daily price
+                                breakdown will show every sixth night as free (local taxes and fees may still be
+                                applicable on free nights) -- Rate includes extensive</p>
+                            </div>
+                            <div class="col-md-4 text-md-right mt-3 mt-md-0">
+                              <h3 class="title font-family--sans-serif-2 font-size--xl mb-2">813.74 €</h3>
+                              <p class="description mb-2">Per Night</p>
+                              <p class="description mb-3">Including Taxes & Fees</p>
+                              <a class="btn btn--green text-white d-block"> SELECT </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="rate-wrapper">
+                          <div class="row">
+                            <div class="col-md">
+                              <h3 class="font-family--sans-serif-2 font-size--lg font-weight-medium">Limited Time Offer
+                                Flexible Rate</h3>
+                              <a class="btn btn--default font-size--xxs py-0 mt-2 text-left">Cancellation Policy</a>
+                              <a class="btn btn--default font-size--xxs py-0 mt-2 ml-3 text-left">Daily Rates</a>
+                              <p class="font-family--sans-serif-2 font-size--sm mt-3"><i
+                                  class="fal fa-coffee font-size--xl"></i> Breakfast Included</p>
+                              <p class="font-family--sans-serif-2 font-size--sm mt-2"><i
+                                  class="fal fa-briefcase font-size--xl"></i> Guaranteed with Credit Card</p>
+                              <p class="description font-size--xs mt-3">Exclusive discount available for stays in July
+                                and August only. Book now and receive 15% off your stay. Rate includes extensive
+                                Breakfastt and taxes. City tax to be paid at the Hotel directly</p>
+                            </div>
+                            <div class="col-md-4 text-md-right mt-3 mt-md-0">
+                              <h4 class="title font-family--sans-serif-2 font-size--md mb-2 old-val">1024.74 €</h4>
+                              <h3 class="title font-family--sans-serif-2 font-size--xl mb-2">813.74 €</h3>
+                              <p class="description mb-2">Per Night</p>
+                              <p class="description mb-3">Including Taxes & Fees</p>
+                              <a class="btn btn--green text-white d-block"> SELECT </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="rooms-block v3">
+                <div class="rooms-item rooms-item--v3">
+                  <div class="row">
+                    <div class="col-12 px-md-0">
+                      <div class="rooms-image-slider">
+                        <div class="rooms-image-wrapper">
+                          <div class="rooms-image-slide">
+                            <figure class="img">
+                              <img src="images/search/rooms/villa-pool.jpg" alt="villa pool" />
+                            </figure>
+                          </div>
+                          <div class="rooms-image-slide">
+                            <figure class="img">
+                              <img src="images/search/rooms/villa-pool-2.jpg" alt="villa pool" />
+                            </figure>
+                          </div>
+                          <div class="rooms-image-slide">
+                            <figure class="img">
+                              <img src="images/search/rooms/villa-pool-3.jpg" alt="villa pool" />
+                            </figure>
+                          </div>
+                          <div class="rooms-image-slide">
+                            <figure class="img">
+                              <img src="images/search/rooms/villa-pool-4.jpg" alt="villa pool" />
+                            </figure>
+                          </div>
+                        </div>
+                        <div class="rooms-image-controller">
+                          <i class="fal fa-chevron-left prev"></i>
+                          <i class="fal fa-chevron-right next"></i>
+                        </div>
+                        <a class="gallery-button" data-toggle="modal" data-target="#roomDetailsModal"> <span
+                            class="font-size--xs">Room Details</span> <i class="fal fa-images"></i> </a>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="rooms-content">
+                        <div class="form-row align-items-center">
+                          <div class="col-12">
+                            <h3 class="title title--serif font-size--lg">Classic Room</h3>
+                            <p class="description font-size--xs mt-2 op-05 font-italic">Short Description</p>
+                          </div>
+                        </div>
+
+                        <div class="rate-wrapper--expandable">
                           <div class="form-row align-items-center">
                             <div class="col-8">
-                              <h3 class="title title--serif">Classic Room</h3>
+                              <p class="description font-size--xxs op-05">Başlangıç Fiyatı</p>
+                              <h3 class="title font-family--sans-serif-2 font-size--xl">813.74 €</h3>
+                            </div>
+                            <div class="col-4">
+                              <a class="btn btn--green text-white d-block"> SELECT </a>
+                            </div>
+                          </div>
+                          <div class="row mt-3 trigger-row">
+                            <div class="col-12">
+                              <a class="d-block btn view-all-btn text-center"> <i class="fal fa-search mr-2"></i> <span
+                                  class="view-text">View</span><span class="hide-text">Hide</span> All Rates</a>
+                            </div>
+                          </div>
+                          <div class="form-row align-items-center">
+                            <div class="col-8">
+                              <h3 class="font-size--sm font-family--sans-serif-2">Non Refundable Rate</h3>
+                              <a class="d-block btn btn--default font-size--xxs py-0 mt-2 text-left">Cancellation
+                                Policy</a>
+                              <a class="d-block btn btn--default font-size--xxs py-0 mt-1 text-left">Daily Rates</a>
                             </div>
                             <div class="col-4 text-right">
-                              <a class="btn btn--default text-underline" data-toggle="modal" data-target="#roomDetailsModal"> Room Details <i class="fal fa-images"></i></a>
+                              <h4 class="title font-family--sans-serif-2 font-size--md mb-2 old-val">1024.74 €</h4>
+                              <h4 class="title font-family--sans-serif-2 font-size--md">813.74.74 €</h4>
                             </div>
-                          </div>
-                          <div class="info-block">
-                            <span class="text-color--red"> Only two rooms left</span>
-                            <ul>
-                              <li>2 Person</li>
-                              <li>25 m<sup>2</sup></li>
-                            </ul>
-                          </div>
-                          <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, eius praesentium porro recusandae iure cum in adipisci debitis.</p>
-
-                          <div class="rate-wrapper">
-                            <div class="row">
-                              <div class="col-md">
-                                <h3 class="font-family--sans-serif-2 font-size--lg font-weight-medium">Stay Longer. One night complimentary</h3>
-                                <a class="btn btn--default font-size--xxs py-0 mt-2 text-left">Cancellation Policy</a>
-                                <a class="btn btn--default font-size--xxs py-0 mt-2 ml-3 text-left">Daily Rates</a>
-                                <p class="font-family--sans-serif-2 font-size--sm font-weight-medium mt-3"><i class="fal fa-coffee font-size--xl"></i> Breakfast Included</p>
-                                <p class="font-family--sans-serif-2 font-size--sm mt-2"><i class="fal fa-briefcase font-size--xl"></i> Deopsit Required</p>
-                                <p class="description font-size--xs mt-3">With our Stay Longer rates your daily price breakdown will show every sixth night as free (local taxes and fees may still be applicable on free nights) -- Rate includes extensive</p>
-                              </div>
-                              <div class="col-md-4 text-md-right mt-3 mt-md-0">
-                                <h3 class="title font-family--sans-serif-2 font-size--xl mb-2">813.74 €</h3>
-                                <p class="description mb-2">Per Night</p>
-                                <p class="description mb-3">Including Taxes & Fees</p>
-                                <a class="btn btn--green text-white d-block"> SELECT </a>
+                            <div class="col-12">
+                              <div class="discount-block">
+                                <div class="discount">
+                                  <span class="discount-box"> %23 </span>
+                                  Erk. Rez
+                                </div>
+                                <div class="discount">
+                                  <span class="discount-box"> %5 </span>
+                                  Royalty
+                                </div>
+                                <a class="btn btn--green text-white"> SELECT </a>
                               </div>
                             </div>
                           </div>
-                          <div class="rate-wrapper">
-                            <div class="row">
-                              <div class="col-md">
-                                <h3 class="font-family--sans-serif-2 font-size--lg font-weight-medium">Limited Time Offer Flexible Rate</h3>
-                                <a class="btn btn--default font-size--xxs py-0 mt-2 text-left">Cancellation Policy</a>
-                                <a class="btn btn--default font-size--xxs py-0 mt-2 ml-3 text-left">Daily Rates</a>
-                                <p class="font-family--sans-serif-2 font-size--sm mt-3"><i class="fal fa-coffee font-size--xl"></i> Breakfast Included</p>
-                                <p class="font-family--sans-serif-2 font-size--sm mt-2"><i class="fal fa-briefcase font-size--xl"></i> Guaranteed with Credit Card</p>
-                                <p class="description font-size--xs mt-3">Exclusive discount available for stays in July and August only. Book now and receive 15% off your stay. Rate includes extensive Breakfastt and taxes. City tax to be paid at the Hotel directly</p>
-                              </div>
-                              <div class="col-md-4 text-md-right mt-3 mt-md-0">
-                                <h4 class="title font-family--sans-serif-2 font-size--md mb-2 old-val">1024.74 €</h4>
-                                <h3 class="title font-family--sans-serif-2 font-size--xl mb-2">813.74 €</h3>
-                                <p class="description mb-2">Per Night</p>
-                                <p class="description mb-3">Including Taxes & Fees</p>
-                                <a class="btn btn--green text-white d-block"> SELECT </a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="rooms-block v3">
-                  <div class="rooms-item rooms-item--v3">
-                    <div class="row">
-                      <div class="col-12 px-md-0">
-                        <div class="rooms-image-slider">
-                          <div class="rooms-image-wrapper">
-                            <div class="rooms-image-slide">
-                              <figure class="img">
-                                <img src="images/search/rooms/villa-pool.jpg" alt="villa pool" />
-                              </figure>
-                            </div>
-                            <div class="rooms-image-slide">
-                              <figure class="img">
-                                <img src="images/search/rooms/villa-pool-2.jpg" alt="villa pool" />
-                              </figure>
-                            </div>
-                            <div class="rooms-image-slide">
-                              <figure class="img">
-                                <img src="images/search/rooms/villa-pool-3.jpg" alt="villa pool" />
-                              </figure>
-                            </div>
-                            <div class="rooms-image-slide">
-                              <figure class="img">
-                                <img src="images/search/rooms/villa-pool-4.jpg" alt="villa pool" />
-                              </figure>
-                            </div>
-                          </div>
-                          <div class="rooms-image-controller">
-                            <i class="fal fa-chevron-left prev"></i>
-                            <i class="fal fa-chevron-right next"></i>
-                          </div>
-                          <a class="gallery-button" data-toggle="modal" data-target="#roomDetailsModal"> <span class="font-size--xs">Room Details</span> <i class="fal fa-images"></i> </a>
-                        </div>
-                      </div>
-                      <div class="col-12">
-                        <div class="rooms-content">
                           <div class="form-row align-items-center">
+                            <div class="col-8">
+                              <h3 class="font-size--sm font-family--sans-serif-2">Best Rate With Flex. Policy</h3>
+                              <a class="d-block btn btn--default font-size--xxs py-0 mt-2 text-left">Cancellation
+                                Policy</a>
+                              <a class="d-block btn btn--default font-size--xxs py-0 mt-1 text-left">Daily Rates</a>
+                            </div>
+                            <div class="col-4 text-right">
+                              <h4 class="title font-family--sans-serif-2 font-size--md mb-2 old-val">1024.74 €</h4>
+                              <h4 class="title font-family--sans-serif-2 font-size--md">813.74.74 €</h4>
+                            </div>
                             <div class="col-12">
-                              <h3 class="title title--serif font-size--lg">Classic Room</h3>
-                              <p class="description font-size--xs mt-2 op-05 font-italic">Short Description</p>
-                            </div>
-                          </div>
-
-                          <div class="rate-wrapper--expandable">
-                            <div class="form-row align-items-center">
-                              <div class="col-8">
-                                <p class="description font-size--xxs op-05">Başlangıç Fiyatı</p>
-                                <h3 class="title font-family--sans-serif-2 font-size--xl">813.74 €</h3>
-                              </div>
-                              <div class="col-4">
-                                <a class="btn btn--green text-white d-block"> SELECT </a>
-                              </div>
-                            </div>
-                            <div class="row mt-3 trigger-row">
-                              <div class="col-12">
-                                <a class="d-block btn view-all-btn text-center"> <i class="fal fa-search mr-2"></i> <span class="view-text">View</span><span class="hide-text">Hide</span> All Rates</a>
-                              </div>
-                            </div>
-                            <div class="form-row align-items-center">
-                              <div class="col-8">
-                                <h3 class="font-size--sm font-family--sans-serif-2">Non Refundable Rate</h3>
-                                <a class="d-block btn btn--default font-size--xxs py-0 mt-2 text-left">Cancellation Policy</a>
-                                <a class="d-block btn btn--default font-size--xxs py-0 mt-1 text-left">Daily Rates</a>
-                              </div>
-                              <div class="col-4 text-right">
-                                <h4 class="title font-family--sans-serif-2 font-size--md mb-2 old-val">1024.74 €</h4>
-                                <h4 class="title font-family--sans-serif-2 font-size--md">813.74.74 €</h4>
-                              </div>
-                              <div class="col-12">
-                                <div class="discount-block">
-                                  <div class="discount">
-                                    <span class="discount-box"> %23 </span>
-                                    Erk. Rez
-                                  </div>
-                                  <div class="discount">
-                                    <span class="discount-box"> %5 </span>
-                                    Royalty
-                                  </div>
-                                  <a class="btn btn--green text-white"> SELECT </a>
+                              <div class="discount-block">
+                                <div class="discount">
+                                  <span class="discount-box"> %5 </span>
+                                  Royalty
                                 </div>
-                              </div>
-                            </div>
-                            <div class="form-row align-items-center">
-                              <div class="col-8">
-                                <h3 class="font-size--sm font-family--sans-serif-2">Best Rate With Flex. Policy</h3>
-                                <a class="d-block btn btn--default font-size--xxs py-0 mt-2 text-left">Cancellation Policy</a>
-                                <a class="d-block btn btn--default font-size--xxs py-0 mt-1 text-left">Daily Rates</a>
-                              </div>
-                              <div class="col-4 text-right">
-                                <h4 class="title font-family--sans-serif-2 font-size--md mb-2 old-val">1024.74 €</h4>
-                                <h4 class="title font-family--sans-serif-2 font-size--md">813.74.74 €</h4>
-                              </div>
-                              <div class="col-12">
-                                <div class="discount-block">
-                                  <div class="discount">
-                                    <span class="discount-box"> %5 </span>
-                                    Royalty
-                                  </div>
-                                  <a class="btn btn--green text-white"> SELECT </a>
-                                </div>
+                                <a class="btn btn--green text-white"> SELECT </a>
                               </div>
                             </div>
                           </div>
@@ -459,737 +498,786 @@
                   </div>
                 </div>
               </div>
-              <!-- ROOMS END -->
+            </div>
+            <!-- ROOMS END -->
 
-              <!-- TRANSFERS BEGIN -->
-              <div class="main-search_transfers">
-                <div class="text-underline d-flex align-items-center justify-content-between">
-                  <h4 class="font-family--serif font-size--xl py-3">SELECT TRANSFER</h4>
-                  <a class="d-inline-block btn btn--green text-white py-3 text-uppercase"> Continue Without Transfer </a>
-                </div>
+            <!-- TRANSFERS BEGIN -->
+            <div class="main-search_transfers">
+              <div class="text-underline d-flex align-items-center justify-content-between">
+                <h4 class="font-family--serif font-size--xl py-3">SELECT TRANSFER</h4>
+                <a class="d-inline-block btn btn--green text-white py-3 text-uppercase"> Continue Without Transfer </a>
+              </div>
 
-                <div class="transfer-fields-box box--primary mt-4">
-                  <div class="form-row">
-                    <div class="col-12 mb-4">
-                      <label class="font-family--sans-serif-2 font-size--lg mb-0">Arrival Transfer</label>
+              <div class="transfer-fields-box box--primary mt-4">
+                <div class="form-row">
+                  <div class="col-12 mb-4">
+                    <label class="font-family--sans-serif-2 font-size--lg mb-0">Arrival Transfer</label>
 
-                      <div class="transfer-section mt-4">
-                        <ul class="transfer-list">
-                          <li class="transfer-list-item">
-                            <div class="box--primary">
-                              <input id="inpHelicopterTransferArrival" type="radio" name="transfersArrival" />
-                              <label for="inpHelicopterTransferArrival">
-                                <figure class="img">
-                                  <img src="images/transfers/helicopter-transfer.png" />
-                                </figure>
+                    <div class="transfer-section mt-4">
+                      <ul class="transfer-list">
+                        <li class="transfer-list-item">
+                          <div class="box--primary">
+                            <input id="inpHelicopterTransferArrival" type="radio" name="transfersArrival" />
+                            <label for="inpHelicopterTransferArrival">
+                              <figure class="img">
+                                <img src="images/transfers/helicopter-transfer.png" />
+                              </figure>
 
-                                <div class="transfer-list-contents">
-                                  <h3 class="title">Helicpoter Transfer</h3>
-                                  <span class="cost">500 €</span>
-                                </div>
+                              <div class="transfer-list-contents">
+                                <h3 class="title">Helicpoter Transfer</h3>
+                                <span class="cost">500 €</span>
+                              </div>
 
-                                <span class="select-button">Select</span>
-                              </label>
-                            </div>
-                          </li>
-                          <li class="transfer-list-item">
-                            <div class="box--primary">
-                              <input id="inpVIPTransferArrival" type="radio" name="transfersArrival" />
-                              <label for="inpVIPTransferArrival">
-                                <figure class="img">
-                                  <img src="images/transfers/vip-transfer.png" />
-                                </figure>
+                              <span class="select-button">Select</span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="transfer-list-item">
+                          <div class="box--primary">
+                            <input id="inpVIPTransferArrival" type="radio" name="transfersArrival" />
+                            <label for="inpVIPTransferArrival">
+                              <figure class="img">
+                                <img src="images/transfers/vip-transfer.png" />
+                              </figure>
 
-                                <div class="transfer-list-contents">
-                                  <h3 class="title">VIP Transfer</h3>
-                                  <span class="cost">150 €</span>
-                                </div>
+                              <div class="transfer-list-contents">
+                                <h3 class="title">VIP Transfer</h3>
+                                <span class="cost">150 €</span>
+                              </div>
 
-                                <span class="select-button">Select</span>
-                              </label>
-                            </div>
-                          </li>
-                          <li class="transfer-list-item">
-                            <div class="box--primary">
-                              <input id="inpExclusiveTransferArrival" type="radio" name="transfersArrival" />
-                              <label for="inpExclusiveTransferArrival">
-                                <figure class="img">
-                                  <img src="images/transfers/exclusive-transfer.png" />
-                                </figure>
+                              <span class="select-button">Select</span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="transfer-list-item">
+                          <div class="box--primary">
+                            <input id="inpExclusiveTransferArrival" type="radio" name="transfersArrival" />
+                            <label for="inpExclusiveTransferArrival">
+                              <figure class="img">
+                                <img src="images/transfers/exclusive-transfer.png" />
+                              </figure>
 
-                                <div class="transfer-list-contents">
-                                  <h3 class="title">Exclusive Transfer</h3>
-                                  <span class="cost">100 €</span>
-                                </div>
+                              <div class="transfer-list-contents">
+                                <h3 class="title">Exclusive Transfer</h3>
+                                <span class="cost">100 €</span>
+                              </div>
 
-                                <span class="select-button">Select</span>
-                              </label>
-                            </div>
-                          </li>
-                        </ul>
+                              <span class="select-button">Select</span>
+                            </label>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="form-row mt-4">
+                      <div class="col-12 mb-3">
+                        <h3 class="font-family--sans-serif-2 font-size--lg mb-0">Please fill all fields</h3>
                       </div>
-
-                      <div class="form-row mt-4">
-                        <div class="col-12 mb-3">
-                          <h3 class="font-family--sans-serif-2 font-size--lg mb-0">Please fill all fields</h3>
-                        </div>
-                        <div class="col-md-3">
-                          <select class="form-control">
-                            <option value="">Please Select Airport</option>
-                          </select>
-                        </div>
-                        <div class="col-md-2">
-                          <select class="form-control">
-                            <option value="">Guest Count</option>
-                          </select>
-                        </div>
-                        <div class="col-md-2">
-                          <input class="form-control" type="text" placeholder="Flight Number" />
-                        </div>
-                        <div class="col-md-2">
-                          <input class="form-control" type="text" placeholder="Flight Time" />
-                        </div>
-                        <div class="col-md">
-                          <input class="form-control" type="text" placeholder="Notes" />
-                        </div>
+                      <div class="col-md-3">
+                        <select class="form-control">
+                          <option value="">Please Select Airport</option>
+                        </select>
+                      </div>
+                      <div class="col-md-2">
+                        <select class="form-control">
+                          <option value="">Guest Count</option>
+                        </select>
+                      </div>
+                      <div class="col-md-2">
+                        <input class="form-control" type="text" placeholder="Flight Number" />
+                      </div>
+                      <div class="col-md-2">
+                        <input class="form-control" type="text" placeholder="Flight Time" />
+                      </div>
+                      <div class="col-md">
+                        <input class="form-control" type="text" placeholder="Notes" />
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="transfer-fields-box box--primary mt-4">
-                  <div class="form-row">
-                    <div class="col-12 mb-4">
-                      <label class="font-family--sans-serif-2 font-size--lg mb-0">Departure Transfer</label>
+              </div>
+              <div class="transfer-fields-box box--primary mt-4">
+                <div class="form-row">
+                  <div class="col-12 mb-4">
+                    <label class="font-family--sans-serif-2 font-size--lg mb-0">Departure Transfer</label>
 
-                      <div class="transfer-section mt-4">
-                        <ul class="transfer-list">
-                          <li class="transfer-list-item">
-                            <div class="box--primary">
-                              <input id="inpHelicopterTransferDeparture" type="radio" name="transfersDeparture" />
-                              <label for="inpHelicopterTransferDeparture">
-                                <figure class="img">
-                                  <img src="images/transfers/helicopter-transfer.png" />
-                                </figure>
+                    <div class="transfer-section mt-4">
+                      <ul class="transfer-list">
+                        <li class="transfer-list-item">
+                          <div class="box--primary">
+                            <input id="inpHelicopterTransferDeparture" type="radio" name="transfersDeparture" />
+                            <label for="inpHelicopterTransferDeparture">
+                              <figure class="img">
+                                <img src="images/transfers/helicopter-transfer.png" />
+                              </figure>
 
-                                <div class="transfer-list-contents">
-                                  <h3 class="title">Helicpoter Transfer</h3>
-                                  <span class="cost">500 €</span>
-                                </div>
+                              <div class="transfer-list-contents">
+                                <h3 class="title">Helicpoter Transfer</h3>
+                                <span class="cost">500 €</span>
+                              </div>
 
-                                <span class="select-button">Select</span>
-                              </label>
-                            </div>
-                          </li>
-                          <li class="transfer-list-item">
-                            <div class="box--primary">
-                              <input id="inpVIPTransferDeparture" type="radio" name="transfersDeparture" />
-                              <label for="inpVIPTransferDeparture">
-                                <figure class="img">
-                                  <img src="images/transfers/vip-transfer.png" />
-                                </figure>
+                              <span class="select-button">Select</span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="transfer-list-item">
+                          <div class="box--primary">
+                            <input id="inpVIPTransferDeparture" type="radio" name="transfersDeparture" />
+                            <label for="inpVIPTransferDeparture">
+                              <figure class="img">
+                                <img src="images/transfers/vip-transfer.png" />
+                              </figure>
 
-                                <div class="transfer-list-contents">
-                                  <h3 class="title">VIP Transfer</h3>
-                                  <span class="cost">150 €</span>
-                                </div>
+                              <div class="transfer-list-contents">
+                                <h3 class="title">VIP Transfer</h3>
+                                <span class="cost">150 €</span>
+                              </div>
 
-                                <span class="select-button">Select</span>
-                              </label>
-                            </div>
-                          </li>
-                          <li class="transfer-list-item">
-                            <div class="box--primary">
-                              <input id="inpExclusiveTransferDeparture" type="radio" name="transfersDeparture" />
-                              <label for="inpExclusiveTransferDeparture">
-                                <figure class="img">
-                                  <img src="images/transfers/exclusive-transfer.png" />
-                                </figure>
+                              <span class="select-button">Select</span>
+                            </label>
+                          </div>
+                        </li>
+                        <li class="transfer-list-item">
+                          <div class="box--primary">
+                            <input id="inpExclusiveTransferDeparture" type="radio" name="transfersDeparture" />
+                            <label for="inpExclusiveTransferDeparture">
+                              <figure class="img">
+                                <img src="images/transfers/exclusive-transfer.png" />
+                              </figure>
 
-                                <div class="transfer-list-contents">
-                                  <h3 class="title">Exclusive Transfer</h3>
-                                  <span class="cost">100 €</span>
-                                </div>
+                              <div class="transfer-list-contents">
+                                <h3 class="title">Exclusive Transfer</h3>
+                                <span class="cost">100 €</span>
+                              </div>
 
-                                <span class="select-button">Select</span>
-                              </label>
-                            </div>
-                          </li>
-                        </ul>
+                              <span class="select-button">Select</span>
+                            </label>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="form-row mt-4">
+                      <div class="col-12 mb-3">
+                        <h3 class="font-family--sans-serif-2 font-size--lg mb-0">Please fill all fields</h3>
                       </div>
+                      <div class="col-md-3">
+                        <select class="form-control">
+                          <option value="">Please Select Airport</option>
+                        </select>
+                      </div>
+                      <div class="col-md-2">
+                        <select class="form-control">
+                          <option value="">Guest Count</option>
+                        </select>
+                      </div>
+                      <div class="col-md-2">
+                        <input class="form-control" type="text" placeholder="Flight Number" />
+                      </div>
+                      <div class="col-md-2">
+                        <input class="form-control" type="text" placeholder="Flight Time" />
+                      </div>
+                      <div class="col-md">
+                        <input class="form-control" type="text" placeholder="Notes" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- TRANSFERS END -->
 
-                      <div class="form-row mt-4">
-                        <div class="col-12 mb-3">
-                          <h3 class="font-family--sans-serif-2 font-size--lg mb-0">Please fill all fields</h3>
+            <!-- GUESTS BEGIN -->
+            <div class="main-search_guests">
+              <div class="text-underline d-flex align-items-center justify-content-between px-4 px-md-0">
+                <h4 class="font-family--serif font-size--xl py-3 text-uppercase">Reservation Contacts And Billing
+                  Information</h4>
+              </div>
+
+              <div class="search-blocks">
+                <div class="row mb-2">
+                  <div class="col-12">
+                    <div class="custom-checkbox mb-4">
+                      <input id="inpFillFieldOfAllGuests" type="checkbox" />
+                      <label for="inpFillFieldOfAllGuests">I want to fill the information of all guests. </label>
+                      <div class="search-blocks--hidden mt-3">
+                        <div class="form-row">
+                          <div class="col-12">
+                            <h4 class="font-family--sans-serif-2 font-size--lg mb-4">1. Guest Information</h4>
+                          </div>
+                          <div class="col-md-3">
+                            <select class="form-control">
+                              <option value="">Cinsiyet</option>
+                              <option value="Erkek">Erkek</option>
+                              <option value="Kadın">Kadın</option>
+                            </select>
+                          </div>
+                          <div class="col-md-3">
+                            <input id="inpGuest1Name" class="form-control" placeholder="Name" />
+                          </div>
+                          <div class="col-md-3">
+                            <input id="inpGuest1Surname" class="form-control" placeholder="Surname" />
+                          </div>
                         </div>
-                        <div class="col-md-3">
-                          <select class="form-control">
-                            <option value="">Please Select Airport</option>
-                          </select>
+                        <div class="form-row">
+                          <div class="col-12">
+                            <h4 class="font-family--sans-serif-2 font-size--lg mb-4">2. Guest Information</h4>
+                          </div>
+                          <div class="col-md-3">
+                            <select class="form-control">
+                              <option value="">Cinsiyet</option>
+                              <option value="Erkek">Erkek</option>
+                              <option value="Kadın">Kadın</option>
+                            </select>
+                          </div>
+                          <div class="col-md-3">
+                            <input id="inpGuest2Name" class="form-control" placeholder="Name" />
+                          </div>
+                          <div class="col-md-3">
+                            <input id="inpGuest2Surname" class="form-control" placeholder="Surname" />
+                          </div>
                         </div>
-                        <div class="col-md-2">
-                          <select class="form-control">
-                            <option value="">Guest Count</option>
-                          </select>
-                        </div>
-                        <div class="col-md-2">
-                          <input class="form-control" type="text" placeholder="Flight Number" />
-                        </div>
-                        <div class="col-md-2">
-                          <input class="form-control" type="text" placeholder="Flight Time" />
-                        </div>
-                        <div class="col-md">
-                          <input class="form-control" type="text" placeholder="Notes" />
+                        <div class="form-row">
+                          <div class="col-12">
+                            <h4 class="font-family--sans-serif-2 font-size--lg mb-4">1. Child Information</h4>
+                          </div>
+                          <div class="col-md-3">
+                            <select class="form-control">
+                              <option value="">Cinsiyet</option>
+                              <option value="Erkek">Erkek</option>
+                              <option value="Kadın">Kadın</option>
+                            </select>
+                          </div>
+                          <div class="col-md-3">
+                            <input id="inpChild1Name" class="form-control" placeholder="Name" />
+                          </div>
+                          <div class="col-md-3">
+                            <input id="inpChild1Surname" class="form-control" placeholder="Surname" />
+                          </div>
+                          <div class="col-md-3">
+                            <select id="inpChild1Age" class="form-control">
+                              <option value="">1. Child Age</option>
+                            </select>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <!-- TRANSFERS END -->
 
-              <!-- GUESTS BEGIN -->
-              <div class="main-search_guests">
-                <div class="text-underline d-flex align-items-center justify-content-between px-4 px-md-0">
-                  <h4 class="font-family--serif font-size--xl py-3 text-uppercase">Reservation Contacts And Billing Information</h4>
+              <div class="search-blocks">
+                <div class="row">
+                  <div class="col-12">
+                    <p class="description">Please enter the information to be contacted about the bookings for fast
+                      check-in.</p>
+                  </div>
                 </div>
-
-                <div class="search-blocks">
-                  <div class="row mb-2">
-                    <div class="col-12">
-                      <div class="custom-checkbox mb-4">
-                        <input id="inpFillFieldOfAllGuests" type="checkbox" />
-                        <label for="inpFillFieldOfAllGuests">I want to fill the information of all guests. </label>
-                        <div class="search-blocks--hidden mt-3">
-                          <div class="form-row">
-                            <div class="col-12">
-                              <h4 class="font-family--sans-serif-2 font-size--lg mb-4">1. Guest Information</h4>
-                            </div>
-                            <div class="col-md-3">
-                              <select class="form-control">
-                                <option value="">Cinsiyet</option>
-                                <option value="Erkek">Erkek</option>
-                                <option value="Kadın">Kadın</option>
-                              </select>
-                            </div>
-                            <div class="col-md-3">
-                              <input id="inpGuest1Name" class="form-control" placeholder="Name" />
-                            </div>
-                            <div class="col-md-3">
-                              <input id="inpGuest1Surname" class="form-control" placeholder="Surname" />
-                            </div>
-                          </div>
-                          <div class="form-row">
-                            <div class="col-12">
-                              <h4 class="font-family--sans-serif-2 font-size--lg mb-4">2. Guest Information</h4>
-                            </div>
-                            <div class="col-md-3">
-                              <select class="form-control">
-                                <option value="">Cinsiyet</option>
-                                <option value="Erkek">Erkek</option>
-                                <option value="Kadın">Kadın</option>
-                              </select>
-                            </div>
-                            <div class="col-md-3">
-                              <input id="inpGuest2Name" class="form-control" placeholder="Name" />
-                            </div>
-                            <div class="col-md-3">
-                              <input id="inpGuest2Surname" class="form-control" placeholder="Surname" />
-                            </div>
-                          </div>
-                          <div class="form-row">
-                            <div class="col-12">
-                              <h4 class="font-family--sans-serif-2 font-size--lg mb-4">1. Child Information</h4>
-                            </div>
-                            <div class="col-md-3">
-                              <select class="form-control">
-                                <option value="">Cinsiyet</option>
-                                <option value="Erkek">Erkek</option>
-                                <option value="Kadın">Kadın</option>
-                              </select>
-                            </div>
-                            <div class="col-md-3">
-                              <input id="inpChild1Name" class="form-control" placeholder="Name" />
-                            </div>
-                            <div class="col-md-3">
-                              <input id="inpChild1Surname" class="form-control" placeholder="Surname" />
-                            </div>
-                            <div class="col-md-3">
-                              <select id="inpChild1Age" class="form-control">
-                                <option value="">1. Child Age</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
+                <div class="form-row">
+                  <div class="col-md-3">
+                    <input id="inpName" class="form-control" placeholder="Name" />
+                  </div>
+                  <div class="col-md-3">
+                    <input id="inpSurname" class="form-control" placeholder="Surname" />
+                  </div>
+                  <div class="col-md-6">
+                    <input id="inpEmail" class="form-control" placeholder="E-mail" />
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-md-3">
+                    <select class="form-control">
+                      <option value="">Select Country</option>
+                    </select>
+                  </div>
+                  <div class="col-md-3">
+                    <input id="inpPassportNo" class="form-control" placeholder="Passport No" />
+                  </div>
+                  <div class="col-md-6">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <select class="form-control">
+                          <option value="+90">+90</option>
+                        </select>
                       </div>
+                      <input type="text" class="form-control" placeholder="XXX XX XX" />
                     </div>
                   </div>
                 </div>
+                <div class="form-row">
+                  <div class="col-md-6">
+                    <textarea id="txtReservationNote" rows="5" class="form-control"
+                      placeholder="Reservation Note"></textarea>
+                  </div>
+                  <div class="col-md-6">
+                    <textarea id="txtAddress" rows="5" class="form-control" placeholder="Address"></textarea>
+                  </div>
+                </div>
 
-                <div class="search-blocks">
-                  <div class="row">
-                    <div class="col-12">
-                      <p class="description">Please enter the information to be contacted about the bookings for fast check-in.</p>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="custom-checkbox">
+                      <input id="inpDiffBillingDetails" type="checkbox" />
+                      <label for="inpDiffBillingDetails"> My billing details are not the above. </label>
                     </div>
-                  </div>
-                  <div class="form-row">
-                    <div class="col-md-3">
-                      <input id="inpName" class="form-control" placeholder="Name" />
-                    </div>
-                    <div class="col-md-3">
-                      <input id="inpSurname" class="form-control" placeholder="Surname" />
-                    </div>
-                    <div class="col-md-6">
-                      <input id="inpEmail" class="form-control" placeholder="E-mail" />
-                    </div>
-                  </div>
-                  <div class="form-row">
-                    <div class="col-md-3">
-                      <select class="form-control">
-                        <option value="">Select Country</option>
-                      </select>
-                    </div>
-                    <div class="col-md-3">
-                      <input id="inpPassportNo" class="form-control" placeholder="Passport No" />
-                    </div>
-                    <div class="col-md-6">
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <select class="form-control">
-                            <option value="+90">+90</option>
-                          </select>
-                        </div>
-                        <input type="text" class="form-control" placeholder="XXX XX XX" />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-row">
-                    <div class="col-md-6">
-                      <textarea id="txtReservationNote" rows="5" class="form-control" placeholder="Reservation Note"></textarea>
-                    </div>
-                    <div class="col-md-6">
-                      <textarea id="txtAddress" rows="5" class="form-control" placeholder="Address"></textarea>
-                    </div>
-                  </div>
 
-                  <div class="row">
-                    <div class="col-12">
-                      <div class="custom-checkbox">
-                        <input id="inpDiffBillingDetails" type="checkbox" />
-                        <label for="inpDiffBillingDetails"> My billing details are not the above. </label>
-                      </div>
-
-                      <div class="custom-checkbox">
-                        <input id="inpCheckAgreement" type="checkbox" />
-                        <label for="inpCheckAgreement">I have read the <a class="text-underline">Personal Data Protection</a> and <a class="text-underline">Privacy Policy</a>. </label>
-                      </div>
+                    <div class="custom-checkbox">
+                      <input id="inpCheckAgreement" type="checkbox" />
+                      <label for="inpCheckAgreement">I have read the <a class="text-underline">Personal Data
+                          Protection</a> and <a class="text-underline">Privacy Policy</a>. </label>
                     </div>
                   </div>
                 </div>
               </div>
-              <!-- GUESTS END -->
+            </div>
+            <!-- GUESTS END -->
 
-              <!-- CHECKOUT BEGIN -->
-              <div class="main-search_checkout">
-                <div class="text-underline d-flex align-items-center justify-content-between px-4 px-md-0">
-                  <h4 class="font-family--serif font-size--xl py-3 text-uppercase">CHECKOUT</h4>
-                </div>
+            <!-- CHECKOUT BEGIN -->
+            <div class="main-search_checkout">
+              <div class="text-underline d-flex align-items-center justify-content-between px-4 px-md-0">
+                <h4 class="font-family--serif font-size--xl py-3 text-uppercase">CHECKOUT</h4>
+              </div>
 
-                <div class="search-blocks">
-                  <ul class="checkout-tabs">
-                    <li class="active" data-rel=".credit-card">
-                      <div class="custom-radio">
-                        <input type="radio" id="inpCreditCard" name="checkout" checked />
-                        <label for="inpCreditCard"><i class="icons credit-card-icon mr-2"></i>KREDİ KARTI</label>
+              <div class="search-blocks">
+                <ul class="checkout-tabs">
+                  <li class="active" data-rel=".credit-card">
+                    <div class="custom-radio">
+                      <input type="radio" id="inpCreditCard" name="checkout" checked />
+                      <label for="inpCreditCard"><i class="icons credit-card-icon mr-2"></i>KREDİ KARTI</label>
+                    </div>
+                  </li>
+                  <li data-rel=".money-order">
+                    <div class="custom-radio">
+                      <input type="radio" id="inpMoneyOrder" name="checkout" />
+                      <label for="inpMoneyOrder"><i class="icons money-order-icon mr-2"></i>HAVALE</label>
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="checkout-tabs-content">
+                  <div class="credit-card is-shown">
+                    <div class="form-row">
+                      <div class="col-md-6"></div>
+                      <div class="col-md-6">
+                        <h4 class="font-family--sans-serif-2 font-size--lg mb-3">Reservation Cost</h4>
                       </div>
-                    </li>
-                    <li data-rel=".money-order">
-                      <div class="custom-radio">
-                        <input type="radio" id="inpMoneyOrder" name="checkout" />
-                        <label for="inpMoneyOrder"><i class="icons money-order-icon mr-2"></i>HAVALE</label>
-                      </div>
-                    </li>
-                  </ul>
-
-                  <div class="checkout-tabs-content">
-                    <div class="credit-card is-shown">
-                      <div class="form-row">
-                        <div class="col-md-6"></div>
-                        <div class="col-md-6">
-                          <h4 class="font-family--sans-serif-2 font-size--lg mb-3">Reservation Cost</h4>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-row">
-                            <div class="col-12">
-                              <select class="form-control">
-                                <option value="">Bonus</option>
-                              </select>
-                            </div>
-                          </div>
-                          <div class="form-row">
-                            <div class="col-12">
-                              <input class="form-control" placeholder="Kart Numarası" />
-                            </div>
-                          </div>
-                          <div class="form-row">
-                            <div class="col-12">
-                              <input class="form-control" placeholder="Kartın Üzerinde Yazan İsim Soyisim" />
-                            </div>
-                          </div>
-                          <div class="form-row">
-                            <div class="col-4">
-                              <select class="form-control">
-                                <option value="">Ay</option>
-                              </select>
-                            </div>
-                            <div class="col-4 mt-0">
-                              <select class="form-control">
-                                <option value="">Yıl</option>
-                              </select>
-                            </div>
-                            <div class="col-4 mt-0">
-                              <input class="form-control" placeholder="CVV" />
-                            </div>
+                      <div class="col-md-6">
+                        <div class="form-row">
+                          <div class="col-12">
+                            <select class="form-control">
+                              <option value="">Bonus</option>
+                            </select>
                           </div>
                         </div>
-                        <div class="col-md-6">
-                          <div class="tbl">
-                            <div class="hire-row">
-                              <input id="inpHire1" type="radio" name="hires" checked />
-                              <label for="inpHire1">
-                                <div class="row">
-                                  <div class="col">Tek Çekim</div>
-                                  <div class="col text-center">21.546</div>
-                                  <div class="col text-right font-weight-bold">21.546</div>
-                                </div>
-                              </label>
-                            </div>
-                            <div class="hire-row">
-                              <input id="inpHire2" type="radio" name="hires" />
-                              <label for="inpHire2">
-                                <div class="row">
-                                  <div class="col">2 Taksit</div>
-                                  <div class="col text-center">8.973</div>
-                                  <div class="col text-right font-weight-bold">21.546</div>
-                                </div>
-                              </label>
-                            </div>
-                            <div class="hire-row">
-                              <input id="inpHire3" type="radio" name="hires" />
-                              <label for="inpHire3">
-                                <div class="row">
-                                  <div class="col">6 Taksit</div>
-                                  <div class="col text-center">5.797</div>
-                                  <div class="col text-right font-weight-bold">21.546</div>
-                                </div>
-                              </label>
-                            </div>
-                            <div class="hire-row">
-                              <input id="inpHire4" type="radio" name="hires" />
-                              <label for="inpHire4">
-                                <div class="row">
-                                  <div class="col">9 Taksit</div>
-                                  <div class="col text-center">4.789</div>
-                                  <div class="col text-right font-weight-bold">21.546</div>
-                                </div>
-                              </label>
-                            </div>
+                        <div class="form-row">
+                          <div class="col-12">
+                            <input class="form-control" placeholder="Kart Numarası" />
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="col-12">
+                            <input class="form-control" placeholder="Kartın Üzerinde Yazan İsim Soyisim" />
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="col-4">
+                            <select class="form-control">
+                              <option value="">Ay</option>
+                            </select>
+                          </div>
+                          <div class="col-4 mt-0">
+                            <select class="form-control">
+                              <option value="">Yıl</option>
+                            </select>
+                          </div>
+                          <div class="col-4 mt-0">
+                            <input class="form-control" placeholder="CVV" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="tbl">
+                          <div class="hire-row">
+                            <input id="inpHire1" type="radio" name="hires" checked />
+                            <label for="inpHire1">
+                              <div class="row">
+                                <div class="col">Tek Çekim</div>
+                                <div class="col text-center">21.546</div>
+                                <div class="col text-right font-weight-bold">21.546</div>
+                              </div>
+                            </label>
+                          </div>
+                          <div class="hire-row">
+                            <input id="inpHire2" type="radio" name="hires" />
+                            <label for="inpHire2">
+                              <div class="row">
+                                <div class="col">2 Taksit</div>
+                                <div class="col text-center">8.973</div>
+                                <div class="col text-right font-weight-bold">21.546</div>
+                              </div>
+                            </label>
+                          </div>
+                          <div class="hire-row">
+                            <input id="inpHire3" type="radio" name="hires" />
+                            <label for="inpHire3">
+                              <div class="row">
+                                <div class="col">6 Taksit</div>
+                                <div class="col text-center">5.797</div>
+                                <div class="col text-right font-weight-bold">21.546</div>
+                              </div>
+                            </label>
+                          </div>
+                          <div class="hire-row">
+                            <input id="inpHire4" type="radio" name="hires" />
+                            <label for="inpHire4">
+                              <div class="row">
+                                <div class="col">9 Taksit</div>
+                                <div class="col text-center">4.789</div>
+                                <div class="col text-right font-weight-bold">21.546</div>
+                              </div>
+                            </label>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="money-order">
-                      <div class="row mt-5">
-                        <div class="col-12">
-                          <div class="box--primary">
-                            <h4 class="font-family--sans-serif-2 font-size--lg">IMPORTANT NOTE!</h4>
-                            <p class="description mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores eveniet error amet suscipit similique ducimus, fugiat vel ipsa fuga odio inventore non neque doloribus ipsum dolorem, officia culpa qui perspiciatis?</p>
-                            <p class="description mt-4">Maiores eveniet error amet suscipit similique ducimus, fugiat vel ipsa fuga odio inventore non neque doloribus ipsum dolorem?</p>
-                            <p class="description mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores eveniet error amet suscipit similique ducimus, fugiat vel ipsa fuga odio inventore non neque doloribus ipsum dolorem, officia culpa qui perspiciatis?</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row mt-5">
-                        <div class="col-md-6">
-                          <div class="box--primary">
-                            <div class="custom-radio">
-                              <input type="radio" id="inpMoneyOrder1" name="money-order" checked />
-                              <label for="inpMoneyOrder1">
-                                <h4 class="font-weight-bold font-family--sans-serif-2">Finansbank Kurumsal</h4>
-                                <p class="description font-size--sm mt-3">
-                                  Hesap No: 413 - 6299538<br />
-                                  IBAN : TR24 0006 2000 4130 0006 2995 38<br />
-                                  Swift Code : TGBATRISXXX
-                                </p>
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="box--primary">
-                            <div class="custom-radio">
-                              <input type="radio" id="inpMoneyOrder2" name="money-order" checked />
-                              <label for="inpMoneyOrder2">
-                                <h4 class="font-weight-bold font-family--sans-serif-2">Türk Ekonomi Bankası - Trakya Kurumsal</h4>
-                                <p class="description font-size--sm mt-3">
-                                  Hesap No: 413 - 6299538<br />
-                                  IBAN : TR24 0006 2000 4130 0006 2995 38<br />
-                                  Swift Code : TGBATRISXXX
-                                </p>
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="box--primary">
-                            <div class="custom-radio">
-                              <input type="radio" id="inpMoneyOrder3" name="money-order" checked />
-                              <label for="inpMoneyOrder3">
-                                <h4 class="font-weight-bold font-family--sans-serif-2">Garanti Bankası Kurumsal</h4>
-                                <p class="description font-size--sm mt-3">
-                                  Hesap No: 413 - 6299538<br />
-                                  IBAN : TR24 0006 2000 4130 0006 2995 38<br />
-                                  Swift Code : TGBATRISXXX
-                                </p>
-                              </label>
-                            </div>
-                          </div>
+                  </div>
+                  <div class="money-order">
+                    <div class="row mt-5">
+                      <div class="col-12">
+                        <div class="box--primary">
+                          <h4 class="font-family--sans-serif-2 font-size--lg">IMPORTANT NOTE!</h4>
+                          <p class="description mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+                            eveniet error amet suscipit similique ducimus, fugiat vel ipsa fuga odio inventore non neque
+                            doloribus ipsum dolorem, officia culpa qui perspiciatis?</p>
+                          <p class="description mt-4">Maiores eveniet error amet suscipit similique ducimus, fugiat vel
+                            ipsa fuga odio inventore non neque doloribus ipsum dolorem?</p>
+                          <p class="description mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+                            eveniet error amet suscipit similique ducimus, fugiat vel ipsa fuga odio inventore non neque
+                            doloribus ipsum dolorem, officia culpa qui perspiciatis?</p>
                         </div>
                       </div>
                     </div>
                     <div class="row mt-5">
-                      <div class="col-12">
-                        <div class="custom-checkbox">
-                          <input id="inpCheckAgreement2" type="checkbox" />
-                          <label for="inpCheckAgreement2"><a class="text-underline">Online Sales Agreement</a> read and commit.</label>
-                        </div>
-                        <div class="custom-checkbox">
-                          <input id="inpInfo" type="checkbox" />
-                          <label for="inpInfo">Inform me about offers and promotions detailed information.</label>
+                      <div class="col-md-6">
+                        <div class="box--primary">
+                          <div class="custom-radio">
+                            <input type="radio" id="inpMoneyOrder1" name="money-order" checked />
+                            <label for="inpMoneyOrder1">
+                              <h4 class="font-weight-bold font-family--sans-serif-2">Finansbank Kurumsal</h4>
+                              <p class="description font-size--sm mt-3">
+                                Hesap No: 413 - 6299538<br />
+                                IBAN : TR24 0006 2000 4130 0006 2995 38<br />
+                                Swift Code : TGBATRISXXX
+                              </p>
+                            </label>
+                          </div>
                         </div>
                       </div>
-                      <div class="col-12 mt-4">
-                        <textarea id="txtReservationNote" class="form-control" rows="5" placeholder="Reservation Note"></textarea>
+                      <div class="col-md-6">
+                        <div class="box--primary">
+                          <div class="custom-radio">
+                            <input type="radio" id="inpMoneyOrder2" name="money-order" checked />
+                            <label for="inpMoneyOrder2">
+                              <h4 class="font-weight-bold font-family--sans-serif-2">Türk Ekonomi Bankası - Trakya
+                                Kurumsal</h4>
+                              <p class="description font-size--sm mt-3">
+                                Hesap No: 413 - 6299538<br />
+                                IBAN : TR24 0006 2000 4130 0006 2995 38<br />
+                                Swift Code : TGBATRISXXX
+                              </p>
+                            </label>
+                          </div>
+                        </div>
                       </div>
+                      <div class="col-md-6">
+                        <div class="box--primary">
+                          <div class="custom-radio">
+                            <input type="radio" id="inpMoneyOrder3" name="money-order" checked />
+                            <label for="inpMoneyOrder3">
+                              <h4 class="font-weight-bold font-family--sans-serif-2">Garanti Bankası Kurumsal</h4>
+                              <p class="description font-size--sm mt-3">
+                                Hesap No: 413 - 6299538<br />
+                                IBAN : TR24 0006 2000 4130 0006 2995 38<br />
+                                Swift Code : TGBATRISXXX
+                              </p>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mt-5">
+                    <div class="col-12">
+                      <div class="custom-checkbox">
+                        <input id="inpCheckAgreement2" type="checkbox" />
+                        <label for="inpCheckAgreement2"><a class="text-underline">Online Sales Agreement</a> read and
+                          commit.</label>
+                      </div>
+                      <div class="custom-checkbox">
+                        <input id="inpInfo" type="checkbox" />
+                        <label for="inpInfo">Inform me about offers and promotions detailed information.</label>
+                      </div>
+                    </div>
+                    <div class="col-12 mt-4">
+                      <textarea id="txtReservationNote" class="form-control" rows="5"
+                        placeholder="Reservation Note"></textarea>
                     </div>
                   </div>
                 </div>
               </div>
-              <!-- CHECKOUT END -->
             </div>
-          </div>
-          <div class="col-12 col-lg-4">
-            <div class="reservation-summary">
-              <div class="reservation-summary-block">
-                <div class="row">
-                  <div class="col-12 mb-5">
-                    <h4 class="title title--serif font-size--2xl">Reservation</h4>
-                  </div>
-                  <div class="col-6">
-                    <h4 class="font-family--sans-serif-2 font-size--lg font-weight-medium">Check-in</h4>
-                    <p class="description font-size--md">21 Mon 2020</p>
-                    <p class="description font-italic">After 02:00 PM</p>
-                  </div>
-                  <div class="col-6">
-                    <h4 class="font-family--sans-serif-2 font-size--lg font-weight-medium">Check-out</h4>
-                    <p class="description font-size--md">28 Mon 2020</p>
-                    <p class="description font-italic">Before 12:00 PM</p>
-                  </div>
-                  <div class="col-12 mt-3 text-right">
-                    <a href="#" class="btn btn--default font-size--xs font-weight-bold"><i class="edit-icon"></i> Edit Stay Dates </a>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-12">
-                    <p class="description font-size--md">2 Adults + 1 Child + 1 Baby</p>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col">
-                    <a href="#room-link" class="btn btn--default">
-                      <h4 class="font-family--sans-serif-2 font-size--lg font-weight-medium">Clasic Room</h4>
-                    </a>
-                    <p class="description font-italic">Clasic Room Description!</p>
-                  </div>
-                  <div class="col-auto">
-                    <h4 class="font-family--sans-serif-2 font-size--lg font-weight-medium">813.74 €</h4>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-12">
-                    <h4 class="font-family--sans-serif-2 font-size--lg font-weight-medium">Transfers</h4>
-                  </div>
-                  <div class="col-9 mt-3">
-                    <p class="description d-inline-block">Arrival Transfer</p>
-                    <a href="#" class="btn btn--default font-size--xs font-weight-bold"> <i class="remove-icon"></i></a>
-                  </div>
-                  <div class="col-3 text-right">
-                    <h4 class="font-family--sans-serif-2 font-size--lg font-weight-medium">20 €</h4>
-                  </div>
-                  <div class="col-9 mt-3">
-                    <p class="description d-inline-block">Departure Transfer</p>
-                    <a href="#" class="btn btn--default font-size--xs font-weight-bold"> <i class="remove-icon"></i></a>
-                  </div>
-                  <div class="col-3 text-right">
-                    <h4 class="font-family--sans-serif-2 font-size--lg font-weight-medium">20 €</h4>
-                  </div>
-                  <div class="col-12 mt-3 text-right">
-                    <a href="#" class="btn btn--default font-size--xs text-underline font-weight-bold"><i class="edit-icon"></i> Edit Transfer </a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row align-items-center mt-lg-4" res-trigger>
-                <div class="col-7">
-                  <i class="fal fa-angle-up d-lg-none font-size--huge mr-3"></i>
-                  <p class="font-family--sans-serif-2 font-size--2xl d-inline-block">Toplam</p>
-                  <h4 class="font-family--sans-serif-2 font-size--huge font-weight-medium">2000 €</h4>
-                </div>
-                <div class="col-5 px-0 px-lg-3">
-                  <a class="btn btn--green continue-button"><span>CONTINUE BOOK</span></a>
-                </div>
-              </div>
-            </div>
+            <!-- CHECKOUT END -->
           </div>
         </div>
-      </section>
-    </main>
-    <footer class="footer">
-      <div class="container-fluid px-0">
-        <div class="row no-gutters">
-          <div class="col-md-3 d-none d-md-block text-center">
-            <h4 class="title--big font-family--avant-garde">SITEMAP</h4>
-
-            <a class="d-block font-size--3xl py-5">
-              <i class="fal fa-sitemap"></i>
-            </a>
-          </div>
-          <div class="col-12 col-md-2">
-            <h4 class="title font-family--serif text-center">Follow Us</h4>
-            <ul class="social-list mt-5">
-              <li class="social-list-item">
-                <a class="social-list-link">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </li>
-              <li class="social-list-item">
-                <a class="social-list-link">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li class="social-list-item">
-                <a class="social-list-link">
-                  <i class="fab fa-instagram"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-12 col-md order-md-4">
-            <div class="footer-brand">
-              <a class="brand">
-                <img src="images/hotel-brand.svg" alt="" srcset="" />
-              </a>
+        <div class="col-12 col-lg-4">
+          <div class="reservation-summary">
+            <div class="reservation-summary-block">
+              <div class="row">
+                <div class="col-12 mb-5">
+                  <h4 class="title title--serif font-size--2xl">Reservation</h4>
+                </div>
+                <div class="col-6">
+                  <h4 class="font-family--sans-serif-2 font-size--lg font-weight-medium">Check-in</h4>
+                  <p class="description font-size--md">21 Mon 2020</p>
+                  <p class="description font-italic">After 02:00 PM</p>
+                </div>
+                <div class="col-6">
+                  <h4 class="font-family--sans-serif-2 font-size--lg font-weight-medium">Check-out</h4>
+                  <p class="description font-size--md">28 Mon 2020</p>
+                  <p class="description font-italic">Before 12:00 PM</p>
+                </div>
+                <div class="col-12 mt-3 text-right">
+                  <a href="#" class="btn btn--default font-size--xs font-weight-bold"><i class="edit-icon"></i> Edit
+                    Stay Dates </a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <p class="description font-size--md">2 Adults + 1 Child + 1 Baby</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <a href="#room-link" class="btn btn--default">
+                    <h4 class="font-family--sans-serif-2 font-size--lg font-weight-medium">Clasic Room</h4>
+                  </a>
+                  <p class="description font-italic">Clasic Room Description!</p>
+                </div>
+                <div class="col-auto">
+                  <h4 class="font-family--sans-serif-2 font-size--lg font-weight-medium">813.74 €</h4>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <h4 class="font-family--sans-serif-2 font-size--lg font-weight-medium">Transfers</h4>
+                </div>
+                <div class="col-9 mt-3">
+                  <p class="description d-inline-block">Arrival Transfer</p>
+                  <a href="#" class="btn btn--default font-size--xs font-weight-bold"> <i class="remove-icon"></i></a>
+                </div>
+                <div class="col-3 text-right">
+                  <h4 class="font-family--sans-serif-2 font-size--lg font-weight-medium">20 €</h4>
+                </div>
+                <div class="col-9 mt-3">
+                  <p class="description d-inline-block">Departure Transfer</p>
+                  <a href="#" class="btn btn--default font-size--xs font-weight-bold"> <i class="remove-icon"></i></a>
+                </div>
+                <div class="col-3 text-right">
+                  <h4 class="font-family--sans-serif-2 font-size--lg font-weight-medium">20 €</h4>
+                </div>
+                <div class="col-12 mt-3 text-right">
+                  <a href="#" class="btn btn--default font-size--xs text-underline font-weight-bold"><i
+                      class="edit-icon"></i> Edit Transfer </a>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="col-12 col-md-2">
-            <div class="footer-address">
-              <p class="footer-address-desc">Kemer Lorem Sokak, 5A</p>
-              <p class="footer-address-desc">07070 Antalya</p>
-              <p class="footer-address-desc">TURKIYE</p>
-              <a class="footer-address-phone"> tel: +90 242 00 00 00 </a>
-              <a class="footer-address-phone"> fax: +90 242 00 00 01 </a>
+
+            <div class="row align-items-center mt-lg-4" res-trigger>
+              <div class="col-7">
+                <i class="fal fa-angle-up d-lg-none font-size--huge mr-3"></i>
+                <p class="font-family--sans-serif-2 font-size--2xl d-inline-block">Toplam</p>
+                <h4 class="font-family--sans-serif-2 font-size--huge font-weight-medium">2000 €</h4>
+              </div>
+              <div class="col-5 px-0 px-lg-3">
+                <a class="btn btn--green continue-button"><span>CONTINUE BOOK</span></a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </footer>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container-fluid px-0">
+      <div class="row no-gutters">
+        <div class="col-md-3 d-none d-md-block text-center">
+          <h4 class="title--big font-family--avant-garde">SITEMAP</h4>
 
-    <!-- Room Details Modal -->
-    <div class="modal modal--room-details fade" id="roomDetailsModal" tabindex="-1" aria-labelledby="roomDetailsModal" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <i class="fal fa-times font-size--3xl"></i>
-            </button>
+          <a class="d-block font-size--3xl py-5">
+            <i class="fal fa-sitemap"></i>
+          </a>
+        </div>
+        <div class="col-12 col-md-2">
+          <h4 class="title font-family--serif text-center">Follow Us</h4>
+          <ul class="social-list mt-5">
+            <li class="social-list-item">
+              <a class="social-list-link">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="social-list-item">
+              <a class="social-list-link">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="social-list-item">
+              <a class="social-list-link">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-12 col-md order-md-4">
+          <div class="footer-brand">
+            <a class="brand">
+              <img src="images/hotel-brand.svg" alt="" srcset="" />
+            </a>
           </div>
-          <div class="modal-body">
-            <div class="row justify-content-center">
-              <div class="col-12">
-                <div class="rooms-image-slider modal-slider wide">
-                  <div class="rooms-image-wrapper">
-                    <div class="rooms-image-slide">
-                      <figure class="img">
-                        <img src="images/search/rooms/villa-pool@2x.jpg" alt="villa pool" />
-                      </figure>
-                    </div>
-                    <div class="rooms-image-slide">
-                      <figure class="img">
-                        <img src="images/search/rooms/villa-pool-2@2x.jpg" alt="villa pool" />
-                      </figure>
-                    </div>
-                    <div class="rooms-image-slide">
-                      <figure class="img">
-                        <img src="images/search/rooms/villa-pool-3@2x.jpg" alt="villa pool" />
-                      </figure>
-                    </div>
-                    <div class="rooms-image-slide">
-                      <figure class="img">
-                        <img src="images/search/rooms/villa-pool-4@2x.jpg" alt="villa pool" />
-                      </figure>
-                    </div>
-                  </div>
-                  <div class="rooms-image-controller">
-                    <i class="fal fa-chevron-left prev"></i>
-                    <i class="fal fa-chevron-right next"></i>
-                  </div>
+        </div>
+        <div class="col-12 col-md-2">
+          <div class="footer-address">
+            <p class="footer-address-desc">Kemer Lorem Sokak, 5A</p>
+            <p class="footer-address-desc">07070 Antalya</p>
+            <p class="footer-address-desc">TURKIYE</p>
+            <a class="footer-address-phone"> tel: +90 242 00 00 00 </a>
+            <a class="footer-address-phone"> fax: +90 242 00 00 01 </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal fade" id="LoyaltyModal" tabindex="-1" aria-labelledby="roomDetailsModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header flex-column justify-content-center">
+          <h2 class="title title--serif font-size--2xl mx-auto" data-item-id="roomTitle">Loyaly Card</h2>
+          <p class="description font-size--xs mx-auto">ayrıcalıklarını yaşayın</p>
+
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i class="fal fa-times font-size--3xl"></i>
+          </button>
+        </div>
+        <div class="modal-body pb-5">
+          <div class="row justify-content-center">
+            <div class="col-md-5">
+              <h4 class="font-family--sans-serif-2 font-size--sm mb-4">
+                Kart numaranızı giriniz
+              </h4>
+              <div class="input-group">
+                <input id="inpLoyaltyCard" class="form-control" placeholder="Loyalty Card Number">
+                <div class="input-group-append">
+                  <a class="btn btn--green p-3 font-size--xs text-white">Sorgula</a>
                 </div>
-              </div>
-              <div class="col-lg-8 contents text-center">
-                <h2 class="title title--serif font-size--2xl" data-item-id="roomTitle">Classic Room</h2>
-                <ul class="room-prop-list justify-content-center">
-                  <li>2 Person</li>
-                  <li>25 m<sup>2</sup></li>
-                </ul>
-                <ul class="room-facilities flexible p-4">
-                  <li>
-                    <i class="icons air-conditioner-icon"></i>
-                    <p class="d-inline-block description font-size--xs">Air Conditioner</p>
-                  </li>
-                  <li>
-                    <i class="icons bathtub-icon"></i>
-                    <p class="d-inline-block description font-size--xs">Bathtub</p>
-                  </li>
-                  <li>
-                    <i class="icons tv-icon"></i>
-                    <p class="d-inline-block description font-size--xs">TV</p>
-                  </li>
-                  <li>
-                    <i class="icons coffee-maker-icon"></i>
-                    <p class="d-inline-block description font-size--xs">Coffee Maker</p>
-                  </li>
-                  <li>
-                    <i class="icons wifi-icon"></i>
-                    <p class="d-inline-block description font-size--xs">Wifi</p>
-                  </li>
-                </ul>
-                <p class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi ipsa nesciunt ipsam molestias, et debitis. Magni consequuntur numquam in assumenda officia ad sint! Ad quia officia aliquam exercitationem culpa illum?</p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <script src="js/vendors/jquery.min.js"></script>
-    <script src="js/vendors/moment.min.js"></script>
-    <script src="js/vendors/popper.min.js"></script>
-    <script src="js/vendors/bootstrap.min.js"></script>
-    <script src="js/vendors/jquery.daterangepicker.min.js"></script>
-    <script src="js/vendors/gsap.min.js"></script>
-    <script src="js/vendors/ScrollTrigger.min.js"></script>
-    <script src="js/vendors/swiper.min.js"></script>
-    <script src="js/vendors/smooth-scrollbar.js"></script>
-    <script src="js/common.js"></script>
-    <script src="js/search.js"></script>
-  </body>
+  <!-- Room Details Modal -->
+  <div class="modal modal--room-details fade" id="roomDetailsModal" tabindex="-1" aria-labelledby="roomDetailsModal"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i class="fal fa-times font-size--3xl"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="rooms-image-slider modal-slider wide">
+                <div class="rooms-image-wrapper">
+                  <div class="rooms-image-slide">
+                    <figure class="img">
+                      <img src="images/search/rooms/villa-pool@2x.jpg" alt="villa pool" />
+                    </figure>
+                  </div>
+                  <div class="rooms-image-slide">
+                    <figure class="img">
+                      <img src="images/search/rooms/villa-pool-2@2x.jpg" alt="villa pool" />
+                    </figure>
+                  </div>
+                  <div class="rooms-image-slide">
+                    <figure class="img">
+                      <img src="images/search/rooms/villa-pool-3@2x.jpg" alt="villa pool" />
+                    </figure>
+                  </div>
+                  <div class="rooms-image-slide">
+                    <figure class="img">
+                      <img src="images/search/rooms/villa-pool-4@2x.jpg" alt="villa pool" />
+                    </figure>
+                  </div>
+                </div>
+                <div class="rooms-image-controller">
+                  <i class="fal fa-chevron-left prev"></i>
+                  <i class="fal fa-chevron-right next"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-8 contents text-center">
+              <h2 class="title title--serif font-size--2xl" data-item-id="roomTitle">Classic Room</h2>
+              <ul class="room-prop-list justify-content-center">
+                <li>2 Person</li>
+                <li>25 m<sup>2</sup></li>
+              </ul>
+              <ul class="room-facilities flexible p-4">
+                <li>
+                  <i class="icons air-conditioner-icon"></i>
+                  <p class="d-inline-block description font-size--xs">Air Conditioner</p>
+                </li>
+                <li>
+                  <i class="icons bathtub-icon"></i>
+                  <p class="d-inline-block description font-size--xs">Bathtub</p>
+                </li>
+                <li>
+                  <i class="icons tv-icon"></i>
+                  <p class="d-inline-block description font-size--xs">TV</p>
+                </li>
+                <li>
+                  <i class="icons coffee-maker-icon"></i>
+                  <p class="d-inline-block description font-size--xs">Coffee Maker</p>
+                </li>
+                <li>
+                  <i class="icons wifi-icon"></i>
+                  <p class="d-inline-block description font-size--xs">Wifi</p>
+                </li>
+              </ul>
+              <p class="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi ipsa nesciunt ipsam
+                molestias, et debitis. Magni consequuntur numquam in assumenda officia ad sint! Ad quia officia aliquam
+                exercitationem culpa illum?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/vendors/jquery.min.js"></script>
+  <script src="js/vendors/moment.min.js"></script>
+  <script src="js/vendors/popper.min.js"></script>
+  <script src="js/vendors/bootstrap.min.js"></script>
+  <script src="js/vendors/jquery.daterangepicker.min.js"></script>
+  <script src="js/vendors/gsap.min.js"></script>
+  <script src="js/vendors/ScrollTrigger.min.js"></script>
+  <script src="js/vendors/swiper.min.js"></script>
+  <script src="js/vendors/smooth-scrollbar.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/search.js"></script>
+</body>
+
 </html>

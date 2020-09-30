@@ -1,80 +1,85 @@
 <!DOCTYPE html>
 <html lang="tr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="css/main.min.css" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  </head>
 
-  <body>
-    <div id="blockMenu" class="offset-block">
-      <div class="menu-col">
-        <ul class="offset-menu">
-          <li class="offset-menu-item">
-            <a href="#" class="offset-menu-link border-bottom-white"> About HotelN </a>
-          </li>
-          <li class="offset-menu-item">
-            <a href="#" class="offset-menu-link"> Rooms </a>
-          </li>
-          <li class="offset-menu-item">
-            <a href="#" class="offset-menu-link"> Offers </a>
-          </li>
-          <li class="offset-menu-item">
-            <a href="#" class="offset-menu-link"> Bar & Champagne </a>
-          </li>
-          <li class="offset-menu-item">
-            <a href="#" class="offset-menu-link"> Meeting Room </a>
-          </li>
-          <li class="offset-menu-item">
-            <a href="#" class="offset-menu-link"> Gallery </a>
-          </li>
-          <li class="offset-menu-item">
-            <a href="#" class="offset-menu-link"> Contact </a>
-          </li>
-          <li class="offset-menu-item">
-            <a href="#" class="offset-menu-link"> Protocol COVID-19 </a>
-          </li>
-        </ul>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="css/main.min.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+</head>
 
-        <ul class="offset-menu right offset-menu--normal">
-          <li class="offset-menu-item">Follow Us</li>
-          <li class="offset-menu-item">
-            <a href="#" class="offset-menu-link"><i class="fab fa-facebook-f"></i></a>
-          </li>
-          <li class="offset-menu-item">
-            <a href="#" class="offset-menu-link"><i class="fab fa-twitter"></i></a>
-          </li>
-          <li class="offset-menu-item">
-            <a href="#" class="offset-menu-link"><i class="fab fa-youtube"></i></a>
-          </li>
-        </ul>
-      </div>
-      <div class="image-col d-none d-md-flex">
-        <div class="col-8 mx-auto">
-          <figure class="img standart">
-            <img src="images/statics/menu-image.jpeg" />
-          </figure>
-        </div>
+<body>
+  <div id="blockMenu" class="offset-block">
+    <div class="menu-col">
+      <ul class="offset-menu">
+        <li class="offset-menu-item">
+          <a href="#" class="offset-menu-link border-bottom-white"> About HotelN </a>
+        </li>
+        <li class="offset-menu-item">
+          <a href="#" class="offset-menu-link"> Rooms </a>
+        </li>
+        <li class="offset-menu-item">
+          <a href="#" class="offset-menu-link"> Offers </a>
+        </li>
+        <li class="offset-menu-item">
+          <a href="#" class="offset-menu-link"> Bar & Champagne </a>
+        </li>
+        <li class="offset-menu-item">
+          <a href="#" class="offset-menu-link"> Meeting Room </a>
+        </li>
+        <li class="offset-menu-item">
+          <a href="#" class="offset-menu-link"> Gallery </a>
+        </li>
+        <li class="offset-menu-item">
+          <a href="#" class="offset-menu-link"> Contact </a>
+        </li>
+        <li class="offset-menu-item">
+          <a href="#" class="offset-menu-link"> Protocol COVID-19 </a>
+        </li>
+      </ul>
+
+      <ul class="offset-menu right offset-menu--normal">
+        <li class="offset-menu-item">Follow Us</li>
+        <li class="offset-menu-item">
+          <a href="#" class="offset-menu-link"><i class="fab fa-facebook-f"></i></a>
+        </li>
+        <li class="offset-menu-item">
+          <a href="#" class="offset-menu-link"><i class="fab fa-twitter"></i></a>
+        </li>
+        <li class="offset-menu-item">
+          <a href="#" class="offset-menu-link"><i class="fab fa-youtube"></i></a>
+        </li>
+      </ul>
+    </div>
+    <div class="image-col d-none d-md-flex">
+      <div class="col-8 mx-auto">
+        <figure class="img standart">
+          <img src="images/statics/menu-image.jpeg" />
+        </figure>
       </div>
     </div>
-    <div id="bookBlock" class="offset-block">
-      <div class="offset-block__text">
-        <h5 class="title font-family--avant-garde">book now</h5>
-        <div id="typewriter">
-          When you choose to official website, you choose
-          <span class="txt-rotate" data-period="2000" data-rotate='[ "best rate quaranteed.", "free transfer.", "free cancellation."]'></span>
-        </div>
+  </div>
+  <div id="bookBlock" class="offset-block">
+    <div class="offset-block__text">
+      <h5 class="title font-family--avant-garde">book now</h5>
+      <div id="typewriter">
+        When you choose to official website, you choose
+        <span class="txt-rotate" data-period="2000"
+          data-rotate='[ "best rate quaranteed.", "free transfer.", "free cancellation."]'></span>
       </div>
-      <div class="offset-block__col">
+    </div>
+    <div class="offset-block__col">
+      <form id="bookForm" autocomplete="off">
         <div class="book-block">
           <div class="row justify-content-center">
             <div class="col-12 col-md-10">
               <h3 class="title">check-in</h3>
 
               <div class="form-control-block calendar">
-                <input id="inpCheckinDate" class="form-control" data-prop="datepicker" placeholder="11.09.2020" readonly />
+                <input id="inpCheckinDate" type="text" class="form-control readonly" data-prop="datepicker"
+                  placeholder="11.09.2020" required />
               </div>
             </div>
           </div>
@@ -83,7 +88,8 @@
               <h3 class="title">check-out</h3>
 
               <div class="form-control-block calendar">
-                <input id="inpCheckoutDate" class="form-control" placeholder="18.09.2020" data-prop="datepicker" readonly />
+                <input id="inpCheckoutDate" type="text" class="form-control readonly" placeholder="18.09.2020"
+                  data-prop="datepicker" required />
               </div>
             </div>
           </div>
@@ -135,402 +141,428 @@
           </div>
           <div class="row">
             <div class="col-12 mt-md-5">
-              <a href="search.html" class="btn btn--transparent"> <span>ARA</span> </a>
+              <button type="submit" class="btn btn--transparent"> <span>ARA</span> </button>
             </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- 
+  <div id="bookBlockv2" class="offset-block">
+    <div class="offset-block__text">
+      <h5 class="title font-family--avant-garde">book now</h5>
+    </div>
+    <div class="offset-block__col">
+      <div class="book-block">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-10">
+            <h3 class="title">check-in</h3>
+
+            <div class="form-control-block calendar">
+              <input id="inpCheckinDate" class="form-control" data-prop="datepicker--single" placeholder="11.09.2020"
+                readonly />
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8">
+            <h3 class="title">Nights</h3>
+
+            <div class="form-control-block minus-plus">
+              <i class="fal fa-minus"></i>
+              <input id="inpNights" class="form-control" value="2" readonly data-max="60" />
+              <i class="fal fa-plus"></i>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <h3 class="title">adult</h3>
+
+            <div class="form-control-block minus-plus">
+              <i class="fal fa-minus"></i>
+              <input id="inpAdultCount" class="form-control" value="2" readonly data-max="12" />
+              <i class="fal fa-plus"></i>
+            </div>
+          </div>
+          <div class="col-6">
+            <h3 class="title">child</h3>
+
+            <div class="form-control-block minus-plus">
+              <i class="fal fa-minus"></i>
+              <input id="inpChildCount" class="form-control" readonly data-max="3" value="0" />
+              <i class="fal fa-plus"></i>
+            </div>
+          </div>
+          <div class="col-12 mt-5 d-none" child-hidden>
+            <div class="row">
+              <div class="col-4 d-none">
+                <select id="selectChild1" class="form-control">
+                  <option value="" selected>1. Yaş</option>
+                </select>
+              </div>
+              <div class="col-4 d-none">
+                <select id="selectChild2" class="form-control">
+                  <option value="" selected>2. Yaş</option>
+                </select>
+              </div>
+              <div class="col-4 d-none">
+                <select id="selectChild3" class="form-control">
+                  <option value="" selected>3. Yaş</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="form-control-block calendar">
+              <input id="#inpPromotionCode" class="form-control promotion-code" placeholder="promotion code" />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 mt-md-5">
+            <a href="search.html" class="btn btn--transparent"> <span>ARA</span> </a>
           </div>
         </div>
       </div>
     </div>
-    <div id="bookBlockv2" class="offset-block">
-      <div class="offset-block__text">
-        <h5 class="title font-family--avant-garde">book now</h5>
+  </div> -->
+  <header class="header">
+    <div class="header-container">
+      <div class="header-container-left">
+        <div class="menu-trigger">
+          <a class="menu-trigger-button" data-toggle="offset-block" data-target="#blockMenu">
+            <div></div>
+            <div></div>
+            <div></div>
+          </a>
+        </div>
       </div>
-      <div class="offset-block__col">
-        <div class="book-block">
-          <div class="row justify-content-center">
-            <div class="col-12 col-md-10">
-              <h3 class="title">check-in</h3>
-
-              <div class="form-control-block calendar">
-                <input id="inpCheckinDate" class="form-control" data-prop="datepicker--single" placeholder="11.09.2020" readonly />
-              </div>
-            </div>
+      <div class="brand">
+        <img src="images/hotel-brand.svg" />
+      </div>
+      <div class="header-container-right">
+        <div class="book-now">
+          <div class="book-now-button">
+            <a data-toggle="offset-block" data-target="#bookBlock">BOOK NOW</a>
           </div>
-          <div class="row justify-content-center">
-            <div class="col-12 col-md-8">
-              <h3 class="title">Nights</h3>
-
-              <div class="form-control-block minus-plus">
-                <i class="fal fa-minus"></i>
-                <input id="inpNights" class="form-control" value="2" readonly data-max="60" />
-                <i class="fal fa-plus"></i>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-6">
-              <h3 class="title">adult</h3>
-
-              <div class="form-control-block minus-plus">
-                <i class="fal fa-minus"></i>
-                <input id="inpAdultCount" class="form-control" value="2" readonly data-max="12" />
-                <i class="fal fa-plus"></i>
-              </div>
-            </div>
-            <div class="col-6">
-              <h3 class="title">child</h3>
-
-              <div class="form-control-block minus-plus">
-                <i class="fal fa-minus"></i>
-                <input id="inpChildCount" class="form-control" readonly data-max="3" value="0" />
-                <i class="fal fa-plus"></i>
-              </div>
-            </div>
-            <div class="col-12 mt-5 d-none" child-hidden>
-              <div class="row">
-                <div class="col-4 d-none">
-                  <select id="selectChild1" class="form-control">
-                    <option value="" selected>1. Yaş</option>
-                  </select>
-                </div>
-                <div class="col-4 d-none">
-                  <select id="selectChild2" class="form-control">
-                    <option value="" selected>2. Yaş</option>
-                  </select>
-                </div>
-                <div class="col-4 d-none">
-                  <select id="selectChild3" class="form-control">
-                    <option value="" selected>3. Yaş</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <div class="form-control-block calendar">
-                <input id="#inpPromotionCode" class="form-control promotion-code" placeholder="promotion code" />
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12 mt-md-5">
-              <a href="search.html" class="btn btn--transparent"> <span>ARA</span> </a>
-            </div>
+          <div class="book-now-button ml-4 d-none d-md-inline-block">
+            <a data-toggle="offset-block" data-target="#bookBlockv2"> BOOK NOW V2 </a>
           </div>
         </div>
       </div>
     </div>
-    <header class="header">
-      <div class="header-container">
-        <div class="header-container-left">
-          <div class="menu-trigger">
-            <a class="menu-trigger-button" data-toggle="offset-block" data-target="#blockMenu">
-              <div></div>
-              <div></div>
-              <div></div>
-            </a>
+  </header>
+  <div id="body">
+    <div id="scroller">
+      <main class="main">
+        <section class="main-block main-block--filtered load-anim">
+          <figure class="img">
+            <img class="lazy parallax-image" data-src="images/backgrounds/hotel-front.jpg" />
+          </figure>
+          <div class="main-block_contents">
+            <h3 class="title title--serif title--hero" text-anim>Beyond your dreams.</h3>
           </div>
-        </div>
-        <div class="brand">
-          <img src="images/hotel-brand.svg" />
-        </div>
-        <div class="header-container-right">
-          <div class="book-now">
-            <div class="book-now-button">
-              <a data-toggle="offset-block" data-target="#bookBlock">BOOK NOW</a>
-            </div>
-            <div class="book-now-button ml-4 d-none d-md-inline-block">
-              <a data-toggle="offset-block" data-target="#bookBlockv2"> BOOK NOW V2 </a>
-            </div>
+          <div class="scroll-down">
+            <a><span></span></a>
           </div>
-        </div>
-      </div>
-    </header>
-    <div id="body">
-      <div id="scroller">
-        <main class="main">
-          <section class="main-block main-block--filtered load-anim">
-            <figure class="img">
-              <img class="lazy parallax-image" data-src="images/backgrounds/hotel-front.jpg" />
-            </figure>
-            <div class="main-block_contents">
-              <h3 class="title title--serif title--hero" text-anim>Beyond your dreams.</h3>
-            </div>
-            <div class="scroll-down">
-              <a><span></span></a>
-            </div>
-          </section>
-          <section class="main-section main-section--white">
-            <div class="container py-big">
-              <div class="title-block">
-                <h3 class="title title--big title--light title--bordered" text-anim>Cras non justo lorem.</h3>
-                <h4 class="title title--sub title--serif mt-5" text-anim>Et, excepturi! Numquam, eius minima praesentium.</h4>
-              </div>
-              <div class="row">
-                <div class="col-12 col-md col-xl-4">
-                  <p class="description description--lg" text-anim>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non justo lorem. Donec non dapibus augue. Aenean porta venenatis justo nec aliquam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean egestas, mauris vitae dictum tincidunt,
-                    nulla ante facilisis augue, varius commodo justo sapien quis odio. Ut commodo, metus eget efficitur finibus
-                  </p>
-                </div>
-                <div class="d-none d-xl-block col-xl-1"></div>
-                <div class="col-12 col-md col-xl-4">
-                  <p class="description description--lg" text-anim>
-                    Morbi pretium augue in est efficitur dictum. Aenean ac dignissim orci. Maecenas porttitor accumsan est vel euismod. Ut vel augue a nisi ultricies ultrices. Sed malesuada, urna non bibendum mollis, nisl nisl malesuada sapien, sed suscipit nisi metus semper lorem. Phasellus mauris
-                    ipsum, malesuada in tellus id, posuere commodo neque. Nulla facilisi. Vivamus interdum quam in urna rutrum fringilla.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section class="main-section main-section--white">
-            <div class="paragraph">
-              <div class="title-block">
-                <div class="parallax">
-                  <span class="parallax-rectangle"></span>
-                  <div class="gsap-parallax-texts">
-                    <h3 class="title title--big title--sans-serif-two">Cras non justo lorem.</h3>
-                    <h4 class="title title--sub title--sans-serif-two">Et, excepturi! Numquam, eius minima praesentium.</h4>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section class="main-block">
-            <figure class="img">
-              <img class="lazy" data-src="images/backgrounds/beach-front.jpg" />
-              <!-- <img class="v2" src="images/backgrounds/beach-front-v2.png" /> -->
-
-              <div class="parallax-elems">
-                <div parallax-text>feel</div>
-              </div>
-            </figure>
-          </section>
-          <section class="main-section main-section--white">
-            <div class="paragraph">
-              <div class="title-block">
-                <h3 class="title title--big title--sans-serif-two" text-anim>Cras non justo lorem.</h3>
-                <h4 class="title title--sub title--sans-serif-two" text-anim>Et, excepturi! Numquam, eius minima praesentium.</h4>
-              </div>
-            </div>
-          </section>
-          <section class="main-section">
+        </section>
+        <section class="main-section main-section--white">
+          <div class="container py-big">
             <div class="title-block">
-              <h3 class="title--serif font-size--huge text-center" text-anim>FROM THE JOURNAL</h3>
+              <h3 class="title title--big title--light title--bordered" text-anim>Cras non justo lorem.</h3>
+              <h4 class="title title--sub title--serif mt-5" text-anim>Et, excepturi! Numquam, eius minima praesentium.
+              </h4>
             </div>
-            <div class="card-container mobile-sliders">
-              <div class="card-wrapper">
-                <div class="card-block">
-                  <figure class="img standart" data-anim-type="ltr" bg-body><img class="lazy" data-src="images/journal/journal-card-1.jpg" /></figure>
-                  <div class="card-block-content">
-                    <h4 class="title--serif font-size--md text-uppercase">Lorem ipsum dolor</h4>
-                    <p class="description">Pariatur natus ex distinctio laboriosam officia nam?</p>
-                  </div>
-                </div>
-                <div class="card-block">
-                  <figure class="img standart" data-anim-type="ltr" bg-body><img class="lazy" data-src="images/journal/journal-card-2.jpg" /></figure>
-                  <div class="card-block-content">
-                    <h4 class="title--serif font-size--md text-uppercase">Lorem ipsum dolor</h4>
-                    <p class="description">Pariatur natus ex distinctio laboriosam officia nam?</p>
-                  </div>
-                </div>
-                <div class="card-block">
-                  <figure class="img standart" data-anim-type="ltr" bg-body><img class="lazy" data-src="images/journal/journal-card-3.jpg" /></figure>
-                  <div class="card-block-content">
-                    <h4 class="title--serif font-size--md text-uppercase">Lorem ipsum dolor</h4>
-                    <p class="description">Pariatur natus ex distinctio laboriosam officia nam?</p>
-                  </div>
+            <div class="row">
+              <div class="col-12 col-md col-xl-4">
+                <p class="description description--lg" text-anim>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non justo lorem. Donec non dapibus
+                  augue. Aenean porta venenatis justo nec aliquam. Vestibulum ante ipsum primis in faucibus orci luctus
+                  et ultrices posuere cubilia curae; Aenean egestas, mauris vitae dictum tincidunt,
+                  nulla ante facilisis augue, varius commodo justo sapien quis odio. Ut commodo, metus eget efficitur
+                  finibus
+                </p>
+              </div>
+              <div class="d-none d-xl-block col-xl-1"></div>
+              <div class="col-12 col-md col-xl-4">
+                <p class="description description--lg" text-anim>
+                  Morbi pretium augue in est efficitur dictum. Aenean ac dignissim orci. Maecenas porttitor accumsan est
+                  vel euismod. Ut vel augue a nisi ultricies ultrices. Sed malesuada, urna non bibendum mollis, nisl
+                  nisl malesuada sapien, sed suscipit nisi metus semper lorem. Phasellus mauris
+                  ipsum, malesuada in tellus id, posuere commodo neque. Nulla facilisi. Vivamus interdum quam in urna
+                  rutrum fringilla.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="main-section main-section--white">
+          <div class="paragraph">
+            <div class="title-block">
+              <div class="parallax">
+                <span class="parallax-rectangle"></span>
+                <div class="gsap-parallax-texts">
+                  <h3 class="title title--big title--sans-serif-two">Cras non justo lorem.</h3>
+                  <h4 class="title title--sub title--sans-serif-two">Et, excepturi! Numquam, eius minima praesentium.
+                  </h4>
                 </div>
               </div>
             </div>
-          </section>
-          <section class="main-section" data-body-bg="rgba(207, 227, 231, 0.85)">
-            <div class="container square-block py-big">
-              <div class="row">
-                <div class="col-12 col-md-5 order-2 order-md-1">
-                  <div class="square-block-contents">
-                    <h3 class="title font-size--sm">DESIGNED EXCLUSIVELY FOR COUPLES</h3>
-                    <h2 class="title font-family--avant-garde title--big mb-5 pb-5">seeking seclusion and wellness</h2>
-                    <div class="col-12 col-xl-7 ml-auto px-0">
-                      <p class="description font-size--lg font-family--serif font-weight-light">Welcome to a world of beauty and recreation; your journey to total relaxation, wellbeing and fitness begins at Althea by Carpe Diem, where a spectacular, one-of-a-kind sanctuary awaits you.</p>
-                      <a class="btn btn--transparent mt-5"> <span>EXPERIENCE</span> </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-5 mx-auto order-1 order-md-2">
-                  <div class="square-block-images">
-                    <figure class="img main-image">
-                      <img class="lazy" data-src="images/wellness/soft-img.jpg" />
-                    </figure>
-                    <div class="col-12 col-md-6 px-0 mt-5">
-                      <figure class="img helper-image">
-                        <img class="lazy" data-src="images/wellness/soft-2.png" />
-                      </figure>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section class="half-image-slider no-padding">
-            <div class="half-image-block">
-              <figure class="img standart" data-anim-type="ttb" bg-body>
-                <img class="lazy parallax-image" data-src="images/rooms/room-1.jpg" />
-              </figure>
-            </div>
-            <div class="content-box">
-              <div class="content-box_title-block">
-                <h3 class="title title--big title--serif">Rooms<br />& Suites</h3>
-                <div class="description-column">
-                  <p class="description description--lg font-family--serif mt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus explicabo mollitia recusandae autem nulla sunt rerum ut modi corporis facilis ullam hic ex debitis est quam nostrum consequuntur, ipsa voluptates.</p>
-                </div>
-              </div>
-              <div class="content-box_wrapper">
-                <div class="cb-container" data-prop="slider--vertical" allowTouchMove="false">
-                  <div class="cb-wrapper">
-                    <div class="cb-slide" data-related-image="images/rooms/room-1.jpg">
-                      <h3 class="title font-size--huge title--serif text-center">Royal Beach Villa</h3>
-                      <div class="col-lg-8 ml-auto mt-5 pt-3">
-                        <p class="description description--lg font-family--serif">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nam ipsa perferendis magnam quam consequuntur necessitatibus facere deserunt illo porro.</p>
-                      </div>
-                      <div class="mt-5 pt-3 justify-content-around">
-                        <a href="#" class="btn btn--sm btn--black"> <span>BOOK</span> </a>
-                        <a href="#" class="btn btn--sm btn--black"> <span>SEE MORE</span> </a>
-                      </div>
-                    </div>
-                    <div class="cb-slide" data-related-image="images/rooms/room-2.jpg">
-                      <h3 class="title font-size--huge title--serif text-center">Royal Beach Villa</h3>
-                      <div class="col-lg-8 ml-auto mt-5 pt-3">
-                        <p class="description description--lg font-family--serif">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nam ipsa perferendis magnam quam consequuntur necessitatibus facere deserunt illo porro.</p>
-                      </div>
-                      <div class="mt-5 pt-3 d-flex justify-content-around">
-                        <a href="#" class="btn btn--sm btn--black"> <span>BOOK</span> </a>
-                        <a href="#" class="btn btn--sm btn--black"> <span>SEE MORE</span> </a>
-                      </div>
-                    </div>
-                    <div class="cb-slide" data-related-image="images/rooms/room-3.jpg">
-                      <h3 class="title font-size--huge title--serif text-center">Royal Beach Villa</h3>
-                      <div class="col-lg-8 ml-auto mt-5 pt-3">
-                        <p class="description description--lg font-family--serif">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nam ipsa perferendis magnam quam consequuntur necessitatibus facere deserunt illo porro.</p>
-                      </div>
-                      <div class="mt-5 pt-3 d-flex justify-content-around">
-                        <a href="#" class="btn btn--sm btn--black"> <span>BOOK</span> </a>
-                        <a href="#" class="btn btn--sm btn--black"> <span>SEE MORE</span> </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section class="grid-gallery">
-            <div class="grid-gallery-row">
-              <div class="grid-gallery-col">
-                <div class="grid-gallery-row inner">
-                  <div class="grid-gallery-col">
-                    <a class="grid-gallery-image with-filter">
-                      <figure class="img standart">
-                        <img class="lazy" data-src="images/gallery/img-2.jpg" />
-                      </figure>
-                      <div class="grid-gallery-content">
-                        <h3 class="title font-size--2xl title--serif">Gallery</h3>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="grid-gallery-col">
-                    <a class="grid-gallery-image">
-                      <figure class="img standart">
-                        <img class="lazy" data-src="images/gallery/breyner-villa-2.jpg" />
-                      </figure>
-                    </a>
-                  </div>
-                  <div class="grid-gallery-col">
-                    <a class="grid-gallery-image">
-                      <figure class="img standart">
-                        <img class="lazy" data-src="images/gallery/superior-room-2.jpg" />
-                      </figure>
-                    </a>
-                  </div>
-                  <div class="grid-gallery-col">
-                    <a class="grid-gallery-image">
-                      <figure class="img standart">
-                        <img class="lazy" data-src="images/gallery/img-1.jpg" />
-                      </figure>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="grid-gallery-col">
-                <a class="grid-gallery-image">
-                  <figure class="img standart">
-                    <img class="lazy" data-src="images/gallery/img-3.jpg" />
-                  </figure>
-                </a>
-              </div>
-            </div>
-          </section>
-        </main>
-        <footer class="footer">
-          <div class="container-fluid px-0">
-            <div class="row no-gutters">
-              <div class="col-md-3 d-none d-md-block text-center">
-                <h4 class="title--big font-family--avant-garde">SITEMAP</h4>
+          </div>
+        </section>
+        <section class="main-block">
+          <figure class="img">
+            <img class="lazy" data-src="images/backgrounds/beach-front.jpg" />
+            <!-- <img class="v2" src="images/backgrounds/beach-front-v2.png" /> -->
 
-                <a class="d-block font-size--3xl py-5">
-                  <i class="fal fa-sitemap"></i>
-                </a>
+            <div class="parallax-elems">
+              <div parallax-text>feel</div>
+            </div>
+          </figure>
+        </section>
+        <section class="main-section main-section--white">
+          <div class="paragraph">
+            <div class="title-block">
+              <h3 class="title title--big title--sans-serif-two" text-anim>Cras non justo lorem.</h3>
+              <h4 class="title title--sub title--sans-serif-two" text-anim>Et, excepturi! Numquam, eius minima
+                praesentium.</h4>
+            </div>
+          </div>
+        </section>
+        <section class="main-section">
+          <div class="title-block">
+            <h3 class="title--serif font-size--huge text-center" text-anim>FROM THE JOURNAL</h3>
+          </div>
+          <div class="card-container mobile-sliders">
+            <div class="card-wrapper">
+              <div class="card-block">
+                <figure class="img standart" data-anim-type="ltr" bg-body><img class="lazy"
+                    data-src="images/journal/journal-card-1.jpg" /></figure>
+                <div class="card-block-content">
+                  <h4 class="title--serif font-size--md text-uppercase">Lorem ipsum dolor</h4>
+                  <p class="description">Pariatur natus ex distinctio laboriosam officia nam?</p>
+                </div>
               </div>
-              <div class="col-12 col-md-2">
-                <h4 class="title font-family--serif text-center">Follow Us</h4>
-                <ul class="social-list mt-5">
-                  <li class="social-list-item">
-                    <a class="social-list-link">
-                      <i class="fab fa-facebook-f"></i>
-                    </a>
-                  </li>
-                  <li class="social-list-item">
-                    <a class="social-list-link">
-                      <i class="fab fa-twitter"></i>
-                    </a>
-                  </li>
-                  <li class="social-list-item">
-                    <a class="social-list-link">
-                      <i class="fab fa-instagram"></i>
-                    </a>
-                  </li>
-                </ul>
+              <div class="card-block">
+                <figure class="img standart" data-anim-type="ltr" bg-body><img class="lazy"
+                    data-src="images/journal/journal-card-2.jpg" /></figure>
+                <div class="card-block-content">
+                  <h4 class="title--serif font-size--md text-uppercase">Lorem ipsum dolor</h4>
+                  <p class="description">Pariatur natus ex distinctio laboriosam officia nam?</p>
+                </div>
               </div>
-              <div class="col-12 col-md order-md-4">
-                <div class="footer-brand">
-                  <a class="brand">
-                    <img src="images/hotel-brand.svg" alt="" srcset="" />
+              <div class="card-block">
+                <figure class="img standart" data-anim-type="ltr" bg-body><img class="lazy"
+                    data-src="images/journal/journal-card-3.jpg" /></figure>
+                <div class="card-block-content">
+                  <h4 class="title--serif font-size--md text-uppercase">Lorem ipsum dolor</h4>
+                  <p class="description">Pariatur natus ex distinctio laboriosam officia nam?</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="main-section" data-body-bg="rgba(207, 227, 231, 0.85)">
+          <div class="container square-block py-big">
+            <div class="row">
+              <div class="col-12 col-md-5 order-2 order-md-1">
+                <div class="square-block-contents">
+                  <h3 class="title font-size--sm">DESIGNED EXCLUSIVELY FOR COUPLES</h3>
+                  <h2 class="title font-family--avant-garde title--big mb-5 pb-5">seeking seclusion and wellness</h2>
+                  <div class="col-12 col-xl-7 ml-auto px-0">
+                    <p class="description font-size--lg font-family--serif font-weight-light">Welcome to a world of
+                      beauty and recreation; your journey to total relaxation, wellbeing and fitness begins at Althea by
+                      Carpe Diem, where a spectacular, one-of-a-kind sanctuary awaits you.</p>
+                    <a class="btn btn--transparent mt-5"> <span>EXPERIENCE</span> </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-5 mx-auto order-1 order-md-2">
+                <div class="square-block-images">
+                  <figure class="img main-image">
+                    <img class="lazy" data-src="images/wellness/soft-img.jpg" />
+                  </figure>
+                  <div class="col-12 col-md-6 px-0 mt-5">
+                    <figure class="img helper-image">
+                      <img class="lazy" data-src="images/wellness/soft-2.png" />
+                    </figure>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="half-image-slider no-padding">
+          <div class="half-image-block">
+            <figure class="img standart" data-anim-type="ttb" bg-body>
+              <img class="lazy parallax-image" data-src="images/rooms/room-1.jpg" />
+            </figure>
+          </div>
+          <div class="content-box">
+            <div class="content-box_title-block">
+              <h3 class="title title--big title--serif">Rooms<br />& Suites</h3>
+              <div class="description-column">
+                <p class="description description--lg font-family--serif mt-5">Lorem ipsum dolor sit amet consectetur
+                  adipisicing elit. Doloribus explicabo mollitia recusandae autem nulla sunt rerum ut modi corporis
+                  facilis ullam hic ex debitis est quam nostrum consequuntur, ipsa voluptates.</p>
+              </div>
+            </div>
+            <div class="content-box_wrapper">
+              <div class="cb-container" data-prop="slider--vertical" allowTouchMove="false">
+                <div class="cb-wrapper">
+                  <div class="cb-slide" data-related-image="images/rooms/room-1.jpg">
+                    <h3 class="title font-size--huge title--serif text-center">Royal Beach Villa</h3>
+                    <div class="col-lg-8 ml-auto mt-5 pt-3">
+                      <p class="description description--lg font-family--serif">Lorem, ipsum dolor sit amet consectetur
+                        adipisicing elit. Perspiciatis nam ipsa perferendis magnam quam consequuntur necessitatibus
+                        facere deserunt illo porro.</p>
+                    </div>
+                    <div class="mt-5 pt-3 justify-content-around">
+                      <a href="#" class="btn btn--sm btn--black"> <span>BOOK</span> </a>
+                      <a href="#" class="btn btn--sm btn--black"> <span>SEE MORE</span> </a>
+                    </div>
+                  </div>
+                  <div class="cb-slide" data-related-image="images/rooms/room-2.jpg">
+                    <h3 class="title font-size--huge title--serif text-center">Royal Beach Villa</h3>
+                    <div class="col-lg-8 ml-auto mt-5 pt-3">
+                      <p class="description description--lg font-family--serif">Lorem, ipsum dolor sit amet consectetur
+                        adipisicing elit. Perspiciatis nam ipsa perferendis magnam quam consequuntur necessitatibus
+                        facere deserunt illo porro.</p>
+                    </div>
+                    <div class="mt-5 pt-3 d-flex justify-content-around">
+                      <a href="#" class="btn btn--sm btn--black"> <span>BOOK</span> </a>
+                      <a href="#" class="btn btn--sm btn--black"> <span>SEE MORE</span> </a>
+                    </div>
+                  </div>
+                  <div class="cb-slide" data-related-image="images/rooms/room-3.jpg">
+                    <h3 class="title font-size--huge title--serif text-center">Royal Beach Villa</h3>
+                    <div class="col-lg-8 ml-auto mt-5 pt-3">
+                      <p class="description description--lg font-family--serif">Lorem, ipsum dolor sit amet consectetur
+                        adipisicing elit. Perspiciatis nam ipsa perferendis magnam quam consequuntur necessitatibus
+                        facere deserunt illo porro.</p>
+                    </div>
+                    <div class="mt-5 pt-3 d-flex justify-content-around">
+                      <a href="#" class="btn btn--sm btn--black"> <span>BOOK</span> </a>
+                      <a href="#" class="btn btn--sm btn--black"> <span>SEE MORE</span> </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="grid-gallery">
+          <div class="grid-gallery-row">
+            <div class="grid-gallery-col">
+              <div class="grid-gallery-row inner">
+                <div class="grid-gallery-col">
+                  <a class="grid-gallery-image with-filter">
+                    <figure class="img standart">
+                      <img class="lazy" data-src="images/gallery/img-2.jpg" />
+                    </figure>
+                    <div class="grid-gallery-content">
+                      <h3 class="title font-size--2xl title--serif">Gallery</h3>
+                    </div>
+                  </a>
+                </div>
+                <div class="grid-gallery-col">
+                  <a class="grid-gallery-image">
+                    <figure class="img standart">
+                      <img class="lazy" data-src="images/gallery/breyner-villa-2.jpg" />
+                    </figure>
+                  </a>
+                </div>
+                <div class="grid-gallery-col">
+                  <a class="grid-gallery-image">
+                    <figure class="img standart">
+                      <img class="lazy" data-src="images/gallery/superior-room-2.jpg" />
+                    </figure>
+                  </a>
+                </div>
+                <div class="grid-gallery-col">
+                  <a class="grid-gallery-image">
+                    <figure class="img standart">
+                      <img class="lazy" data-src="images/gallery/img-1.jpg" />
+                    </figure>
                   </a>
                 </div>
               </div>
-              <div class="col-12 col-md-2">
-                <div class="footer-address">
-                  <p class="footer-address-desc">Kemer Lorem Sokak, 5A</p>
-                  <p class="footer-address-desc">07070 Antalya</p>
-                  <p class="footer-address-desc">TURKIYE</p>
-                  <a class="footer-address-phone"> tel: +90 242 00 00 00 </a>
-                  <a class="footer-address-phone"> fax: +90 242 00 00 01 </a>
-                </div>
+            </div>
+            <div class="grid-gallery-col">
+              <a class="grid-gallery-image">
+                <figure class="img standart">
+                  <img class="lazy" data-src="images/gallery/img-3.jpg" />
+                </figure>
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="container-fluid px-0">
+          <div class="row no-gutters">
+            <div class="col-md-3 d-none d-md-block text-center">
+              <h4 class="title--big font-family--avant-garde">SITEMAP</h4>
+
+              <a class="d-block font-size--3xl py-5">
+                <i class="fal fa-sitemap"></i>
+              </a>
+            </div>
+            <div class="col-12 col-md-2">
+              <h4 class="title font-family--serif text-center">Follow Us</h4>
+              <ul class="social-list mt-5">
+                <li class="social-list-item">
+                  <a class="social-list-link">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                </li>
+                <li class="social-list-item">
+                  <a class="social-list-link">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="social-list-item">
+                  <a class="social-list-link">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-12 col-md order-md-4">
+              <div class="footer-brand">
+                <a class="brand">
+                  <img src="images/hotel-brand.svg" alt="" srcset="" />
+                </a>
+              </div>
+            </div>
+            <div class="col-12 col-md-2">
+              <div class="footer-address">
+                <p class="footer-address-desc">Kemer Lorem Sokak, 5A</p>
+                <p class="footer-address-desc">07070 Antalya</p>
+                <p class="footer-address-desc">TURKIYE</p>
+                <a class="footer-address-phone"> tel: +90 242 00 00 00 </a>
+                <a class="footer-address-phone"> fax: +90 242 00 00 01 </a>
               </div>
             </div>
           </div>
-        </footer>
-      </div>
+        </div>
+      </footer>
     </div>
+  </div>
 
-    <script src="js/vendors/jquery.min.js"></script>
-    <script src="js/vendors/moment.min.js"></script>
-    <script src="js/vendors/jquery.daterangepicker.min.js"></script>
-    <script src="js/vendors/gsap.min.js"></script>
-    <script src="js/vendors/ScrollTrigger.min.js"></script>
-    <script src="js/vendors/swiper.min.js"></script>
-    <script src="js/vendors/smooth-scrollbar.js"></script>
-    <script src="js/common.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+  <script src="js/vendors/jquery.min.js"></script>
+  <script src="js/vendors/moment.min.js"></script>
+  <script src="js/vendors/jquery.daterangepicker.min.js"></script>
+  <script src="js/vendors/gsap.min.js"></script>
+  <script src="js/vendors/ScrollTrigger.min.js"></script>
+  <script src="js/vendors/swiper.min.js"></script>
+  <script src="js/vendors/smooth-scrollbar.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
 </html>

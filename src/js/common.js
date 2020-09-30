@@ -1,4 +1,9 @@
 var lang = $('html').attr('lang');
+var bookForm = document.getElementById('bookForm');
+
+$('.readonly').on('keydown paste', function (e) {
+  e.preventDefault();
+});
 
 $('.btn--black').each(function () {
   var hasSpan = $(this).find('span').length != 0;
@@ -68,10 +73,51 @@ $("[data-prop*='datepicker']").each(function () {
         var selectedDates = s.split('-');
 
         $(this).val(selectedDates[0].trim());
+        $(this).next() != undefined ? $(this).next().val(selectedDates[0].trim()) : '';
         $('#inpCheckoutDate').val(selectedDates[1].trim());
+        $('#inpCheckoutDate').next() != undefined ? $('#inpCheckoutDate').next().val(selectedDates[1].trim()) : '';
       }
     },
   };
 
   $(this).dateRangePicker(config);
+});
+
+$('#bookForm')
+  .find('button[type=submit]')
+  .on('click', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (bookForm.checkValidity() === false) {
+      bookForm.classList.add('has-error');
+    } else {
+      $(bookForm).submit();
+    }
+  });
+
+/* Book Form Submit */
+$(document).on('submit', '#bookForm', function (event) {
+  event.preventDefault();
+
+  let form = $(this);
+
+  let language = $('html').attr('lang');
+  let checkin = form.find('#inpCheckinDate').val();
+  let checkout = form.find('#inpCheckoutDate').val();
+  // let hotelId = form.find('#inpHotelId').val();
+  let hotelId = 3;
+  let roomId = '';
+  let adult = form.find('#inpAdultCount').val();
+  let children = form.find('#inpChildCount').val();
+  let childAge1 = form.find('#selectChild1').val();
+  let childAge2 = form.find('#selectChild2').val();
+  let childAge3 = form.find('#selectChild3').val();
+  let promotionCode = form.find('#inpPromotionCode').val();
+
+  var url = '/' + language + '/book-search?hid=' + hotelId + '&rid=' + roomId + '&cin=' + checkin + '&cout=' + checkout + '&adt=' + adult + '&chd=' + children + '&c1=' + childAge1 + '&c2=' + childAge2 + '&c3=' + childAge3 + '&pc=' + promotionCode;
+
+  window.open(url, '_blank');
+
+  return false;
 });

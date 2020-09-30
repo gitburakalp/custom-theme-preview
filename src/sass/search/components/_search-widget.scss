@@ -155,9 +155,29 @@
     color: darken($colors--white, 7.5%);
     padding-bottom: 1rem;
 
+    @include media-breakpoint-between(md, lg) {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
     @include media-breakpoint-up(md) {
       color: lighten($colors--black, 7.5%);
     }
+  }
+}
+
+.has-arrow-down {
+  position: relative;
+
+  &:after {
+    content: '\f078';
+    font-family: 'Font Awesome 5 Pro';
+    font-size: 1.25rem;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 
@@ -166,20 +186,9 @@
   cursor: pointer;
 
   &.has-arrow-down {
-    position: relative;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-
-    &:after {
-      content: '\f078';
-      font-family: 'Font Awesome 5 Pro';
-      font-size: 1.25rem;
-      position: absolute;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%);
-    }
   }
 
   + .popovers {

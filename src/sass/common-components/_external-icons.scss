@@ -51,27 +51,38 @@
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 363.95'%3E%3Ctitle%3EVarlık 1%3C/title%3E%3Cg id='katman_2' data-name='katman 2'%3E%3Cg id='Capa_1' data-name='Capa 1'%3E%3Cpath d='M487.33,0H24.67A24.74,24.74,0,0,0,0,24.67V339.28A24.74,24.74,0,0,0,24.67,364H487.32A24.74,24.74,0,0,0,512,339.28V24.67A24.74,24.74,0,0,0,487.33,0ZM18.51,24.67a6.24,6.24,0,0,1,6.16-6.16H487.32a6.24,6.24,0,0,1,6.17,6.16V55.52h-475Zm475,314.61a6.24,6.24,0,0,1-6.17,6.16H24.67a6.24,6.24,0,0,1-6.16-6.16V148.05h475Zm0-209.74h-475V74h475v55.52Z'/%3E%3Cpath d='M416.39,209.73a52.27,52.27,0,0,0-37,15.3,52.44,52.44,0,1,0,0,74.27,52.43,52.43,0,1,0,37-89.57Zm0,86.37a33.69,33.69,0,0,1-23.95-9.91,18.53,18.53,0,0,0-26.13,0,33.93,33.93,0,1,1,0-48.05,18.51,18.51,0,0,0,26.13,0,33.93,33.93,0,1,1,23.95,58Z'/%3E%3Cpath d='M203.57,228.24h-148a9.26,9.26,0,1,0,0,18.51h148a9.26,9.26,0,0,0,0-18.51Z'/%3E%3Cpath d='M123.39,271.42H55.52a9.26,9.26,0,1,0,0,18.51h67.87a9.26,9.26,0,0,0,0-18.51Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   }
 
-  &[style*=air-conditioner-icon] {
+  &[style*='air-conditioner-icon'] {
     width: 4rem;
     height: 2.5rem;
   }
 
-  &[style*=bathtub-icon] {
+  &[style*='bathtub-icon'] {
     height: 2rem;
   }
 
-  &[style*=tv-icon] {
+  &[style*='tv-icon'] {
     height: 2.5rem;
-    
   }
 
-  &[style*=coffee-maker-icon] {
+  &[style*='coffee-maker-icon'] {
     height: 2.5rem;
-    
   }
 
-  &[style*=wifi-icon] {
+  &[style*='wifi-icon'] {
     height: 2.5rem;
-    
+  }
+}
+
+.promotion-icon {
+  position: relative;
+
+  &:after {
+    content: '\f4ae';
+    position: absolute;
+    top: 0;
+    right: 2rem;
+    font-size: 2rem;
+    line-height: 1;
+    font-family: 'Font Awesome 5 Pro';
   }
 }
