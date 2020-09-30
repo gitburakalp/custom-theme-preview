@@ -1,5 +1,5 @@
 var lang = $('html').attr('lang');
-var bookForm = document.getElementById('bookForm');
+// var bookForm = document.getElementById('bookForm');
 
 $('.readonly').on('keydown paste', function (e) {
   e.preventDefault();
@@ -83,18 +83,18 @@ $("[data-prop*='datepicker']").each(function () {
   $(this).dateRangePicker(config);
 });
 
-$('#bookForm')
-  .find('button[type=submit]')
-  .on('click', function (e) {
-    e.preventDefault();
-    e.stopPropagation();
+// $('#bookForm')
+//   .find('button[type=submit]')
+//   .on('click', function (e) {
+//     e.preventDefault();
+//     e.stopPropagation();
 
-    if (bookForm.checkValidity() === false) {
-      bookForm.classList.add('has-error');
-    } else {
-      $(bookForm).submit();
-    }
-  });
+//     if (bookForm.checkValidity() === false) {
+//       bookForm.classList.add('has-error');
+//     } else {
+//       $(bookForm).submit();
+//     }
+//   });
 
 /* Book Form Submit */
 $(document).on('submit', '#bookForm', function (event) {
