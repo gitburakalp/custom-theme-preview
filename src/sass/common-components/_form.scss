@@ -1,4 +1,4 @@
-#bookForm {
+#mainBookingForm {
   &.has-error {
     input[required]:not(:valid) {
       border-color: $colors--red !important;

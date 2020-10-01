@@ -1,5 +1,5 @@
 var lang = $('html').attr('lang');
-// var bookForm = document.getElementById('bookForm');
+var bookForm = document.getElementById('mainBookingForm');
 
 $('.readonly').on('keydown paste', function (e) {
   e.preventDefault();
@@ -83,7 +83,7 @@ $("[data-prop*='datepicker']").each(function () {
   $(this).dateRangePicker(config);
 });
 
-// $('#bookForm')
+// $('#mainBookingForm')
 //   .find('button[type=submit]')
 //   .on('click', function (e) {
 //     e.preventDefault();
@@ -97,7 +97,7 @@ $("[data-prop*='datepicker']").each(function () {
 //   });
 
 /* Book Form Submit */
-$(document).on('submit', '#bookForm', function (event) {
+$(document).on('submit', '#mainBookingForm', function (event) {
   event.preventDefault();
 
   let form = $(this);
@@ -114,6 +114,13 @@ $(document).on('submit', '#bookForm', function (event) {
   let childAge2 = form.find('#selectChild2').val();
   let childAge3 = form.find('#selectChild3').val();
   let promotionCode = form.find('#inpPromotionCode').val();
+
+  if (lang == 'en') {
+    var cinArr = checkin.split('.');
+    var coutArr = checkout.split('.');
+    checkin = `${cinArr[1]}.${cinArr[0]}.${cinArr[2]}`;
+    checkout = `${coutArr[1]}.${coutArr[0]}.${coutArr[2]}`;
+  }
 
   var url = '/' + language + '/book-search?hid=' + hotelId + '&rid=' + roomId + '&cin=' + checkin + '&cout=' + checkout + '&adt=' + adult + '&chd=' + children + '&c1=' + childAge1 + '&c2=' + childAge2 + '&c3=' + childAge3 + '&pc=' + promotionCode;
 

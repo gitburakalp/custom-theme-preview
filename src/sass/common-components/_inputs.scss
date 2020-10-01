@@ -8,23 +8,34 @@
     cursor: pointer;
   }
 
-  &[class*=validation-error] {
+  &[class*='validation-error'] {
     border-color: $colors--red !important;
   }
 
-  + [class*=field-validation] {
+  + [class*='field-validation'] {
     position: absolute;
     top: 0;
     right: 0;
     font-size: 1.125rem;
     color: $colors--red;
-    transform: translate(-225%,-100%);
+    transform: translate(-225%, -100%);
     line-height: 1;
   }
 }
 
+input[type='radio'],
+input[type='checkbox'] {
+  &[class*='validation-error'] {
+    + label {
+      &::before {
+        border-color: $colors--red !important;
+      }
+    }
+  }
+}
+
 .order--1 {
-  order:-1 !important;
+  order: -1 !important;
 }
 
 select {
