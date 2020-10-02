@@ -1,0 +1,196 @@
+.successful {
+  &-block {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-image: url($imagePath + '/backgrounds/success-bg.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    @include media-breakpoint-down(sm) {
+      max-height: 100vh;
+      overflow-y: auto;
+    }
+
+    [class*='title'] {
+      font-weight: bold;
+    }
+  }
+
+  &-wrapper {
+    position: relative;
+    margin: 1.5rem;
+
+    background-color: rgba($colors--black, 0.375);
+    z-index: 9;
+
+    padding: 5rem 2rem;
+
+    @include media-breakpoint-down(sm) {
+      > * {
+        + * {
+          margin-top: 2rem;
+        }
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      $width: 1rem;
+
+      position: absolute;
+      top: $width;
+      left: $width;
+      right: $width;
+      bottom: $width;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      padding: 2.5rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+      $width: 2.5vw;
+      top: $width;
+      left: $width;
+      right: $width;
+      bottom: $width;
+
+      padding: 5rem 2rem;
+    }
+
+    .main-logo {
+      width: 100%;
+      max-width: 50vw;
+      height: auto;
+
+      @include media-breakpoint-up(md) {
+        max-width: 20rem;
+      }
+    }
+
+    .heading {
+      .fa-check-circle {
+        font-size: 5rem;
+        position: relative;
+        overflow: hidden;
+        background-color: $colors--green;
+        border-radius: 50%;
+        color: white;
+        padding-left: 0.1px;
+        line-height: 1;
+
+        @include media-breakpoint-up(md) {
+          font-size: 6rem;
+          margin-top: 2.5rem;
+        }
+      }
+
+      .description {
+        font-size: 1.4rem;
+        color: $colors--white;
+        font-weight: bold;
+
+        @include media-breakpoint-up(md) {
+          font-size: 2rem;
+          letter-spacing: 2rem * 0.05;
+        }
+
+        &--lg {
+          @extend .description;
+          font-size: 1.6rem;
+
+          @include media-breakpoint-up(md) {
+            font-size: 2.5rem;
+            letter-spacing: 2rem * 0.05;
+          }
+        }
+      }
+    }
+
+    .details {
+      position: relative;
+      background-color: $colors--white;
+      padding: 2rem;
+
+      @include media-breakpoint-up(md) {
+        padding: 3rem;
+      }
+
+      &-title {
+        text-align: center;
+        font-size: 1.4rem;
+        letter-spacing: 1.4rem * 0.05;
+        color: $colors--green;
+
+        @include media-breakpoint-up(md) {
+          font-size: 1.8rem;
+          letter-spacing: 1.8rem * 0.05;
+        }
+      }
+
+      &-box {
+        position: relative;
+        border: 1px solid rgba($colors--black, 0.375);
+        padding: 2rem 1rem;
+        margin-top: 1.5rem;
+        border-radius: 5px;
+
+        .description {
+          font-size: 1.3rem;
+
+          @include media-breakpoint-up(md) {
+            font-size: 1.5rem;
+          }
+        }
+
+        &-title {
+          font-size: 1.2rem;
+
+          @include media-breakpoint-down(sm) {
+            text-align: center;
+          }
+
+          @include media-breakpoint-up(md) {
+            font-size: 1.4rem;
+          }
+
+          &--md {
+            font-size: 1.4rem;
+
+            @include media-breakpoint-up(md) {
+              font-size: 1.6rem;
+            }
+
+            @extend .details-box-title;
+          }
+
+          &--lg {
+            font-size: 1.5rem;
+
+            @extend .details-box-title;
+
+            @include media-breakpoint-up(md) {
+              font-size: 2rem;
+            }
+          }
+        }
+
+        .cost {
+          font-size: 2rem;
+
+          &-old {
+            font-size: 1.4rem;
+            text-decoration: line-through;
+          }
+        }
+      }
+    }
+  }
+}
