@@ -63,6 +63,10 @@
       margin-left: 0;
       margin-right: 0;
       box-shadow: 0 0 4px rgba($colors--black, $alpha: 0.25);
+
+      .fal {
+        font-size: 3rem !important;
+      }
     }
 
     &-block {

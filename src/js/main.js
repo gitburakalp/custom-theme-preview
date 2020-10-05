@@ -166,6 +166,7 @@ function initSliders() {
       spaceBetween: 15,
       allowTouchMove: allowTouch,
       direction: isVerticalSlider ? 'vertical' : 'horizontal',
+      loop: true,
       containerModifierClass: 'slider-container--',
       wrapperClass: 'slider-wrapper',
       slideClass: 'slider-slide',

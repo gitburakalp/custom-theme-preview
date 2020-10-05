@@ -49,7 +49,7 @@ $('.search').each(function () {
     }
   });
 
-  $('[res-trigger] p').on('click', function () {
+  $('[res-trigger] .col-7').on('click', function () {
     var $closest = $(this).closest('.reservation-summary');
 
     $closest.toggleClass('is-shown');
@@ -359,7 +359,6 @@ $('.hotel-select-block').each(function () {
   var $triggerElem = $(this).find('[data-trigger]');
   var $inpSelectedHotel = $(this).find('#inpSelectedHotel');
 
-  $triggerElem.text($(this).find('.hotel-select-item input[type=radio]:checked').next().text());
   $inpSelectedHotel.val($(this).find('.hotel-select-item input[type=radio]:checked').val());
 
   $triggerElem.on('click', function () {

@@ -64,12 +64,21 @@
 
     .brand {
       position: absolute;
-      width: 9rem;
+      width: 14rem;
       left: 50%;
       transform: translateX(-50%);
 
+      @include media-breakpoint-down(sm) {
+        max-width: 5rem;
+        overflow: hidden;
+
+        img {
+          width: 14rem;
+        }
+      }
+
       @include media-breakpoint-up(md) {
-        width: 14rem;
+        width: 20rem;
       }
     }
   }

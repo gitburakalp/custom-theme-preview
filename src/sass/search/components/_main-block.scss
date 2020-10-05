@@ -1,6 +1,29 @@
 .main-block {
   position: relative;
 
+  @include media-breakpoint-up(md) {
+    &.not-searched {
+      img {
+        filter: blur(3px);
+      }
+
+      .search-widget {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+
+        > * {
+          padding-left: 0;
+          padding-right: 0;
+          background-color: $colors--white;
+          box-shadow: 0 0 10px rgba($colors--black, 0.5);
+        }
+      }
+    }
+  }
+
   .img {
     @include media-breakpoint-down(sm) {
       height: 100%;
