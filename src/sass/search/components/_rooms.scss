@@ -482,6 +482,18 @@
   font-size: 1.125rem;
 }
 
+.description {
+  > * {
+    + * {
+      margin-top: 1rem;
+    }
+  }
+
+  ul li {
+    text-align: left;
+  }
+}
+
 .coupon-anim {
   animation: 1.5s animshake infinite alternate;
 }
