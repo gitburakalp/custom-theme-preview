@@ -14,6 +14,10 @@ body {
   transition: background-color 1s;
   text-rendering: optimizeLegibility;
 
+  .br-0 {
+    border-right-color: transparent !important;
+  }
+
   * {
     &:focus {
       outline: none !important;

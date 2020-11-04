@@ -56,6 +56,24 @@
     justify-content: space-between;
     z-index: 2;
 
+    &-left {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+
+      > * {
+        position: relative;
+        min-height: 1px;
+        width: auto;
+        flex: 0 0 auto;
+        max-width: 100%;
+
+        + * {
+          margin-left: 1rem;
+        }
+      }
+    }
+
     @include media-breakpoint-up(md) {
       max-width: 85vw;
       margin-left: auto;

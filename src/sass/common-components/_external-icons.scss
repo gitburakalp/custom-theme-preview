@@ -76,6 +76,14 @@
 .promotion-icon {
   position: relative;
 
+  &.calendar {
+    &::after {
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 3rem;
+    }
+  }
+
   &:after {
     content: '\f4ae';
     position: absolute;

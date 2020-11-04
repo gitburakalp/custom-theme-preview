@@ -105,6 +105,22 @@ a {
     display: inline-block;
   }
 
+  &--call-you {
+    position: relative;
+    font-size: 1.3rem;
+    padding-left: 2rem;
+    font-weight: 600;
+
+    &:before {
+      content: '\f095';
+      font-family: 'Font Awesome 5 Pro';
+      position: absolute;
+      left: 0;
+      font-size: 1.4rem;
+      top: 0;
+    }
+  }
+
   &--transparent {
     position: relative;
     overflow: hidden;

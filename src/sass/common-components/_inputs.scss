@@ -1,3 +1,11 @@
+.input-group {
+  &.input-validation-error {
+    .form-control {
+      border-color: $colors--red;
+    }
+  }
+}
+
 .form-control {
   font-size: 1.3rem;
   border-radius: 0;

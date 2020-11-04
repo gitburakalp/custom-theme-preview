@@ -273,18 +273,20 @@ $('#roomDetailsModal').on('show.bs.modal', function (e) {
   var roomid = $relatedTarget.data('roomid');
   var searchid = $relatedTarget.data('searchid');
 
+  var $title = $this.find('[data-item-id="roomTitle"]');
+  var $description = $this.find('[data-item-id="roomDescription"]');
+  var $roomImageSlider = $this.find('[data-item-id="roomImageSlider"]');
+
+  $title.text('');
+  $description.text('');
+  $roomImageSlider.find('.rooms-image-wrapper').empty();
+
   function getRoomDetails() {
     var url = '/' + currentLang + '/book-getRoomDetails?searchid=' + searchid + '&roomid=' + roomid;
-
-    var $title = $this.find('[data-item-id="roomTitle"]');
-    var $description = $this.find('[data-item-id="roomDescription"]');
-    var $roomImageSlider = $this.find('[data-item-id="roomImageSlider"]');
-
     var config = getConfigRoomsSlider($roomImageSlider);
 
     if ($roomImageSlider[0].swiper != undefined) {
       $roomImageSlider[0].swiper.destroy();
-      $roomImageSlider.find('.rooms-image-wrapper').empty();
     }
 
     $.get(url, res => {
@@ -293,7 +295,8 @@ $('#roomDetailsModal').on('show.bs.modal', function (e) {
       var photos = res.gallery.photos;
 
       $title.html(titleValue);
-      $description.html(descriptionValue);
+      var rt = $description.html(descriptionValue).text();
+      $description.html(rt);
 
       $.each(photos, (idx, e) => {
         var sliderSlides = `<div class="rooms-image-slide"><figure class="img"><img src="${e.url}" alt="" /></figure></div>`;
@@ -381,4 +384,43 @@ $('.hotel-select-block').each(function () {
       $('.hotel-select--hidden').removeClass('is-shown');
     }
   });
+});
+
+$('.header-menu-link.language').each(function () {
+  var url = window.location.href;
+
+  var urlTR = url.replace('/en/', '/tr/').replace('/de/', '/tr/').replace('/ru/', '/tr/');
+  var urlEN = url.replace('/tr/', '/en/').replace('/de/', '/en/').replace('/ru/', '/en/');
+  var urlDE = url.replace('/en/', '/de/').replace('/tr/', '/de/').replace('/ru/', '/de/');
+  var urlRU = url.replace('/en/', '/ru/').replace('/de/', '/ru/').replace('/tr/', '/ru/');
+
+  $('[data-page-lang]').each(function () {
+    var thisLang = $(this).attr('data-page-lang');
+    var $this = $(this);
+    switch (thisLang) {
+      case 'tr':
+        $this.attr('href', urlTR);
+        break;
+      case 'en':
+        $this.attr('href', urlEN);
+        break;
+      case 'de':
+        $this.attr('href', urlDE);
+        break;
+      case 'ru':
+        $this.attr('href', urlRU);
+        break;
+    }
+
+    var currentLang = $('html').attr('lang');
+
+    $('[data-page-lang="' + currentLang + '"]')
+      .parent()
+      .addClass('active');
+  });
+});
+
+$('.edit-stay-days').on('click', function (evt) {
+  evt.stopPropagation();
+  $('#inpCheckinDate').data('dateRangePicker').open();
 });

@@ -3,6 +3,14 @@
   display: flex;
   flex-wrap: wrap;
 
+  .half-image-block {
+    .img {
+      @include media-breakpoint-up(md) {
+        padding-bottom: 85%;
+      }
+    }
+  }
+
   > * {
     position: relative;
     min-height: 1px;
@@ -69,11 +77,6 @@
       @include media-breakpoint-up(md) {
         margin-left: 0;
         left: -12.5%;
-
-        > * {
-          max-height: 25vw;
-          height: 100%;
-        }
       }
 
       @include media-breakpoint-up(lg) {

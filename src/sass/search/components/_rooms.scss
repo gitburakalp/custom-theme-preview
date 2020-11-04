@@ -454,3 +454,55 @@
     }
   }
 }
+
+.btn--select {
+  border: 1px solid $colors--green !important;
+  font-weight: bold;
+  color: $colors--green !important;
+  background-color: transparent;
+
+  &ed {
+    font-weight: bold;
+    background-color: $colors--green !important;
+    color: $colors--white !important;
+  }
+
+  &:hover {
+    background-color: $colors--green !important;
+    color: $colors--white !important;
+  }
+}
+
+[data-modal-type],
+[data-toggle='popover'] {
+  text-decoration: underline !important;
+}
+
+.popover-body {
+  font-size: 1.125rem;
+}
+
+.coupon-anim {
+  animation: 1.5s animshake infinite alternate;
+}
+
+@keyframes animshake {
+  0% {
+    transform: translate3d(-7.5px, 0, 0);
+  }
+  5% {
+    transform: translate3d(7.5px, 0, 0);
+  }
+  10% {
+    transform: translate3d(-7.5px, 0, 0);
+  }
+  15% {
+    transform: translate3d(7.5px, 0, 0);
+  }
+  20% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}

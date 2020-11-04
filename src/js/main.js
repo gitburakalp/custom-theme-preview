@@ -152,12 +152,14 @@ function initSliders() {
     $this.append("<div class='slider-controls'><i class='fal fa-angle-up prev'></i><i class='fal fa-angle-down next'></i></div>");
 
     if (isVerticalSlider) {
+      console.log($this.find('.slider-slide:nth-child(1)'), $this.find('.slider-slide:nth-child(1)').outerHeight());
+
       let vsh = $this.find('.slider-slide:nth-child(1)').outerHeight();
-      document.documentElement.style.setProperty('--vsh', `calc(${vsh}px + 10rem)`);
+      document.documentElement.style.setProperty('--vsh', `calc(${vsh}px)`);
 
       $(window).on('resize oriantedChanged', function () {
         vsh = $this.find('.slider-slide:nth-child(1)').outerHeight();
-        document.documentElement.style.setProperty('--vsh', `calc(${vsh}px + 10rem)`);
+        document.documentElement.style.setProperty('--vsh', `calc(${vsh}px)`);
       });
     }
 
@@ -166,7 +168,7 @@ function initSliders() {
       spaceBetween: 15,
       allowTouchMove: allowTouch,
       direction: isVerticalSlider ? 'vertical' : 'horizontal',
-      loop: true,
+      // loop: true,
       containerModifierClass: 'slider-container--',
       wrapperClass: 'slider-wrapper',
       slideClass: 'slider-slide',

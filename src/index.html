@@ -240,6 +240,9 @@
             <div></div>
           </a>
         </div>
+        <a class="btn btn--call-you" data-toggle="modal" data-target="#letUsCallYouModal">
+          Let Us Call You
+        </a>
       </div>
       <div class="brand">
         <img src="images/paraiso-icon.svg" />
@@ -421,7 +424,7 @@
                         adipisicing elit. Perspiciatis nam ipsa perferendis magnam quam consequuntur necessitatibus
                         facere deserunt illo porro.</p>
                     </div>
-                    <div class="mt-5 pt-3 justify-content-around">
+                    <div class="mt-5 pt-3 d-flex justify-content-around">
                       <a href="#" class="btn btn--sm btn--black"> <span>BOOK</span> </a>
                       <a href="#" class="btn btn--sm btn--black"> <span>SEE MORE</span> </a>
                     </div>
@@ -553,9 +556,117 @@
       </footer>
     </div>
   </div>
+  <div class="modal fade" id="letUsCallYouModal" tabindex="-1" aria-labelledby="roomDetailsModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header flex-column justify-content-center">
+          <div class="row justify-content-center text-center">
+            <div class="col-md-8">
+              <h2 class="title title--serif font-size--2xl mx-auto" data-item-id="roomTitle">Sizi Arayalım</h2>
+              <a href="tel:+905001234567" class="d-inline-block title font-size--lg mt-3">+90 500 123 45 67</a>
+              <a href="mailto:booking@example.com"
+                class="d-block title font-size--sm mt-2 font-weight-bold">booking@example.com</a>
+              <p class="description font-size--xs mx-auto mt-4">Siz değerli misafirlerimize hızlı ve güvenilir bir
+                rezervasyon
+                süreci sağlamak ; beklenti ve taleplerinizi en kısa sürede karşılamak adına her zaman yanınızdayız.</p>
+            </div>
+          </div>
+
+
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i class="fal fa-times font-size--3xl"></i>
+          </button>
+        </div>
+        <div class="modal-body pb-5">
+          <div class="row">
+            <div class="col-md-6">
+              <label for="inpNameSurname" class="font-family--sans-serif-2 font-size--sm mb-3">
+                Adınız Soyadınız
+              </label>
+              <input id="inpNameSurname" class="form-control" placeholder="Ad Soyad :"
+                data-simplevalidation="min:3,max:70,required,itemGroup:callYouModal">
+            </div>
+            <div class="col-md-6 mt-4 mt-md-0">
+              <label for="selectPhoneCode" class="font-family--sans-serif-2 font-size--sm mb-3">
+                Telefon Numarası
+              </label>
+              <div class="input-group">
+                <div class="input-group-append col-3 px-0">
+                  <select id="selectPhoneCode" class="form-control br-0">
+                  </select>
+                </div>
+                <input id="inpPhoneNumber" class="form-control" placeholder="Telefon Numarası :"
+                  data-simplevalidation="min:3,max:12,required,errorOwner:input-group,itemGroup:callYouModal">
+              </div>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-md-6">
+              <label for="inpEmail" class="font-family--sans-serif-2 font-size--sm mb-3">
+                E-mail
+              </label>
+              <input id="inpEmail" class="form-control" placeholder="E-mail :"
+                data-simplevalidation="min:3,max:70,isEmail,required,itemGroup:callYouModal">
+            </div>
+            <div class="col-md-6 mt-4 mt-md-0">
+              <label for="requestReason" class="font-family--sans-serif-2 font-size--sm mb-3">
+                Aranma Talebiniz
+              </label>
+              <select id="requestReason" class="form-control" data-simplevalidation="required,itemGroup:callYouModal">
+                <option value="0">Aranma Talebiniz</option>
+                <option value="1">Otel Rezervasyonu</option>
+                <option value="2">Konaklama Bedeli Talebi</option>
+              </select>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-md-6">
+              <label for="callDateHour" class="font-family--sans-serif-2 font-size--sm mb-3">
+                Aranma Zamanı
+              </label>
+              <select id="callDateHour" class="form-control">
+                <option value="1">Hemen Ara</option>
+                <option value="2">09:00 - 12:00</option>
+                <option value="3">12:00 - 15:00</option>
+                <option value="4">15:00 - 18:00</option>
+                <option value="4">18:00 - 20:00</option>
+              </select>
+            </div>
+            <div class="col-md-6 mt-4 mt-md-0">
+              <label for="txtNotes" class="font-family--sans-serif-2 font-size--sm mb-3">
+                Not
+              </label>
+              <textarea id="txtNotes" class="form-control" rows="5" placeholder="Notunuz :"
+                data-simplevalidation="min:3,max:300,itemGroup:callYouModal"></textarea>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-12">
+              <div class="custom-checkbox">
+                <input id="chkFormAgreement" type="checkbox"
+                  data-simplevalidation="required,isCheckbox,itemGroup:callYouModal">
+                <label for="chkFormAgreement">
+                  @T["letUsCallYouAgreementText"]
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-5 justify-content-center">
+            <div class="col-md-6 text-center">
+              <a id="submitButton" class="btn btn--sm btn--black">
+                GONDER
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <script src="js/vendors/jquery.min.js"></script>
   <script src="js/vendors/moment.min.js"></script>
+  <script src="js/vendors/bootstrap.min.js"></script>
   <script src="js/vendors/jquery.daterangepicker.min.js"></script>
   <script src="js/vendors/gsap.min.js"></script>
   <script src="js/vendors/ScrollTrigger.min.js"></script>
@@ -563,6 +674,7 @@
   <script src="js/vendors/smooth-scrollbar.js"></script>
   <script src="js/common.js"></script>
   <script src="js/main.js"></script>
+
 </body>
 
 </html>
